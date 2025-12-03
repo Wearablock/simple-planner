@@ -124,84 +124,100 @@ class _CalendarDialogState extends State<CalendarDialog> {
     return (startOfCalendar, endOfCalendar);
   }
 
+  /// 현재 locale이 RTL인지 확인
+  bool _isRtlLocale(BuildContext context) {
+    final locale = Localizations.localeOf(context);
+    return locale.languageCode == 'ar' ||
+        locale.languageCode == 'he' ||
+        locale.languageCode == 'fa' ||
+        locale.languageCode == 'ur';
+  }
+
   @override
   Widget build(BuildContext context) {
+    final isRtl = _isRtlLocale(context);
+
     return Dialog(
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            TableCalendar(
-              locale: _getCalendarLocale(context),
-              focusedDay: _focusedDay,
-              firstDay: widget.firstDate,
-              lastDay: widget.lastDate,
-              selectedDayPredicate: (day) => isSameDay(_selectedDate, day),
-              onDaySelected: (selectedDay, focusedDay) {
-                setState(() {
-                  _selectedDate = selectedDay;
+            Directionality(
+              textDirection: isRtl ? TextDirection.rtl : TextDirection.ltr,
+              child: TableCalendar(
+                locale: _getCalendarLocale(context),
+                startingDayOfWeek:
+                    isRtl ? StartingDayOfWeek.saturday : StartingDayOfWeek.sunday,
+                focusedDay: _focusedDay,
+                firstDay: widget.firstDate,
+                lastDay: widget.lastDate,
+                selectedDayPredicate: (day) => isSameDay(_selectedDate, day),
+                onDaySelected: (selectedDay, focusedDay) {
+                  setState(() {
+                    _selectedDate = selectedDay;
+                    _focusedDay = focusedDay;
+                  });
+                },
+                onPageChanged: (focusedDay) {
                   _focusedDay = focusedDay;
-                });
-              },
-              onPageChanged: (focusedDay) {
-                _focusedDay = focusedDay;
-                _loadTodoStats();
-              },
-              calendarStyle: CalendarStyle(
-                todayDecoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.7),
-                  shape: BoxShape.circle,
+                  _loadTodoStats();
+                },
+                calendarStyle: CalendarStyle(
+                  todayDecoration: BoxDecoration(
+                    color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.7),
+                    shape: BoxShape.circle,
+                  ),
+                  selectedDecoration: BoxDecoration(
+                    color: Theme.of(context).colorScheme.primary,
+                    shape: BoxShape.circle,
+                  ),
                 ),
-                selectedDecoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.primary,
-                  shape: BoxShape.circle,
+                headerStyle: const HeaderStyle(
+                  formatButtonVisible: false,
+                  titleCentered: true,
                 ),
-              ),
-              headerStyle: const HeaderStyle(
-                formatButtonVisible: false,
-                titleCentered: true,
-              ),
-              calendarBuilders: CalendarBuilders(
-                markerBuilder: (context, date, events) {
-                  final stats = _todoStatsMap[date.dateOnly];
-                  if (stats == null) return null;
+                calendarBuilders: CalendarBuilders(
+                  markerBuilder: (context, date, events) {
+                    final stats = _todoStatsMap[date.dateOnly];
+                    if (stats == null) return null;
 
-                  final completed = stats['completed'] ?? 0;
-                  final total = stats['total'] ?? 0;
+                    final completed = stats['completed'] ?? 0;
+                    final total = stats['total'] ?? 0;
 
-                  if (total > 0) {
-                    final status = TodoProgressUtils.getStatus(
-                      totalCount: total,
-                      completedCount: completed,
-                      selectedDate: date,
-                    );
-                    final statusColor = TodoProgressUtils.getColor(status);
+                    if (total > 0) {
+                      final status = TodoProgressUtils.getStatus(
+                        totalCount: total,
+                        completedCount: completed,
+                        selectedDate: date,
+                      );
+                      final statusColor = TodoProgressUtils.getColor(status);
 
-                    return Positioned(
-                      bottom: 1,
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 4,
-                          vertical: 1,
-                        ),
-                        decoration: BoxDecoration(
-                          color: statusColor,
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: Text(
-                          '$completed/$total',
-                          style: TextStyle(
-                            color: AppColors.white,
-                            fontSize: 9,
-                            fontWeight: FontWeight.bold,
+                      return Positioned(
+                        bottom: 1,
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 4,
+                            vertical: 1,
+                          ),
+                          decoration: BoxDecoration(
+                            color: statusColor,
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: Text(
+                            '$completed/$total',
+                            style: TextStyle(
+                              color: AppColors.white,
+                              fontSize: 9,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
-                      ),
-                    );
-                  }
-                  return null;
-                },
+                      );
+                    }
+                    return null;
+                  },
+                ),
               ),
             ),
             const SizedBox(height: 16),
