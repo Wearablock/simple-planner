@@ -1,0 +1,105 @@
+{
+  "@@locale": "fr",
+
+  "appTitle": "Tâches du jour",
+  "@appTitle": {
+    "description": "App title"
+  },
+
+  "cancel": "Annuler",
+  "confirm": "Confirmer",
+  "delete": "Supprimer",
+  "select": "Sélectionner",
+  "settings": "Paramètres",
+
+  "todoInputHint": "Entrez une tâche",
+  "recurring": "Répéter",
+
+  "selectTime": "Sélectionner l'heure",
+  "hourFormat": "{hour}:00",
+  "@hourFormat": {
+    "placeholders": {
+      "hour": {
+        "type": "String"
+      }
+    }
+  },
+
+  "dateFormat": "{day}/{month}",
+  "@dateFormat": {
+    "placeholders": {
+      "month": {"type": "int"},
+      "day": {"type": "int"}
+    }
+  },
+
+  "monday": "Lun",
+  "tuesday": "Mar",
+  "wednesday": "Mer",
+  "thursday": "Jeu",
+  "friday": "Ven",
+  "saturday": "Sam",
+  "sunday": "Dim",
+
+  "everyday": "Tous les jours",
+  "weekdays": "Jours ouvrables",
+  "weekend": "Week-end",
+
+  "deleteConfirmTitle": "Confirmer la suppression",
+  "deleteConfirmMessage": "Supprimer '{title}' ?",
+  "@deleteConfirmMessage": {
+    "placeholders": {
+      "title": {"type": "String"}
+    }
+  },
+  "deleteAllRecurring": "Supprimer également toutes les tâches récurrentes futures",
+
+  "noTodosForDate": "Aucune tâche pour le {day}/{month}",
+  "@noTodosForDate": {
+    "placeholders": {
+      "month": {"type": "int"},
+      "day": {"type": "int"}
+    }
+  },
+
+  "countText": "{count}",
+  "@countText": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+
+  "errorAddTodo": "Échec de l'ajout de la tâche",
+  "errorDeleteTodo": "Échec de la suppression de la tâche",
+  "errorToggleTodo": "Échec de la mise à jour du statut",
+  "errorReorderTodo": "Échec de la réorganisation",
+  "errorLoadTodos": "Échec du chargement des tâches",
+
+  "cannotDeselectLockedDay": "Impossible de désélectionner le jour de la date sélectionnée",
+
+  "removeAds": "Supprimer les publicités",
+  "purchase": "Acheter",
+  "restorePurchase": "Restaurer l'achat",
+  "restorePurchaseDesc": "Restaurer vos achats précédents",
+  "processing": "Traitement...",
+  "checkingPurchase": "Vérification de l'historique des achats...",
+  "purchaseError": "Impossible de démarrer l'achat",
+  "purchaseRestored": "Achat restauré !",
+  "noPurchaseToRestore": "Aucun achat à restaurer",
+
+  "termsOfService": "Conditions d'utilisation",
+  "privacyPolicy": "Politique de confidentialité",
+  "versionInfo": "Version",
+
+  "dateWithWeekday": "{weekday}, {day}/{month}",
+  "@dateWithWeekday": {
+    "placeholders": {
+      "month": {"type": "int"},
+      "day": {"type": "int"},
+      "weekday": {"type": "String"}
+    }
+  },
+
+  "emptyTodoTitle": "Aucune tâche",
+  "emptyTodoSubtitle": "Ajoutez une nouvelle tâche pour commencer"
+}
