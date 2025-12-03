@@ -20,7 +20,7 @@ class SettingsIconButton extends StatelessWidget {
         return GestureDetector(
           onTap: () => _openSettings(context),
           child: Padding(
-            padding: const EdgeInsets.only(right: AppConstants.defaultPadding),
+            padding: const EdgeInsetsDirectional.only(end: AppConstants.defaultPadding),
             child: Stack(
               clipBehavior: Clip.none,
               children: [
@@ -29,8 +29,8 @@ class SettingsIconButton extends StatelessWidget {
                   size: AppConstants.largeIconSize,
                 ),
                 if (!isAdFree)
-                  Positioned(
-                    right: -8,
+                  PositionedDirectional(
+                    end: -8,
                     bottom: -12,
                     child: Container(
                       padding: const EdgeInsets.symmetric(

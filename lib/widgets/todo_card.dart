@@ -52,7 +52,7 @@ class _TodoTitle extends StatelessWidget {
       children: [
         if (todo.recurringId != null)
           Padding(
-            padding: const EdgeInsets.only(right: AppConstants.tinyPadding),
+            padding: const EdgeInsetsDirectional.only(end: AppConstants.tinyPadding),
             child: PhosphorIcon(
               PhosphorIcons.arrowsClockwise(PhosphorIconsStyle.light),
               size: AppConstants.smallIconSize,

@@ -1,0 +1,105 @@
+{
+  "@@locale": "ar",
+
+  "appTitle": "مهام اليوم",
+  "@appTitle": {
+    "description": "App title"
+  },
+
+  "cancel": "إلغاء",
+  "confirm": "تأكيد",
+  "delete": "حذف",
+  "select": "اختيار",
+  "settings": "الإعدادات",
+
+  "todoInputHint": "أدخل مهمة",
+  "recurring": "تكرار",
+
+  "selectTime": "اختر الوقت",
+  "hourFormat": "{hour}:00",
+  "@hourFormat": {
+    "placeholders": {
+      "hour": {
+        "type": "String"
+      }
+    }
+  },
+
+  "dateFormat": "{day}/{month}",
+  "@dateFormat": {
+    "placeholders": {
+      "month": {"type": "int"},
+      "day": {"type": "int"}
+    }
+  },
+
+  "monday": "الإثنين",
+  "tuesday": "الثلاثاء",
+  "wednesday": "الأربعاء",
+  "thursday": "الخميس",
+  "friday": "الجمعة",
+  "saturday": "السبت",
+  "sunday": "الأحد",
+
+  "everyday": "كل يوم",
+  "weekdays": "أيام الأسبوع",
+  "weekend": "نهاية الأسبوع",
+
+  "deleteConfirmTitle": "تأكيد الحذف",
+  "deleteConfirmMessage": "حذف '{title}'؟",
+  "@deleteConfirmMessage": {
+    "placeholders": {
+      "title": {"type": "String"}
+    }
+  },
+  "deleteAllRecurring": "حذف جميع المهام المتكررة المستقبلية أيضاً",
+
+  "noTodosForDate": "لا توجد مهام ليوم {day}/{month}",
+  "@noTodosForDate": {
+    "placeholders": {
+      "month": {"type": "int"},
+      "day": {"type": "int"}
+    }
+  },
+
+  "countText": "{count}",
+  "@countText": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+
+  "errorAddTodo": "فشل في إضافة المهمة",
+  "errorDeleteTodo": "فشل في حذف المهمة",
+  "errorToggleTodo": "فشل في تحديث الحالة",
+  "errorReorderTodo": "فشل في إعادة الترتيب",
+  "errorLoadTodos": "فشل في تحميل المهام",
+
+  "cannotDeselectLockedDay": "لا يمكن إلغاء تحديد يوم التاريخ المحدد",
+
+  "removeAds": "إزالة الإعلانات",
+  "purchase": "شراء",
+  "restorePurchase": "استعادة المشتريات",
+  "restorePurchaseDesc": "استعادة مشترياتك السابقة",
+  "processing": "جارٍ المعالجة...",
+  "checkingPurchase": "جارٍ التحقق من سجل الشراء...",
+  "purchaseError": "تعذر بدء عملية الشراء",
+  "purchaseRestored": "تم استعادة المشتريات!",
+  "noPurchaseToRestore": "لا توجد مشتريات للاستعادة",
+
+  "termsOfService": "شروط الخدمة",
+  "privacyPolicy": "سياسة الخصوصية",
+  "versionInfo": "الإصدار",
+
+  "dateWithWeekday": "{weekday}، {day}/{month}",
+  "@dateWithWeekday": {
+    "placeholders": {
+      "month": {"type": "int"},
+      "day": {"type": "int"},
+      "weekday": {"type": "String"}
+    }
+  },
+
+  "emptyTodoTitle": "لا توجد مهام",
+  "emptyTodoSubtitle": "أضف مهمة جديدة للبدء"
+}

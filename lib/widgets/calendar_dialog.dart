@@ -52,6 +52,7 @@ class _CalendarDialogState extends State<CalendarDialog> {
     await initializeDateFormatting('de'); // 독일어
     await initializeDateFormatting('fr'); // 프랑스어
     await initializeDateFormatting('it'); // 이탈리아어
+    await initializeDateFormatting('ar'); // 아랍어
   }
 
   /// 현재 locale에 맞는 캘린더 locale 문자열 반환
