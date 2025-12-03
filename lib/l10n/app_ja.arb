@@ -1,0 +1,66 @@
+{
+  "@@locale": "ja",
+
+  "appTitle": "今日のタスク",
+
+  "cancel": "キャンセル",
+  "confirm": "確認",
+  "delete": "削除",
+  "select": "選択",
+  "settings": "設定",
+
+  "todoInputHint": "タスクを入力",
+  "recurring": "繰り返し",
+
+  "selectTime": "時間を選択",
+  "hourFormat": "{hour}:00",
+
+  "dateFormat": "{month}月{day}日",
+
+  "monday": "月",
+  "tuesday": "火",
+  "wednesday": "水",
+  "thursday": "木",
+  "friday": "金",
+  "saturday": "土",
+  "sunday": "日",
+
+  "everyday": "毎日",
+  "weekdays": "平日",
+  "weekend": "週末",
+
+  "deleteConfirmTitle": "削除の確認",
+  "deleteConfirmMessage": "「{title}」を削除しますか？",
+  "deleteAllRecurring": "今後の繰り返しタスクもすべて削除",
+
+  "noTodosForDate": "{month}月{day}日のタスクはありません",
+
+  "countText": "{count}件",
+
+  "errorAddTodo": "タスクの追加に失敗しました",
+  "errorDeleteTodo": "タスクの削除に失敗しました",
+  "errorToggleTodo": "ステータスの更新に失敗しました",
+  "errorReorderTodo": "並べ替えに失敗しました",
+  "errorLoadTodos": "タスクの読み込みに失敗しました",
+
+  "cannotDeselectLockedDay": "選択した日付の曜日は解除できません",
+
+  "removeAds": "広告を削除",
+  "purchase": "購入",
+  "restorePurchase": "購入を復元",
+  "restorePurchaseDesc": "以前の購入を復元します",
+  "processing": "処理中...",
+  "checkingPurchase": "購入履歴を確認中...",
+  "purchaseError": "購入を開始できません",
+  "purchaseRestored": "購入が復元されました！",
+  "noPurchaseToRestore": "復元する購入がありません",
+
+  "termsOfService": "利用規約",
+  "privacyPolicy": "プライバシーポリシー",
+  "versionInfo": "バージョン",
+
+  "dateWithWeekday": "{month}月{day}日 ({weekday})",
+
+  "emptyTodoTitle": "タスクがありません",
+  "emptyTodoSubtitle": "新しいタスクを追加してみましょう"
+}

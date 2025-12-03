@@ -34,6 +34,9 @@
             <button class="lang-option" onclick="switchLang('ko')">
               한국어
             </button>
+            <button class="lang-option" onclick="switchLang('ja')">
+              日本語
+            </button>
           </div>
         </div>
       </header>
@@ -273,6 +276,110 @@
         </p>
       </main>
 
+      <!-- Japanese Content -->
+      <main id="content-ja" class="content-section">
+        <h2>利用規約</h2>
+        <p><strong>施行日:</strong> 2025年12月3日</p>
+
+        <div class="info-box">
+          <p>
+            Simple Plannerをご利用いただくことで、本利用規約に同意したものとみなされます。よくお読みください。
+          </p>
+        </div>
+
+        <h3>第1条（サービス提供者）</h3>
+        <p>本アプリケーションは以下の事業者が提供します：</p>
+        <ul>
+          <li><strong>会社名:</strong> Wearablock Inc.</li>
+          <li>
+            <strong>所在地:</strong> 大韓民国 京畿道 金浦市 金浦漢江11路 288-5
+          </li>
+          <li><strong>連絡先:</strong> admin@wearablock.com</li>
+        </ul>
+
+        <h3>第2条（サービス内容）</h3>
+        <p>
+          Simple Plannerは、以下の機能を提供するタスク管理アプリケーションです：
+        </p>
+        <ul>
+          <li>日々のタスクの作成と管理</li>
+          <li>繰り返しタスクの設定</li>
+          <li>時間設定によるタスクの整理</li>
+        </ul>
+
+        <h3>第3条（利用年齢）</h3>
+        <p>
+          本サービスは14歳以上のユーザーを対象としています。14歳未満の場合は、保護者または法定代理人の同意を得た上で本アプリケーションをご利用ください。
+        </p>
+
+        <h3>第4条（ユーザーの責任）</h3>
+        <p>ユーザーは以下の事項を遵守するものとします：</p>
+        <ul>
+          <li>適用される法律を遵守してアプリケーションを使用すること</li>
+          <li>アプリケーションのリバースエンジニアリング、改変、配布を行わないこと</li>
+          <li>違法または不正な目的でアプリケーションを使用しないこと</li>
+        </ul>
+
+        <h3>第5条（広告）</h3>
+        <p>
+          本アプリケーションはGoogle AdMobによる広告を表示します。アプリケーションをご利用いただくことで、以下の事項に同意するものとします：
+        </p>
+        <ul>
+          <li>アプリケーション内に広告が表示される場合があること</li>
+          <li>広告コンテンツはサードパーティの広告主から提供されること</li>
+          <li>アプリ内購入により広告を削除できること</li>
+        </ul>
+
+        <h3>第6条（アプリ内購入）</h3>
+        <table>
+          <tr>
+            <th>項目</th>
+            <th>価格</th>
+            <th>説明</th>
+          </tr>
+          <tr>
+            <td>広告削除</td>
+            <td>¥480</td>
+            <td>すべての広告を永久に削除</td>
+          </tr>
+        </table>
+        <p>
+          すべての購入はApple App StoreまたはGoogle Play Storeを通じて処理されます。払い戻しは各ストアの払い戻しポリシーに従います。
+        </p>
+
+        <h3>第7条（データ保存）</h3>
+        <p>
+          すべてのタスクデータはお使いのデバイスにローカルで保存されます。当社はユーザーのタスクデータを収集、送信、または外部サーバーに保存することはありません。データのバックアップはユーザーご自身の責任となります。
+        </p>
+
+        <h3>第8条（免責事項）</h3>
+        <p>
+          アプリケーションは「現状のまま」提供され、いかなる種類の保証も行いません。当社は以下について責任を負いません：
+        </p>
+        <ul>
+          <li>デバイスの故障またはアプリの削除によるデータ損失</li>
+          <li>アプリケーションの使用により生じた間接的または結果的な損害</li>
+          <li>サービスの中断またはエラー</li>
+        </ul>
+
+        <h3>第9条（規約の変更）</h3>
+        <p>
+          当社はいつでも本規約を変更する権利を有します。変更後もアプリケーションを継続してご利用いただくことで、新しい規約に同意したものとみなされます。
+        </p>
+
+        <h3>第10条（準拠法）</h3>
+        <p>
+          本規約は大韓民国の法律に準拠します。紛争が生じた場合は、韓国の裁判所で解決するものとします。
+        </p>
+
+        <h3>第11条（お問い合わせ）</h3>
+        <p>
+          本規約に関するご質問は、
+          <a href="mailto:admin@wearablock.com">admin@wearablock.com</a>
+          までお問い合わせください。
+        </p>
+      </main>
+
       <footer>
         <p>&copy; 2025 Wearablock Inc. All rights reserved.</p>
         <p><a href="privacy.html">Privacy Policy</a></p>
@@ -298,8 +405,8 @@
         event.target.classList.add("active");
 
         // Update current language display
-        document.getElementById("currentLang").textContent =
-          lang === "en" ? "English" : "한국어";
+        const langNames = { en: "English", ko: "한국어", ja: "日本語" };
+        document.getElementById("currentLang").textContent = langNames[lang];
 
         // Update URL hash
         window.location.hash = lang;
@@ -318,7 +425,7 @@
       // Check URL hash on page load
       window.addEventListener("DOMContentLoaded", function () {
         const hash = window.location.hash.slice(1);
-        if (hash === "ko" || hash === "en") {
+        if (["en", "ko", "ja"].includes(hash)) {
           switchLang(hash);
         }
       });
