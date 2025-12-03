@@ -23,6 +23,7 @@
           <button class="lang-option" onclick="switchLang('ja')">日本語</button>
           <button class="lang-option" onclick="switchLang('zh')">简体中文</button>
           <button class="lang-option" onclick="switchLang('zh-Hant')">繁體中文</button>
+          <button class="lang-option" onclick="switchLang('es')">Español</button>
         </div>
       </div>
     </header>
@@ -462,6 +463,93 @@
       </ul>
     </main>
 
+    <!-- Spanish Content -->
+    <main id="content-es" class="content-section">
+      <h2>Política de Privacidad</h2>
+      <p><strong>Fecha de vigencia:</strong> 3 de diciembre de 2025</p>
+
+      <div class="info-box">
+        <p>Su privacidad es importante para nosotros. Esta Política de Privacidad explica cómo Simple Planner maneja su información.</p>
+      </div>
+
+      <h3>1. Responsable de la Información</h3>
+      <p>La entidad responsable de sus datos:</p>
+      <ul>
+        <li><strong>Empresa:</strong> Wearablock Inc.</li>
+        <li><strong>Dirección:</strong> 288-5, Gimpo Hangang 11-ro, Gimpo-si, Gyeonggi-do, República de Corea</li>
+        <li><strong>Contacto:</strong> admin@wearablock.com</li>
+      </ul>
+
+      <h3>2. Información que Recopilamos</h3>
+      <h4>2.1 Información que NO Recopilamos</h4>
+      <p>Simple Planner NO recopila, transmite ni almacena:</p>
+      <ul>
+        <li>Información de identificación personal</li>
+        <li>Sus datos o contenido de tareas</li>
+        <li>Datos de ubicación</li>
+        <li>Información de contacto</li>
+        <li>Identificadores de dispositivo (por nuestra parte)</li>
+      </ul>
+
+      <h4>2.2 Almacenamiento Local de Datos</h4>
+      <p>Todos sus datos de tareas se almacenan únicamente de forma local en su dispositivo. Estos datos:</p>
+      <ul>
+        <li>Nunca salen de su dispositivo</li>
+        <li>No son accesibles para nosotros</li>
+        <li>Se eliminan cuando desinstala la aplicación</li>
+      </ul>
+
+      <h3>3. Servicios de Terceros</h3>
+      <h4>3.1 Google AdMob</h4>
+      <p>Utilizamos Google AdMob para mostrar anuncios. AdMob puede recopilar:</p>
+      <ul>
+        <li>ID de publicidad del dispositivo</li>
+        <li>Dirección IP</li>
+        <li>Información del dispositivo</li>
+        <li>Datos de interacción con anuncios</li>
+      </ul>
+      <p>Para más información, consulte la <a href="https://policies.google.com/privacy" target="_blank">Política de Privacidad de Google</a>.</p>
+
+      <h4>3.2 App Store / Play Store</h4>
+      <p>Cuando realiza compras dentro de la aplicación, la tienda correspondiente (Apple App Store o Google Play Store) procesa la transacción. No tenemos acceso a su información de pago.</p>
+
+      <h3>4. Privacidad de los Niños</h3>
+      <p>Esta aplicación está destinada a usuarios de 14 años o más. No recopilamos conscientemente información personal de niños menores de 14 años. Si cree que un niño menor de 14 años ha proporcionado información personal a través de servicios de terceros, contáctenos.</p>
+
+      <h3>5. Seguridad de los Datos</h3>
+      <p>Dado que todos los datos se almacenan localmente en su dispositivo:</p>
+      <ul>
+        <li>La seguridad de los datos depende de la configuración de seguridad de su dispositivo</li>
+        <li>Recomendamos usar código de acceso/protección biométrica del dispositivo</li>
+        <li>No somos responsables de la pérdida de datos debido a robo, pérdida o daño del dispositivo</li>
+      </ul>
+
+      <h3>6. Sus Derechos</h3>
+      <p>Usted tiene control total sobre sus datos:</p>
+      <ul>
+        <li><strong>Acceso:</strong> Todos los datos son visibles dentro de la aplicación</li>
+        <li><strong>Eliminación:</strong> Elimine tareas dentro de la aplicación o desinstale la aplicación para eliminar todos los datos</li>
+        <li><strong>Portabilidad:</strong> Los datos se almacenan localmente y se pueden respaldar mediante las funciones de respaldo del dispositivo</li>
+      </ul>
+
+      <h3>7. Exclusión de Anuncios Personalizados</h3>
+      <p>Puede optar por no recibir publicidad personalizada:</p>
+      <ul>
+        <li><strong>iOS:</strong> Ajustes → Privacidad → Seguimiento</li>
+        <li><strong>Android:</strong> Ajustes → Google → Anuncios → Inhabilitar personalización de anuncios</li>
+      </ul>
+      <p>Alternativamente, compre la opción "Eliminar Anuncios" para eliminar todos los anuncios.</p>
+
+      <h3>8. Cambios a Esta Política</h3>
+      <p>Podemos actualizar esta Política de Privacidad de vez en cuando. Notificaremos a los usuarios sobre cambios significativos a través de la aplicación o actualizando la fecha de vigencia.</p>
+
+      <h3>9. Contáctenos</h3>
+      <p>Si tiene preguntas sobre esta Política de Privacidad o sus datos, contáctenos en:</p>
+      <ul>
+        <li><strong>Correo electrónico:</strong> <a href="mailto:admin@wearablock.com">admin@wearablock.com</a></li>
+      </ul>
+    </main>
+
     <footer>
       <p>&copy; 2025 Wearablock Inc. All rights reserved.</p>
       <p><a href="terms.html">Terms of Service</a></p>
@@ -489,7 +577,7 @@
       });
 
       // Update current language display
-      const langNames = { en: 'English', ko: '한국어', ja: '日本語', zh: '简体中文', 'zh-Hant': '繁體中文' };
+      const langNames = { en: 'English', ko: '한국어', ja: '日本語', zh: '简体中文', 'zh-Hant': '繁體中文', es: 'Español' };
       document.getElementById('currentLang').textContent = langNames[lang];
 
       // Update URL hash
@@ -509,7 +597,7 @@
     // Check URL hash on page load
     window.addEventListener('DOMContentLoaded', function() {
       const hash = window.location.hash.slice(1);
-      if (['en', 'ko', 'ja', 'zh', 'zh-Hant'].includes(hash)) {
+      if (['en', 'ko', 'ja', 'zh', 'zh-Hant', 'es'].includes(hash)) {
         switchLang(hash);
       }
     });

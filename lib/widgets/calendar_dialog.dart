@@ -34,10 +34,34 @@ class _CalendarDialogState extends State<CalendarDialog> {
   @override
   void initState() {
     super.initState();
-    initializeDateFormatting('ko_KR');
     _focusedDay = widget.initialDate;
     _selectedDate = widget.initialDate;
+    _initializeDateFormatting();
     _loadTodoStats();
+  }
+
+  /// 모든 지원 locale에 대한 날짜 포맷 초기화
+  Future<void> _initializeDateFormatting() async {
+    await initializeDateFormatting('en');
+    await initializeDateFormatting('ko');
+    await initializeDateFormatting('ja');
+    await initializeDateFormatting('zh');
+    await initializeDateFormatting('zh_TW'); // 번체 중국어
+    await initializeDateFormatting('es'); // 스페인어
+  }
+
+  /// 현재 locale에 맞는 캘린더 locale 문자열 반환
+  String _getCalendarLocale(BuildContext context) {
+    final locale = Localizations.localeOf(context);
+    // table_calendar/intl이 지원하는 locale 형식으로 변환
+    // 번체 중국어는 zh_TW로 매핑 (intl 패키지가 zh_Hant를 지원하지 않음)
+    if (locale.languageCode == 'zh' && locale.scriptCode == 'Hant') {
+      return 'zh_TW';
+    }
+    if (locale.countryCode != null) {
+      return '${locale.languageCode}_${locale.countryCode}';
+    }
+    return locale.languageCode;
   }
 
   /// 월 키 생성 (캐시 확인용)
@@ -104,7 +128,7 @@ class _CalendarDialogState extends State<CalendarDialog> {
           mainAxisSize: MainAxisSize.min,
           children: [
             TableCalendar(
-              locale: 'ko_KR',
+              locale: _getCalendarLocale(context),
               focusedDay: _focusedDay,
               firstDay: widget.firstDate,
               lastDay: widget.lastDate,

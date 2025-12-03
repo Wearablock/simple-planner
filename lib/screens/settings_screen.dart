@@ -105,9 +105,18 @@ class SettingsScreen extends StatelessWidget {
     );
   }
 
+  String _getUrlLangCode(BuildContext context) {
+    final locale = Localizations.localeOf(context);
+    // 번체 중국어 처리 (scriptCode가 Hant인 경우)
+    if (locale.languageCode == 'zh' && locale.scriptCode == 'Hant') {
+      return 'zh-Hant';
+    }
+    return locale.languageCode;
+  }
+
   void _openTermsOfService(BuildContext context) {
     final l10n = AppLocalizations.of(context);
-    final langCode = Localizations.localeOf(context).languageCode;
+    final langCode = _getUrlLangCode(context);
     Navigator.push(
       context,
       MaterialPageRoute(
@@ -121,7 +130,7 @@ class SettingsScreen extends StatelessWidget {
 
   void _openPrivacyPolicy(BuildContext context) {
     final l10n = AppLocalizations.of(context);
-    final langCode = Localizations.localeOf(context).languageCode;
+    final langCode = _getUrlLangCode(context);
     Navigator.push(
       context,
       MaterialPageRoute(
