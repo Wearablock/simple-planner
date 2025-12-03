@@ -1,0 +1,105 @@
+{
+  "@@locale": "de",
+
+  "appTitle": "Heutige Aufgaben",
+  "@appTitle": {
+    "description": "App title"
+  },
+
+  "cancel": "Abbrechen",
+  "confirm": "Bestätigen",
+  "delete": "Löschen",
+  "select": "Auswählen",
+  "settings": "Einstellungen",
+
+  "todoInputHint": "Aufgabe eingeben",
+  "recurring": "Wiederholen",
+
+  "selectTime": "Zeit auswählen",
+  "hourFormat": "{hour}:00",
+  "@hourFormat": {
+    "placeholders": {
+      "hour": {
+        "type": "String"
+      }
+    }
+  },
+
+  "dateFormat": "{day}.{month}.",
+  "@dateFormat": {
+    "placeholders": {
+      "month": {"type": "int"},
+      "day": {"type": "int"}
+    }
+  },
+
+  "monday": "Mo",
+  "tuesday": "Di",
+  "wednesday": "Mi",
+  "thursday": "Do",
+  "friday": "Fr",
+  "saturday": "Sa",
+  "sunday": "So",
+
+  "everyday": "Jeden Tag",
+  "weekdays": "Wochentage",
+  "weekend": "Wochenende",
+
+  "deleteConfirmTitle": "Löschen bestätigen",
+  "deleteConfirmMessage": "'{title}' löschen?",
+  "@deleteConfirmMessage": {
+    "placeholders": {
+      "title": {"type": "String"}
+    }
+  },
+  "deleteAllRecurring": "Auch alle zukünftigen wiederkehrenden Aufgaben löschen",
+
+  "noTodosForDate": "Keine Aufgaben für {day}.{month}.",
+  "@noTodosForDate": {
+    "placeholders": {
+      "month": {"type": "int"},
+      "day": {"type": "int"}
+    }
+  },
+
+  "countText": "{count}",
+  "@countText": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+
+  "errorAddTodo": "Aufgabe konnte nicht hinzugefügt werden",
+  "errorDeleteTodo": "Aufgabe konnte nicht gelöscht werden",
+  "errorToggleTodo": "Status konnte nicht aktualisiert werden",
+  "errorReorderTodo": "Neuordnung fehlgeschlagen",
+  "errorLoadTodos": "Aufgaben konnten nicht geladen werden",
+
+  "cannotDeselectLockedDay": "Der Tag des ausgewählten Datums kann nicht abgewählt werden",
+
+  "removeAds": "Werbung entfernen",
+  "purchase": "Kaufen",
+  "restorePurchase": "Kauf wiederherstellen",
+  "restorePurchaseDesc": "Ihre früheren Käufe wiederherstellen",
+  "processing": "Verarbeitung...",
+  "checkingPurchase": "Kaufverlauf wird überprüft...",
+  "purchaseError": "Kauf konnte nicht gestartet werden",
+  "purchaseRestored": "Kauf wiederhergestellt!",
+  "noPurchaseToRestore": "Kein Kauf zum Wiederherstellen",
+
+  "termsOfService": "Nutzungsbedingungen",
+  "privacyPolicy": "Datenschutzrichtlinie",
+  "versionInfo": "Version",
+
+  "dateWithWeekday": "{weekday}, {day}.{month}.",
+  "@dateWithWeekday": {
+    "placeholders": {
+      "month": {"type": "int"},
+      "day": {"type": "int"},
+      "weekday": {"type": "String"}
+    }
+  },
+
+  "emptyTodoTitle": "Keine Aufgaben",
+  "emptyTodoSubtitle": "Fügen Sie eine neue Aufgabe hinzu, um zu beginnen"
+}

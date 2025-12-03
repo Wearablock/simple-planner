@@ -49,6 +49,9 @@
             <button class="lang-option" onclick="switchLang('pt-BR')">
               Português
             </button>
+            <button class="lang-option" onclick="switchLang('de')">
+              Deutsch
+            </button>
           </div>
         </div>
       </header>
@@ -820,6 +823,116 @@
         </p>
       </main>
 
+      <!-- German Content -->
+      <main id="content-de" class="content-section">
+        <h2>Nutzungsbedingungen</h2>
+        <p><strong>Gültig ab:</strong> 3. Dezember 2025</p>
+
+        <div class="info-box">
+          <p>
+            Durch die Nutzung von Simple Planner stimmen Sie diesen Nutzungsbedingungen zu. Bitte lesen Sie diese sorgfältig durch.
+          </p>
+        </div>
+
+        <h3>1. Dienstanbieter</h3>
+        <p>Diese Anwendung wird bereitgestellt von:</p>
+        <ul>
+          <li><strong>Unternehmen:</strong> Wearablock Inc.</li>
+          <li>
+            <strong>Adresse:</strong> 288-5, Gimpo Hangang 11-ro, Gimpo-si,
+            Gyeonggi-do, Republik Korea
+          </li>
+          <li><strong>Kontakt:</strong> admin@wearablock.com</li>
+        </ul>
+
+        <h3>2. Dienstbeschreibung</h3>
+        <p>
+          Simple Planner ist eine Aufgabenverwaltungs-App, die Benutzern ermöglicht:
+        </p>
+        <ul>
+          <li>Tägliche Aufgaben zu erstellen und zu verwalten</li>
+          <li>Wiederkehrende Aufgaben einzurichten</li>
+          <li>Aufgaben mit Zeiteinstellungen zu organisieren</li>
+        </ul>
+
+        <h3>3. Altersanforderung</h3>
+        <p>
+          Dieser Dienst ist für Benutzer ab 14 Jahren bestimmt. Wenn Sie unter 14 Jahre alt sind, müssen Sie vor der Nutzung dieser Anwendung die Zustimmung eines Elternteils oder Erziehungsberechtigten einholen.
+        </p>
+
+        <h3>4. Pflichten des Benutzers</h3>
+        <p>Benutzer verpflichten sich:</p>
+        <ul>
+          <li>Die Anwendung in Übereinstimmung mit geltendem Recht zu nutzen</li>
+          <li>
+            Nicht zu versuchen, die Anwendung zurückzuentwickeln, zu modifizieren oder zu verbreiten
+          </li>
+          <li>
+            Die Anwendung nicht für illegale oder nicht autorisierte Zwecke zu nutzen
+          </li>
+        </ul>
+
+        <h3>5. Werbung</h3>
+        <p>
+          Diese Anwendung zeigt Werbung von Google AdMob an. Durch die Nutzung der Anwendung erkennen Sie an, dass:
+        </p>
+        <ul>
+          <li>Werbung innerhalb der Anwendung angezeigt werden kann</li>
+          <li>Werbeinhalte von Drittanbietern bereitgestellt werden</li>
+          <li>Sie Werbung durch einen In-App-Kauf entfernen können</li>
+        </ul>
+
+        <h3>6. In-App-Käufe</h3>
+        <table>
+          <tr>
+            <th>Artikel</th>
+            <th>Preis</th>
+            <th>Beschreibung</th>
+          </tr>
+          <tr>
+            <td>Werbung entfernen</td>
+            <td>3,99 €</td>
+            <td>Entfernt dauerhaft alle Werbung</td>
+          </tr>
+        </table>
+        <p>
+          Alle Käufe werden über den Apple App Store oder Google Play Store abgewickelt. Rückerstattungen unterliegen den Rückerstattungsrichtlinien des jeweiligen Stores.
+        </p>
+
+        <h3>7. Datenspeicherung</h3>
+        <p>
+          Alle Aufgabendaten werden lokal auf Ihrem Gerät gespeichert. Wir erfassen, übertragen oder speichern Ihre Aufgabendaten nicht auf externen Servern. Sie sind für die Sicherung Ihrer eigenen Daten verantwortlich.
+        </p>
+
+        <h3>8. Haftungsausschluss</h3>
+        <p>
+          Die Anwendung wird "wie besehen" ohne jegliche Gewährleistung bereitgestellt. Wir haften nicht für:
+        </p>
+        <ul>
+          <li>Datenverlust durch Geräteausfall oder App-Löschung</li>
+          <li>
+            Indirekte oder Folgeschäden, die aus der Nutzung der Anwendung entstehen
+          </li>
+          <li>Dienstunterbrechungen oder Fehler</li>
+        </ul>
+
+        <h3>9. Änderungen der Bedingungen</h3>
+        <p>
+          Wir behalten uns das Recht vor, diese Bedingungen jederzeit zu ändern. Die fortgesetzte Nutzung der Anwendung nach Änderungen gilt als Zustimmung zu den neuen Bedingungen.
+        </p>
+
+        <h3>10. Anwendbares Recht</h3>
+        <p>
+          Diese Bedingungen unterliegen dem Recht der Republik Korea. Streitigkeiten werden vor den Gerichten Koreas beigelegt.
+        </p>
+
+        <h3>11. Kontakt</h3>
+        <p>
+          Bei Fragen zu diesen Bedingungen kontaktieren Sie uns unter
+          <a href="mailto:admin@wearablock.com">admin@wearablock.com</a>.
+        </p>
+      </main>
+
       <footer>
         <p>&copy; 2025 Wearablock Inc. All rights reserved.</p>
         <p><a href="privacy.html">Privacy Policy</a></p>
@@ -847,7 +960,7 @@
         });
 
         // Update current language display
-        const langNames = { en: "English", ko: "한국어", ja: "日本語", zh: "简体中文", "zh-Hant": "繁體中文", es: "Español", "pt-BR": "Português" };
+        const langNames = { en: "English", ko: "한국어", ja: "日本語", zh: "简体中文", "zh-Hant": "繁體中文", es: "Español", "pt-BR": "Português", de: "Deutsch" };
         document.getElementById("currentLang").textContent = langNames[lang];
 
         // Update URL hash
@@ -867,7 +980,7 @@
       // Check URL hash on page load
       window.addEventListener("DOMContentLoaded", function () {
         const hash = window.location.hash.slice(1);
-        if (["en", "ko", "ja", "zh", "zh-Hant", "es", "pt-BR"].includes(hash)) {
+        if (["en", "ko", "ja", "zh", "zh-Hant", "es", "pt-BR", "de"].includes(hash)) {
           switchLang(hash);
         } else if (hash === "pt") {
           switchLang("pt-BR");

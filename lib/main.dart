@@ -42,6 +42,7 @@ class MyApp extends StatelessWidget {
         Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant'), // 繁體中文
         Locale('es'), // Español
         Locale('pt'), // Português (Brasil)
+        Locale('de'), // Deutsch
       ],
       localeResolutionCallback: (locale, supportedLocales) {
         // 정확히 일치하는 locale 찾기 (언어 + scriptCode + 국가 코드)

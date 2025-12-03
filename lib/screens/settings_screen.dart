@@ -111,6 +111,10 @@ class SettingsScreen extends StatelessWidget {
     if (locale.languageCode == 'zh' && locale.scriptCode == 'Hant') {
       return 'zh-Hant';
     }
+    // 포르투갈어 처리 (pt -> pt-BR)
+    if (locale.languageCode == 'pt') {
+      return 'pt-BR';
+    }
     return locale.languageCode;
   }
 
