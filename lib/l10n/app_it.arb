@@ -1,0 +1,105 @@
+{
+  "@@locale": "it",
+
+  "appTitle": "Attività di oggi",
+  "@appTitle": {
+    "description": "App title"
+  },
+
+  "cancel": "Annulla",
+  "confirm": "Conferma",
+  "delete": "Elimina",
+  "select": "Seleziona",
+  "settings": "Impostazioni",
+
+  "todoInputHint": "Inserisci un'attività",
+  "recurring": "Ripeti",
+
+  "selectTime": "Seleziona orario",
+  "hourFormat": "{hour}:00",
+  "@hourFormat": {
+    "placeholders": {
+      "hour": {
+        "type": "String"
+      }
+    }
+  },
+
+  "dateFormat": "{day}/{month}",
+  "@dateFormat": {
+    "placeholders": {
+      "month": {"type": "int"},
+      "day": {"type": "int"}
+    }
+  },
+
+  "monday": "Lun",
+  "tuesday": "Mar",
+  "wednesday": "Mer",
+  "thursday": "Gio",
+  "friday": "Ven",
+  "saturday": "Sab",
+  "sunday": "Dom",
+
+  "everyday": "Ogni giorno",
+  "weekdays": "Giorni feriali",
+  "weekend": "Fine settimana",
+
+  "deleteConfirmTitle": "Conferma eliminazione",
+  "deleteConfirmMessage": "Eliminare '{title}'?",
+  "@deleteConfirmMessage": {
+    "placeholders": {
+      "title": {"type": "String"}
+    }
+  },
+  "deleteAllRecurring": "Elimina anche tutte le attività ricorrenti future",
+
+  "noTodosForDate": "Nessuna attività per il {day}/{month}",
+  "@noTodosForDate": {
+    "placeholders": {
+      "month": {"type": "int"},
+      "day": {"type": "int"}
+    }
+  },
+
+  "countText": "{count}",
+  "@countText": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+
+  "errorAddTodo": "Impossibile aggiungere l'attività",
+  "errorDeleteTodo": "Impossibile eliminare l'attività",
+  "errorToggleTodo": "Impossibile aggiornare lo stato",
+  "errorReorderTodo": "Impossibile riordinare",
+  "errorLoadTodos": "Impossibile caricare le attività",
+
+  "cannotDeselectLockedDay": "Impossibile deselezionare il giorno della data selezionata",
+
+  "removeAds": "Rimuovi pubblicità",
+  "purchase": "Acquista",
+  "restorePurchase": "Ripristina acquisto",
+  "restorePurchaseDesc": "Ripristina i tuoi acquisti precedenti",
+  "processing": "Elaborazione...",
+  "checkingPurchase": "Verifica cronologia acquisti...",
+  "purchaseError": "Impossibile avviare l'acquisto",
+  "purchaseRestored": "Acquisto ripristinato!",
+  "noPurchaseToRestore": "Nessun acquisto da ripristinare",
+
+  "termsOfService": "Termini di servizio",
+  "privacyPolicy": "Informativa sulla privacy",
+  "versionInfo": "Versione",
+
+  "dateWithWeekday": "{weekday}, {day}/{month}",
+  "@dateWithWeekday": {
+    "placeholders": {
+      "month": {"type": "int"},
+      "day": {"type": "int"},
+      "weekday": {"type": "String"}
+    }
+  },
+
+  "emptyTodoTitle": "Nessuna attività",
+  "emptyTodoSubtitle": "Aggiungi una nuova attività per iniziare"
+}
