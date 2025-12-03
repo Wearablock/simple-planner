@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
+import 'package:simple_planner/constants/app_constants.dart';
 import 'package:simple_planner/l10n/app_localizations.dart';
 import 'package:simple_planner/services/purchase_service.dart';
 
@@ -17,7 +19,9 @@ class RemoveAdsButton extends StatelessWidget {
         // 광고 제거됨 → 구매 복원 표시
         if (purchaseService.isAdFree) {
           return ListTile(
-            leading: const Icon(Icons.restore),
+            leading: PhosphorIcon(
+              PhosphorIcons.arrowCounterClockwise(PhosphorIconsStyle.light),
+            ),
             title: Text(l10n.restorePurchase),
             subtitle: Text(l10n.restorePurchaseDesc),
             onTap: () => _handleRestore(context),
@@ -37,11 +41,16 @@ class RemoveAdsButton extends StatelessWidget {
 
         // 광고 제거 안됨 → 광고 제거 버튼 표시
         return ListTile(
-          leading: const Icon(Icons.remove_circle_outline),
+          leading: PhosphorIcon(
+            PhosphorIcons.prohibit(PhosphorIconsStyle.light),
+          ),
           title: Text(l10n.removeAds),
           subtitle: Text(purchaseService.priceString),
-          trailing: ElevatedButton(
+          trailing: FilledButton(
             onPressed: () => _handlePurchase(context),
+            style: FilledButton.styleFrom(
+              backgroundColor: AppColors.warning,
+            ),
             child: Text(l10n.purchase),
           ),
         );
@@ -58,7 +67,7 @@ class RemoveAdsButton extends StatelessWidget {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(purchaseService.errorMessage ?? l10n.purchaseError),
-          backgroundColor: Colors.red,
+          backgroundColor: AppColors.error,
         ),
       );
     }
@@ -91,7 +100,7 @@ class RemoveAdsButton extends StatelessWidget {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(l10n.purchaseRestored),
-            backgroundColor: Colors.green,
+            backgroundColor: AppColors.success,
           ),
         );
       } else {

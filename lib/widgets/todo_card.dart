@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:simple_planner/constants/app_constants.dart';
 import 'package:simple_planner/database/database.dart';
 
@@ -21,7 +22,8 @@ class TodoCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 2,
-      shadowColor: Colors.black.withValues(alpha: 0.1),
+      shadowColor: AppColors.black.withValues(alpha: 0.1),
+      color: AppColors.cardBlueWhite,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(AppConstants.defaultBorderRadius),
       ),
@@ -51,10 +53,10 @@ class _TodoTitle extends StatelessWidget {
         if (todo.recurringId != null)
           Padding(
             padding: const EdgeInsets.only(right: AppConstants.tinyPadding),
-            child: Icon(
-              Icons.repeat,
+            child: PhosphorIcon(
+              PhosphorIcons.arrowsClockwise(PhosphorIconsStyle.light),
               size: AppConstants.smallIconSize,
-              color: AppColors.lightGreyIcon,
+              color: AppColors.greyLight,
             ),
           ),
         Expanded(
@@ -62,7 +64,7 @@ class _TodoTitle extends StatelessWidget {
             todo.title,
             style: TextStyle(
               decoration: todo.isDone ? TextDecoration.lineThrough : null,
-              color: todo.isDone ? Colors.grey : null,
+              color: todo.isDone ? AppColors.grey : null,
             ),
           ),
         ),
@@ -86,16 +88,21 @@ class _TodoActionButtons extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         IconButton(
-          icon: const Icon(Icons.delete_outline),
-          color: Colors.grey,
-          splashColor: Colors.red.withValues(alpha: AppConstants.mediumOpacity),
-          highlightColor: Colors.red.withValues(alpha: AppConstants.lowOpacity),
+          icon: PhosphorIcon(
+            PhosphorIcons.trash(PhosphorIconsStyle.light),
+            color: AppColors.grey,
+          ),
+          splashColor: AppColors.error.withValues(alpha: AppConstants.mediumOpacity),
+          highlightColor: AppColors.error.withValues(alpha: AppConstants.lowOpacity),
           onPressed: onDelete,
         ),
         ReorderableDragStartListener(
           index: index,
           child: IconButton(
-            icon: const Icon(Icons.drag_handle, color: Colors.grey),
+            icon: PhosphorIcon(
+              PhosphorIcons.dotsSixVertical(PhosphorIconsStyle.light),
+              color: AppColors.grey,
+            ),
             splashColor: primaryColor.withValues(
               alpha: AppConstants.mediumOpacity,
             ),
@@ -115,7 +122,6 @@ class _AnimatedCheckBox extends StatefulWidget {
   final ValueChanged<bool?> onChanged;
 
   const _AnimatedCheckBox({
-    super.key,
     required this.value,
     required this.onChanged,
   });
@@ -160,10 +166,27 @@ class _AnimatedCheckBoxState extends State<_AnimatedCheckBox>
   Widget build(BuildContext context) {
     return ScaleTransition(
       scale: _scaleAnimation,
-      child: Checkbox(
-        value: widget.value,
-        onChanged: (_) => _handleTap(),
-        activeColor: Colors.green,
+      child: GestureDetector(
+        onTap: _handleTap,
+        child: Container(
+          width: 24,
+          height: 24,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            border: Border.all(
+              color: widget.value ? AppColors.success : AppColors.greyLight,
+              width: 1.5,
+            ),
+            color: widget.value ? AppColors.success : Colors.transparent,
+          ),
+          child: widget.value
+              ? PhosphorIcon(
+                  PhosphorIcons.check(PhosphorIconsStyle.bold),
+                  size: 16,
+                  color: AppColors.white,
+                )
+              : null,
+        ),
       ),
     );
   }

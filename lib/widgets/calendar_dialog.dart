@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/date_symbol_data_local.dart';
+import 'package:simple_planner/constants/app_constants.dart';
 import 'package:simple_planner/l10n/app_localizations.dart';
 import 'package:simple_planner/main.dart';
 import 'package:simple_planner/utils/date_utils.dart';
@@ -161,8 +162,8 @@ class _CalendarDialogState extends State<CalendarDialog> {
                         ),
                         child: Text(
                           '$completed/$total',
-                          style: const TextStyle(
-                            color: Colors.white,
+                          style: TextStyle(
+                            color: AppColors.white,
                             fontSize: 9,
                             fontWeight: FontWeight.bold,
                           ),

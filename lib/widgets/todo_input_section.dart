@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:simple_planner/constants/app_constants.dart';
 import 'package:simple_planner/l10n/app_localizations.dart';
 import 'package:simple_planner/utils/weekday_utils.dart';
@@ -115,8 +116,9 @@ class _WeekdaySelectorContainer extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(AppConstants.mediumPadding),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: AppColors.white,
         borderRadius: BorderRadius.circular(AppConstants.defaultBorderRadius),
+        border: Border.all(color: AppColors.greyBorder),
       ),
       child: WeekdaySelector(
         selectedWeekdays: selectedWeekdays,
@@ -155,7 +157,7 @@ class _InputRow extends StatelessWidget {
               hintText: l10n.todoInputHint,
               hintStyle: const TextStyle(fontSize: AppConstants.defaultFontSize),
               filled: true,
-              fillColor: Colors.white,
+              fillColor: AppColors.white,
               contentPadding: const EdgeInsets.symmetric(
                 horizontal: AppConstants.mediumPadding,
                 vertical: 14,
@@ -163,7 +165,17 @@ class _InputRow extends StatelessWidget {
               border: OutlineInputBorder(
                 borderRadius:
                     BorderRadius.circular(AppConstants.defaultBorderRadius),
-                borderSide: BorderSide.none,
+                borderSide: BorderSide(color: AppColors.greyBorder),
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderRadius:
+                    BorderRadius.circular(AppConstants.defaultBorderRadius),
+                borderSide: BorderSide(color: AppColors.greyBorder),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius:
+                    BorderRadius.circular(AppConstants.defaultBorderRadius),
+                borderSide: BorderSide(color: AppColors.primary),
               ),
             ),
             onSubmitted: (_) => onSubmit(),
@@ -177,7 +189,10 @@ class _InputRow extends StatelessWidget {
         const SizedBox(width: AppConstants.smallPadding),
         IconButton.filled(
           onPressed: onSubmit,
-          icon: const Icon(Icons.add),
+          icon: PhosphorIcon(
+            PhosphorIcons.plus(PhosphorIconsStyle.light),
+            color: AppColors.white,
+          ),
         ),
       ],
     );

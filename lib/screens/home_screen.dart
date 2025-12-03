@@ -109,7 +109,7 @@ class _HomeScreenState extends State<HomeScreen> {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(message),
-        backgroundColor: Colors.red,
+        backgroundColor: AppColors.error,
         duration: AppConstants.snackBarDuration,
       ),
     );
@@ -236,7 +236,7 @@ class _HomeScreenState extends State<HomeScreen> {
         final completedCount = todos.where((t) => t.isDone).length;
 
         return Scaffold(
-          backgroundColor: AppColors.scaffoldBackground,
+          backgroundColor: AppColors.white,
           appBar: DateAppBar(
             selectedDate: _selectedDate,
             onDateTap: _showCalendarDialog,

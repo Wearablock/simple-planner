@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
+import 'package:simple_planner/constants/app_constants.dart';
 
 /// 투두 진행 상태
 enum TodoProgressStatus {
@@ -44,11 +46,11 @@ class TodoProgressUtils {
   static Color getColor(TodoProgressStatus status) {
     switch (status) {
       case TodoProgressStatus.completed:
-        return Colors.green;
+        return AppColors.success;
       case TodoProgressStatus.inProgress:
-        return Colors.blue;
+        return AppColors.primary;
       case TodoProgressStatus.overdue:
-        return Colors.red;
+        return AppColors.error;
     }
   }
 
@@ -58,14 +60,14 @@ class TodoProgressUtils {
   }
 
   /// 상태에 따른 아이콘 반환
-  static IconData getIcon(TodoProgressStatus status) {
+  static PhosphorIconData getIcon(TodoProgressStatus status) {
     switch (status) {
       case TodoProgressStatus.completed:
-        return Icons.check_circle;
+        return PhosphorIcons.checkCircle(PhosphorIconsStyle.fill);
       case TodoProgressStatus.inProgress:
-        return Icons.circle_outlined;
+        return PhosphorIcons.circle(PhosphorIconsStyle.light);
       case TodoProgressStatus.overdue:
-        return Icons.error_outline;
+        return PhosphorIcons.warning(PhosphorIconsStyle.light);
     }
   }
 }

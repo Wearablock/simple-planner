@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:simple_planner/constants/app_constants.dart';
 import 'package:simple_planner/l10n/app_localizations.dart';
 
@@ -29,7 +30,7 @@ class RecurringToggleButton extends StatelessWidget {
         decoration: BoxDecoration(
           color: isRecurring
               ? primaryColor.withValues(alpha: AppConstants.lowOpacity)
-              : Colors.white,
+              : AppColors.white,
           borderRadius: BorderRadius.circular(AppConstants.smallBorderRadius),
           border: Border.all(
             color: isRecurring ? primaryColor : AppColors.greyBorder,
@@ -38,10 +39,12 @@ class RecurringToggleButton extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(
-              isRecurring ? Icons.check_box : Icons.check_box_outline_blank,
+            PhosphorIcon(
+              isRecurring
+                  ? PhosphorIcons.checkSquare(PhosphorIconsStyle.fill)
+                  : PhosphorIcons.square(PhosphorIconsStyle.light),
               size: AppConstants.defaultIconSize,
-              color: isRecurring ? primaryColor : Colors.grey,
+              color: isRecurring ? primaryColor : AppColors.grey,
             ),
             const SizedBox(width: AppConstants.tinyPadding),
             Text(

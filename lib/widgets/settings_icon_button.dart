@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:simple_planner/constants/app_constants.dart';
 import 'package:simple_planner/l10n/app_localizations.dart';
 import 'package:simple_planner/screens/settings_screen.dart';
@@ -23,7 +24,10 @@ class SettingsIconButton extends StatelessWidget {
             child: Stack(
               clipBehavior: Clip.none,
               children: [
-                const Icon(Icons.settings, size: AppConstants.largeIconSize),
+                PhosphorIcon(
+                  PhosphorIcons.gear(PhosphorIconsStyle.light),
+                  size: AppConstants.largeIconSize,
+                ),
                 if (!isAdFree)
                   Positioned(
                     right: -8,
@@ -34,13 +38,13 @@ class SettingsIconButton extends StatelessWidget {
                         vertical: 2,
                       ),
                       decoration: BoxDecoration(
-                        color: Colors.red,
+                        color: AppColors.error,
                         borderRadius: BorderRadius.circular(4),
                       ),
                       child: Text(
                         l10n.removeAds,
-                        style: const TextStyle(
-                          color: Colors.white,
+                        style: TextStyle(
+                          color: AppColors.white,
                           fontSize: 8,
                           fontWeight: FontWeight.bold,
                         ),

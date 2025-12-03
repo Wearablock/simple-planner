@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:simple_planner/constants/app_constants.dart';
 import 'package:simple_planner/l10n/app_localizations.dart';
 import 'package:simple_planner/database/database.dart';
 import 'package:simple_planner/screens/home_screen.dart';
@@ -43,7 +45,35 @@ class MyApp extends StatelessWidget {
         // 지원하지 않는 언어인 경우 영어를 기본값으로 사용
         return const Locale('en');
       },
-      theme: ThemeData(colorSchemeSeed: Colors.blue, useMaterial3: true),
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: AppColors.primary,
+          primary: AppColors.primary,
+          onPrimary: AppColors.white,
+          secondary: AppColors.primaryLight,
+          onSecondary: AppColors.blue900,
+          surface: AppColors.white,
+          onSurface: AppColors.greyDark,
+        ),
+        useMaterial3: true,
+        textTheme: GoogleFonts.poppinsTextTheme().copyWith(
+          displayLarge: GoogleFonts.poppins(fontWeight: FontWeight.w200),
+          displayMedium: GoogleFonts.poppins(fontWeight: FontWeight.w200),
+          displaySmall: GoogleFonts.poppins(fontWeight: FontWeight.w200),
+          headlineLarge: GoogleFonts.poppins(fontWeight: FontWeight.w300),
+          headlineMedium: GoogleFonts.poppins(fontWeight: FontWeight.w300),
+          headlineSmall: GoogleFonts.poppins(fontWeight: FontWeight.w300),
+          titleLarge: GoogleFonts.poppins(fontWeight: FontWeight.w300),
+          titleMedium: GoogleFonts.poppins(fontWeight: FontWeight.w300),
+          titleSmall: GoogleFonts.poppins(fontWeight: FontWeight.w300),
+          bodyLarge: GoogleFonts.poppins(fontWeight: FontWeight.w300),
+          bodyMedium: GoogleFonts.poppins(fontWeight: FontWeight.w300),
+          bodySmall: GoogleFonts.poppins(fontWeight: FontWeight.w300),
+          labelLarge: GoogleFonts.poppins(fontWeight: FontWeight.w300),
+          labelMedium: GoogleFonts.poppins(fontWeight: FontWeight.w300),
+          labelSmall: GoogleFonts.poppins(fontWeight: FontWeight.w300),
+        ),
+      ),
       home: const HomeScreen(),
     );
   }

@@ -53,10 +53,40 @@ class AppConstants {
 class AppColors {
   AppColors._();
 
-  static const Color scaffoldBackground = Color(0xFFF5F5F5); // Colors.grey[100]
-  static Color get greyBackground => Colors.grey[200]!;
-  static Color get greyBorder => Colors.grey[300]!;
-  static Color get greyText => Colors.grey[600]!;
-  static Color get darkGreyText => Colors.grey[700]!;
-  static Color get lightGreyIcon => Colors.grey[400]!;
+  // ===== Blue 테마 색상 =====
+  static const Color primary = Color(0xFF2196F3); // Blue 500
+  static const Color primaryLight = Color(0xFF64B5F6); // Blue 300
+  static const Color primaryDark = Color(0xFF1565C0); // Blue 800
+
+  // Blue 팔레트 (시간대별 배경 등)
+  static const Color blue50 = Color(0xFFE3F2FD);
+  static const Color blue100 = Color(0xFFBBDEFB);
+  static const Color blue200 = Color(0xFF90CAF9);
+  static const Color blue300 = Color(0xFF64B5F6);
+  static const Color blue400 = Color(0xFF42A5F5);
+  static const Color blue500 = Color(0xFF2196F3);
+  static const Color blue800 = Color(0xFF1565C0);
+  static const Color blue900 = Color(0xFF0D47A1);
+
+  // ===== 상태 색상 =====
+  static const Color success = Color(0xFF4CAF50); // Green 500
+  static const Color error = Color(0xFFF44336); // Red 500
+  static const Color warning = Color(0xFFFF9800); // Orange 500
+
+  // ===== Grey 색상 =====
+  static const Color scaffoldBackground = Color(0xFFF5F5F5); // Grey 100
+  static const Color greyBackground = Color(0xFFEEEEEE); // Grey 200
+  static const Color greyBorder = Color(0xFFE0E0E0); // Grey 300
+  static const Color greyLight = Color(0xFFBDBDBD); // Grey 400
+  static const Color grey = Color(0xFF9E9E9E); // Grey 500
+  static const Color greyText = Color(0xFF757575); // Grey 600
+  static const Color darkGreyText = Color(0xFF616161); // Grey 700
+  static const Color greyDark = Color(0xFF424242); // Grey 800
+
+  // ===== 기본 색상 =====
+  static const Color white = Colors.white;
+  static const Color black = Colors.black;
+
+  // ===== 카드 색상 =====
+  static const Color cardBlueWhite = Color(0xFFF8FBFF); // 약간 푸른빛 흰색
 }

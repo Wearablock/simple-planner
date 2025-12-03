@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:simple_planner/constants/app_constants.dart';
 import 'package:simple_planner/database/database.dart';
 import 'package:simple_planner/l10n/app_localizations.dart';
@@ -87,16 +88,16 @@ class _EmptyTodoList extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(
-            Icons.check_circle_outline,
+          PhosphorIcon(
+            PhosphorIcons.checkCircle(PhosphorIconsStyle.light),
             size: 64,
-            color: Colors.grey[300],
+            color: AppColors.greyBorder,
           ),
           const SizedBox(height: 16),
           Text(
             l10n.dateFormat(selectedDate.month, selectedDate.day),
             style: TextStyle(
-              color: Colors.grey[400],
+              color: AppColors.greyLight,
               fontSize: 14,
             ),
           ),
@@ -104,7 +105,7 @@ class _EmptyTodoList extends StatelessWidget {
           Text(
             l10n.emptyTodoTitle,
             style: TextStyle(
-              color: Colors.grey[600],
+              color: AppColors.greyText,
               fontSize: 18,
               fontWeight: FontWeight.w500,
             ),
@@ -113,7 +114,7 @@ class _EmptyTodoList extends StatelessWidget {
           Text(
             l10n.emptyTodoSubtitle,
             style: TextStyle(
-              color: Colors.grey[400],
+              color: AppColors.greyLight,
               fontSize: 14,
             ),
           ),

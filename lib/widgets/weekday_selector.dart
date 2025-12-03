@@ -62,7 +62,7 @@ class WeekdaySelector extends StatelessWidget {
               child: Text(
                 dayNames[index],
                 style: TextStyle(
-                  color: isSelected ? Colors.white : AppColors.greyText,
+                  color: isSelected ? AppColors.white : AppColors.greyText,
                   fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
                   fontSize: AppConstants.defaultFontSize,
                 ),

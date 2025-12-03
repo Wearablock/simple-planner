@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:simple_planner/constants/app_constants.dart';
 import 'package:simple_planner/l10n/app_localizations.dart';
 import 'package:simple_planner/utils/todo_progress_utils.dart';
@@ -70,7 +71,7 @@ class DateAppBar extends StatelessWidget implements PreferredSizeWidget {
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Icon(
+                    PhosphorIcon(
                       statusIcon,
                       size: AppConstants.smallIconSize,
                       color: statusColor,
@@ -103,14 +104,17 @@ class DateAppBar extends StatelessWidget implements PreferredSizeWidget {
               style: const TextStyle(fontWeight: FontWeight.bold),
             ),
             const SizedBox(width: AppConstants.tinyPadding),
-            const Icon(Icons.arrow_drop_down, size: AppConstants.largeIconSize),
+            PhosphorIcon(
+              PhosphorIcons.caretDown(PhosphorIconsStyle.light),
+              size: AppConstants.largeIconSize,
+            ),
           ],
         ),
       ),
       centerTitle: true,
       elevation: 0,
       scrolledUnderElevation: 0,
-      backgroundColor: AppColors.scaffoldBackground,
+      backgroundColor: AppColors.white,
       actions: const [SettingsIconButton()],
     );
   }

@@ -63,7 +63,7 @@ class _HourPickerDialogState extends State<HourPickerDialog> {
                     fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
                     color: isSelected
                         ? Theme.of(context).primaryColor
-                        : Colors.grey,
+                        : AppColors.grey,
                   ),
                 ),
               );

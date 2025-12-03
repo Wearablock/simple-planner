@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:simple_planner/constants/app_constants.dart';
 import 'package:simple_planner/l10n/app_localizations.dart';
 
@@ -26,12 +27,16 @@ class TimePickerButton extends StatelessWidget {
           vertical: 14,
         ),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: AppColors.white,
           borderRadius: BorderRadius.circular(AppConstants.defaultBorderRadius),
+          border: Border.all(color: AppColors.greyBorder),
         ),
         child: Row(
           children: [
-            const Icon(Icons.access_time, size: AppConstants.defaultIconSize),
+            PhosphorIcon(
+              PhosphorIcons.clock(PhosphorIconsStyle.light),
+              size: AppConstants.defaultIconSize,
+            ),
             const SizedBox(width: AppConstants.tinyPadding),
             Text(
               l10n.hourFormat(hour.toString().padLeft(2, '0')),
