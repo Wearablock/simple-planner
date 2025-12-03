@@ -46,6 +46,9 @@
             <button class="lang-option" onclick="switchLang('es')">
               Español
             </button>
+            <button class="lang-option" onclick="switchLang('pt-BR')">
+              Português
+            </button>
           </div>
         </div>
       </header>
@@ -707,6 +710,116 @@
         </p>
       </main>
 
+      <!-- Portuguese (Brazil) Content -->
+      <main id="content-pt-BR" class="content-section">
+        <h2>Termos de Serviço</h2>
+        <p><strong>Data de vigência:</strong> 3 de dezembro de 2025</p>
+
+        <div class="info-box">
+          <p>
+            Ao usar o Simple Planner, você concorda com estes Termos de Serviço. Por favor, leia-os com atenção.
+          </p>
+        </div>
+
+        <h3>1. Provedor do Serviço</h3>
+        <p>Este aplicativo é fornecido por:</p>
+        <ul>
+          <li><strong>Empresa:</strong> Wearablock Inc.</li>
+          <li>
+            <strong>Endereço:</strong> 288-5, Gimpo Hangang 11-ro, Gimpo-si,
+            Gyeonggi-do, República da Coreia
+          </li>
+          <li><strong>Contato:</strong> admin@wearablock.com</li>
+        </ul>
+
+        <h3>2. Descrição do Serviço</h3>
+        <p>
+          Simple Planner é um aplicativo de gerenciamento de tarefas que permite aos usuários:
+        </p>
+        <ul>
+          <li>Criar e gerenciar tarefas diárias</li>
+          <li>Configurar tarefas recorrentes</li>
+          <li>Organizar tarefas com configurações de horário</li>
+        </ul>
+
+        <h3>3. Requisito de Idade</h3>
+        <p>
+          Este serviço é destinado a usuários com 14 anos ou mais. Se você tem menos de 14 anos, deve obter o consentimento de um pai ou responsável legal antes de usar este aplicativo.
+        </p>
+
+        <h3>4. Responsabilidades do Usuário</h3>
+        <p>Os usuários concordam em:</p>
+        <ul>
+          <li>Usar o aplicativo em conformidade com as leis aplicáveis</li>
+          <li>
+            Não tentar fazer engenharia reversa, modificar ou distribuir o aplicativo
+          </li>
+          <li>
+            Não usar o aplicativo para qualquer finalidade ilegal ou não autorizada
+          </li>
+        </ul>
+
+        <h3>5. Publicidade</h3>
+        <p>
+          Este aplicativo exibe anúncios fornecidos pelo Google AdMob. Ao usar o aplicativo, você reconhece que:
+        </p>
+        <ul>
+          <li>Anúncios podem ser exibidos dentro do aplicativo</li>
+          <li>O conteúdo publicitário é fornecido por anunciantes terceiros</li>
+          <li>Você pode remover os anúncios através de uma compra no aplicativo</li>
+        </ul>
+
+        <h3>6. Compras no Aplicativo</h3>
+        <table>
+          <tr>
+            <th>Item</th>
+            <th>Preço</th>
+            <th>Descrição</th>
+          </tr>
+          <tr>
+            <td>Remover Anúncios</td>
+            <td>R$ 22,90</td>
+            <td>Remove permanentemente todos os anúncios</td>
+          </tr>
+        </table>
+        <p>
+          Todas as compras são processadas através da Apple App Store ou Google Play Store. Reembolsos estão sujeitos à política de reembolso de cada loja.
+        </p>
+
+        <h3>7. Armazenamento de Dados</h3>
+        <p>
+          Todos os dados de tarefas são armazenados localmente no seu dispositivo. Não coletamos, transmitimos ou armazenamos seus dados de tarefas em servidores externos. Você é responsável por fazer backup dos seus próprios dados.
+        </p>
+
+        <h3>8. Isenção de Responsabilidade</h3>
+        <p>
+          O aplicativo é fornecido "como está", sem garantias de qualquer tipo. Não somos responsáveis por:
+        </p>
+        <ul>
+          <li>Perda de dados devido a falha do dispositivo ou exclusão do aplicativo</li>
+          <li>
+            Quaisquer danos indiretos ou consequentes decorrentes do uso do aplicativo
+          </li>
+          <li>Interrupções de serviço ou erros</li>
+        </ul>
+
+        <h3>9. Alterações nos Termos</h3>
+        <p>
+          Reservamo-nos o direito de modificar estes termos a qualquer momento. O uso continuado do aplicativo após as alterações constitui aceitação dos novos termos.
+        </p>
+
+        <h3>10. Lei Aplicável</h3>
+        <p>
+          Estes termos são regidos pelas leis da República da Coreia. Quaisquer disputas serão resolvidas nos tribunais da Coreia.
+        </p>
+
+        <h3>11. Contato</h3>
+        <p>
+          Para perguntas sobre estes termos, entre em contato conosco em
+          <a href="mailto:admin@wearablock.com">admin@wearablock.com</a>.
+        </p>
+      </main>
+
       <footer>
         <p>&copy; 2025 Wearablock Inc. All rights reserved.</p>
         <p><a href="privacy.html">Privacy Policy</a></p>
@@ -734,7 +847,7 @@
         });
 
         // Update current language display
-        const langNames = { en: "English", ko: "한국어", ja: "日本語", zh: "简体中文", "zh-Hant": "繁體中文", es: "Español" };
+        const langNames = { en: "English", ko: "한국어", ja: "日本語", zh: "简体中文", "zh-Hant": "繁體中文", es: "Español", "pt-BR": "Português" };
         document.getElementById("currentLang").textContent = langNames[lang];
 
         // Update URL hash
@@ -754,8 +867,10 @@
       // Check URL hash on page load
       window.addEventListener("DOMContentLoaded", function () {
         const hash = window.location.hash.slice(1);
-        if (["en", "ko", "ja", "zh", "zh-Hant", "es"].includes(hash)) {
+        if (["en", "ko", "ja", "zh", "zh-Hant", "es", "pt-BR"].includes(hash)) {
           switchLang(hash);
+        } else if (hash === "pt") {
+          switchLang("pt-BR");
         }
       });
     </script>

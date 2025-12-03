@@ -1,0 +1,105 @@
+{
+  "@@locale": "pt",
+
+  "appTitle": "Tarefas de Hoje",
+  "@appTitle": {
+    "description": "App title"
+  },
+
+  "cancel": "Cancelar",
+  "confirm": "Confirmar",
+  "delete": "Excluir",
+  "select": "Selecionar",
+  "settings": "Configurações",
+
+  "todoInputHint": "Digite uma tarefa",
+  "recurring": "Repetir",
+
+  "selectTime": "Selecionar horário",
+  "hourFormat": "{hour}:00",
+  "@hourFormat": {
+    "placeholders": {
+      "hour": {
+        "type": "String"
+      }
+    }
+  },
+
+  "dateFormat": "{day}/{month}",
+  "@dateFormat": {
+    "placeholders": {
+      "month": {"type": "int"},
+      "day": {"type": "int"}
+    }
+  },
+
+  "monday": "Seg",
+  "tuesday": "Ter",
+  "wednesday": "Qua",
+  "thursday": "Qui",
+  "friday": "Sex",
+  "saturday": "Sáb",
+  "sunday": "Dom",
+
+  "everyday": "Todos os dias",
+  "weekdays": "Dias úteis",
+  "weekend": "Fim de semana",
+
+  "deleteConfirmTitle": "Confirmar exclusão",
+  "deleteConfirmMessage": "Excluir '{title}'?",
+  "@deleteConfirmMessage": {
+    "placeholders": {
+      "title": {"type": "String"}
+    }
+  },
+  "deleteAllRecurring": "Excluir também todas as tarefas recorrentes futuras",
+
+  "noTodosForDate": "Nenhuma tarefa para {day}/{month}",
+  "@noTodosForDate": {
+    "placeholders": {
+      "month": {"type": "int"},
+      "day": {"type": "int"}
+    }
+  },
+
+  "countText": "{count}",
+  "@countText": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+
+  "errorAddTodo": "Falha ao adicionar tarefa",
+  "errorDeleteTodo": "Falha ao excluir tarefa",
+  "errorToggleTodo": "Falha ao atualizar status",
+  "errorReorderTodo": "Falha ao reordenar",
+  "errorLoadTodos": "Falha ao carregar tarefas",
+
+  "cannotDeselectLockedDay": "Não é possível desmarcar o dia da data selecionada",
+
+  "removeAds": "Remover anúncios",
+  "purchase": "Comprar",
+  "restorePurchase": "Restaurar compra",
+  "restorePurchaseDesc": "Restaurar suas compras anteriores",
+  "processing": "Processando...",
+  "checkingPurchase": "Verificando histórico de compras...",
+  "purchaseError": "Não foi possível iniciar a compra",
+  "purchaseRestored": "Compra restaurada!",
+  "noPurchaseToRestore": "Nenhuma compra para restaurar",
+
+  "termsOfService": "Termos de Serviço",
+  "privacyPolicy": "Política de Privacidade",
+  "versionInfo": "Versão",
+
+  "dateWithWeekday": "{weekday}, {day}/{month}",
+  "@dateWithWeekday": {
+    "placeholders": {
+      "month": {"type": "int"},
+      "day": {"type": "int"},
+      "weekday": {"type": "String"}
+    }
+  },
+
+  "emptyTodoTitle": "Nenhuma tarefa",
+  "emptyTodoSubtitle": "Adicione uma nova tarefa para começar"
+}
