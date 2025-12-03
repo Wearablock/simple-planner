@@ -1,0 +1,66 @@
+{
+  "@@locale": "ko",
+
+  "appTitle": "오늘 할 일",
+
+  "cancel": "취소",
+  "confirm": "확인",
+  "delete": "삭제",
+  "select": "선택",
+  "settings": "설정",
+
+  "todoInputHint": "할 일을 입력하세요",
+  "recurring": "반복",
+
+  "selectTime": "시간 선택",
+  "hourFormat": "{hour}:00",
+
+  "dateFormat": "{month}월 {day}일",
+
+  "monday": "월",
+  "tuesday": "화",
+  "wednesday": "수",
+  "thursday": "목",
+  "friday": "금",
+  "saturday": "토",
+  "sunday": "일",
+
+  "everyday": "매일",
+  "weekdays": "평일",
+  "weekend": "주말",
+
+  "deleteConfirmTitle": "삭제 확인",
+  "deleteConfirmMessage": "'{title}'을(를) 삭제하시겠습니까?",
+  "deleteAllRecurring": "이후 반복 일정도 모두 삭제",
+
+  "noTodosForDate": "{month}월 {day}일에 할 일이 없습니다",
+
+  "countText": "{count}개",
+
+  "errorAddTodo": "할 일 추가에 실패했습니다",
+  "errorDeleteTodo": "할 일 삭제에 실패했습니다",
+  "errorToggleTodo": "상태 변경에 실패했습니다",
+  "errorReorderTodo": "순서 변경에 실패했습니다",
+  "errorLoadTodos": "할 일을 불러오는데 실패했습니다",
+
+  "cannotDeselectLockedDay": "선택한 날짜의 요일은 해제할 수 없습니다",
+
+  "removeAds": "광고 제거",
+  "purchase": "구매",
+  "restorePurchase": "구매 복원",
+  "restorePurchaseDesc": "이전에 구매한 항목을 복원합니다",
+  "processing": "처리 중...",
+  "checkingPurchase": "구매 내역을 확인 중...",
+  "purchaseError": "구매를 시작할 수 없습니다",
+  "purchaseRestored": "구매가 복원되었습니다!",
+  "noPurchaseToRestore": "복원할 구매 내역이 없습니다",
+
+  "termsOfService": "이용약관 및 정책",
+  "privacyPolicy": "개인정보 처리방침",
+  "versionInfo": "버전 정보",
+
+  "dateWithWeekday": "{month}월 {day}일 {weekday}",
+
+  "emptyTodoTitle": "할 일이 없어요",
+  "emptyTodoSubtitle": "새로운 할 일을 추가해보세요"
+}

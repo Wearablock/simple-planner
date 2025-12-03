@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - Simple Planner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Simple Planner</h1>
+      <div class="lang-selector">
+        <button class="lang-btn" onclick="toggleDropdown()">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+          </svg>
+          <span id="currentLang">English</span>
+        </button>
+        <div class="lang-dropdown" id="langDropdown">
+          <button class="lang-option active" onclick="switchLang('en')">English</button>
+          <button class="lang-option" onclick="switchLang('ko')">한국어</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- English Content -->
+    <main id="content-en" class="content-section active">
+      <h2>Privacy Policy</h2>
+      <p><strong>Effective Date:</strong> December 3, 2025</p>
+
+      <div class="info-box">
+        <p>Your privacy is important to us. This Privacy Policy explains how Simple Planner handles your information.</p>
+      </div>
+
+      <h3>1. Information Controller</h3>
+      <p>The entity responsible for your data:</p>
+      <ul>
+        <li><strong>Company:</strong> Wearablock Inc.</li>
+        <li><strong>Address:</strong> 288-5, Gimpo Hangang 11-ro, Gimpo-si, Gyeonggi-do, Republic of Korea</li>
+        <li><strong>Contact:</strong> admin@wearablock.com</li>
+      </ul>
+
+      <h3>2. Information We Collect</h3>
+      <h4>2.1 Information We Do NOT Collect</h4>
+      <p>Simple Planner does NOT collect, transmit, or store:</p>
+      <ul>
+        <li>Personal identification information</li>
+        <li>Your task data or content</li>
+        <li>Location data</li>
+        <li>Contact information</li>
+        <li>Device identifiers (by us)</li>
+      </ul>
+
+      <h4>2.2 Local Data Storage</h4>
+      <p>All your task data is stored locally on your device only. This data:</p>
+      <ul>
+        <li>Never leaves your device</li>
+        <li>Is not accessible to us</li>
+        <li>Is deleted when you uninstall the app</li>
+      </ul>
+
+      <h3>3. Third-Party Services</h3>
+      <h4>3.1 Google AdMob</h4>
+      <p>We use Google AdMob to display advertisements. AdMob may collect:</p>
+      <ul>
+        <li>Device advertising ID</li>
+        <li>IP address</li>
+        <li>Device information</li>
+        <li>Ad interaction data</li>
+      </ul>
+      <p>For more information, please review <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</p>
+
+      <h4>3.2 App Store / Play Store</h4>
+      <p>When you make in-app purchases, the respective store (Apple App Store or Google Play Store) processes the transaction. We do not have access to your payment information.</p>
+
+      <h3>4. Children's Privacy</h3>
+      <p>This application is intended for users aged 14 and older. We do not knowingly collect personal information from children under 14. If you believe a child under 14 has provided personal information through third-party services, please contact us.</p>
+
+      <h3>5. Data Security</h3>
+      <p>Since all data is stored locally on your device:</p>
+      <ul>
+        <li>Data security depends on your device's security settings</li>
+        <li>We recommend using device passcode/biometric protection</li>
+        <li>We are not responsible for data loss due to device theft, loss, or damage</li>
+      </ul>
+
+      <h3>6. Your Rights</h3>
+      <p>You have full control over your data:</p>
+      <ul>
+        <li><strong>Access:</strong> All data is visible within the app</li>
+        <li><strong>Deletion:</strong> Delete tasks within the app or uninstall the app to remove all data</li>
+        <li><strong>Portability:</strong> Data is stored locally and can be backed up through device backup features</li>
+      </ul>
+
+      <h3>7. Opt-Out of Personalized Ads</h3>
+      <p>You can opt out of personalized advertising:</p>
+      <ul>
+        <li><strong>iOS:</strong> Settings → Privacy → Tracking</li>
+        <li><strong>Android:</strong> Settings → Google → Ads → Opt out of Ads Personalization</li>
+      </ul>
+      <p>Alternatively, purchase the "Remove Ads" option to eliminate all advertisements.</p>
+
+      <h3>8. Changes to This Policy</h3>
+      <p>We may update this Privacy Policy from time to time. We will notify users of significant changes through the application or by updating the effective date.</p>
+
+      <h3>9. Contact Us</h3>
+      <p>If you have questions about this Privacy Policy or your data, please contact us at:</p>
+      <ul>
+        <li><strong>Email:</strong> <a href="mailto:admin@wearablock.com">admin@wearablock.com</a></li>
+      </ul>
+    </main>
+
+    <!-- Korean Content -->
+    <main id="content-ko" class="content-section">
+      <h2>개인정보 처리방침</h2>
+      <p><strong>시행일:</strong> 2025년 12월 3일</p>
+
+      <div class="info-box">
+        <p>귀하의 개인정보는 소중합니다. 본 개인정보 처리방침은 Simple Planner가 귀하의 정보를 어떻게 처리하는지 설명합니다.</p>
+      </div>
+
+      <h3>제1조 (개인정보 처리자)</h3>
+      <p>귀하의 데이터를 처리하는 주체:</p>
+      <ul>
+        <li><strong>상호:</strong> 주식회사 웨어러블록</li>
+        <li><strong>주소:</strong> 경기도 김포시 김포한강11로 288-5</li>
+        <li><strong>연락처:</strong> admin@wearablock.com</li>
+      </ul>
+
+      <h3>제2조 (수집하는 정보)</h3>
+      <h4>2.1 수집하지 않는 정보</h4>
+      <p>Simple Planner는 다음 정보를 수집, 전송 또는 저장하지 않습니다:</p>
+      <ul>
+        <li>개인 식별 정보</li>
+        <li>할 일 데이터 또는 콘텐츠</li>
+        <li>위치 데이터</li>
+        <li>연락처 정보</li>
+        <li>기기 식별자 (당사에 의한 수집 없음)</li>
+      </ul>
+
+      <h4>2.2 로컬 데이터 저장</h4>
+      <p>모든 할 일 데이터는 사용자의 기기에만 로컬로 저장됩니다. 이 데이터는:</p>
+      <ul>
+        <li>기기 외부로 전송되지 않습니다</li>
+        <li>당사가 접근할 수 없습니다</li>
+        <li>앱 삭제 시 함께 삭제됩니다</li>
+      </ul>
+
+      <h3>제3조 (제3자 서비스)</h3>
+      <h4>3.1 Google AdMob</h4>
+      <p>당사는 광고 표시를 위해 Google AdMob을 사용합니다. AdMob은 다음을 수집할 수 있습니다:</p>
+      <ul>
+        <li>기기 광고 ID</li>
+        <li>IP 주소</li>
+        <li>기기 정보</li>
+        <li>광고 상호작용 데이터</li>
+      </ul>
+      <p>자세한 내용은 <a href="https://policies.google.com/privacy" target="_blank">Google 개인정보 처리방침</a>을 참조하세요.</p>
+
+      <h4>3.2 App Store / Play Store</h4>
+      <p>인앱 결제 시 해당 스토어(Apple App Store 또는 Google Play Store)에서 거래를 처리합니다. 당사는 귀하의 결제 정보에 접근할 수 없습니다.</p>
+
+      <h3>제4조 (아동 개인정보 보호)</h3>
+      <p>본 애플리케이션은 만 14세 이상 사용자를 대상으로 합니다. 당사는 만 14세 미만 아동의 개인정보를 고의로 수집하지 않습니다. 만 14세 미만 아동이 제3자 서비스를 통해 개인정보를 제공했다고 판단되는 경우 당사에 연락해 주시기 바랍니다.</p>
+
+      <h3>제5조 (데이터 보안)</h3>
+      <p>모든 데이터가 기기에 로컬로 저장되므로:</p>
+      <ul>
+        <li>데이터 보안은 기기의 보안 설정에 따릅니다</li>
+        <li>기기 암호/생체인식 보호 사용을 권장합니다</li>
+        <li>기기 도난, 분실 또는 손상으로 인한 데이터 손실에 대해 당사는 책임지지 않습니다</li>
+      </ul>
+
+      <h3>제6조 (이용자의 권리)</h3>
+      <p>귀하는 데이터에 대한 완전한 통제권을 가집니다:</p>
+      <ul>
+        <li><strong>접근:</strong> 모든 데이터는 앱 내에서 확인 가능합니다</li>
+        <li><strong>삭제:</strong> 앱 내에서 할 일을 삭제하거나 앱을 삭제하면 모든 데이터가 제거됩니다</li>
+        <li><strong>이동:</strong> 데이터는 로컬에 저장되며 기기 백업 기능을 통해 백업할 수 있습니다</li>
+      </ul>
+
+      <h3>제7조 (맞춤형 광고 거부)</h3>
+      <p>맞춤형 광고를 거부할 수 있습니다:</p>
+      <ul>
+        <li><strong>iOS:</strong> 설정 → 개인정보 보호 → 추적</li>
+        <li><strong>Android:</strong> 설정 → Google → 광고 → 광고 개인 최적화 선택 해제</li>
+      </ul>
+      <p>또는 "광고 제거" 옵션을 구매하여 모든 광고를 제거할 수 있습니다.</p>
+
+      <h3>제8조 (방침 변경)</h3>
+      <p>당사는 수시로 본 개인정보 처리방침을 업데이트할 수 있습니다. 중요한 변경사항이 있을 경우 애플리케이션을 통해 또는 시행일 업데이트를 통해 사용자에게 알립니다.</p>
+
+      <h3>제9조 (문의)</h3>
+      <p>본 개인정보 처리방침 또는 귀하의 데이터에 관한 문의사항이 있으시면 아래로 연락해 주시기 바랍니다:</p>
+      <ul>
+        <li><strong>이메일:</strong> <a href="mailto:admin@wearablock.com">admin@wearablock.com</a></li>
+      </ul>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Wearablock Inc. All rights reserved.</p>
+      <p><a href="terms.html">Terms of Service</a></p>
+    </footer>
+  </div>
+
+  <script>
+    function toggleDropdown() {
+      document.getElementById('langDropdown').classList.toggle('show');
+    }
+
+    function switchLang(lang) {
+      // Update content visibility
+      document.querySelectorAll('.content-section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById('content-' + lang).classList.add('active');
+
+      // Update button states
+      document.querySelectorAll('.lang-option').forEach(option => {
+        option.classList.remove('active');
+      });
+      event.target.classList.add('active');
+
+      // Update current language display
+      document.getElementById('currentLang').textContent = lang === 'en' ? 'English' : '한국어';
+
+      // Update URL hash
+      window.location.hash = lang;
+
+      // Close dropdown
+      document.getElementById('langDropdown').classList.remove('show');
+    }
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(event) {
+      if (!event.target.closest('.lang-selector')) {
+        document.getElementById('langDropdown').classList.remove('show');
+      }
+    });
+
+    // Check URL hash on page load
+    window.addEventListener('DOMContentLoaded', function() {
+      const hash = window.location.hash.slice(1);
+      if (hash === 'ko' || hash === 'en') {
+        switchLang(hash);
+      }
+    });
+  </script>
+</body>
+</html>

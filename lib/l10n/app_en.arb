@@ -1,0 +1,105 @@
+{
+  "@@locale": "en",
+
+  "appTitle": "Today's Tasks",
+  "@appTitle": {
+    "description": "App title"
+  },
+
+  "cancel": "Cancel",
+  "confirm": "Confirm",
+  "delete": "Delete",
+  "select": "Select",
+  "settings": "Settings",
+
+  "todoInputHint": "Enter a task",
+  "recurring": "Repeat",
+
+  "selectTime": "Select Time",
+  "hourFormat": "{hour}:00",
+  "@hourFormat": {
+    "placeholders": {
+      "hour": {
+        "type": "String"
+      }
+    }
+  },
+
+  "dateFormat": "{month}/{day}",
+  "@dateFormat": {
+    "placeholders": {
+      "month": {"type": "int"},
+      "day": {"type": "int"}
+    }
+  },
+
+  "monday": "Mon",
+  "tuesday": "Tue",
+  "wednesday": "Wed",
+  "thursday": "Thu",
+  "friday": "Fri",
+  "saturday": "Sat",
+  "sunday": "Sun",
+
+  "everyday": "Everyday",
+  "weekdays": "Weekdays",
+  "weekend": "Weekend",
+
+  "deleteConfirmTitle": "Confirm Delete",
+  "deleteConfirmMessage": "Delete '{title}'?",
+  "@deleteConfirmMessage": {
+    "placeholders": {
+      "title": {"type": "String"}
+    }
+  },
+  "deleteAllRecurring": "Also delete all future recurring tasks",
+
+  "noTodosForDate": "No tasks for {month}/{day}",
+  "@noTodosForDate": {
+    "placeholders": {
+      "month": {"type": "int"},
+      "day": {"type": "int"}
+    }
+  },
+
+  "countText": "{count}",
+  "@countText": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+
+  "errorAddTodo": "Failed to add task",
+  "errorDeleteTodo": "Failed to delete task",
+  "errorToggleTodo": "Failed to update status",
+  "errorReorderTodo": "Failed to reorder",
+  "errorLoadTodos": "Failed to load tasks",
+
+  "cannotDeselectLockedDay": "Cannot deselect the selected date's day",
+
+  "removeAds": "Remove Ads",
+  "purchase": "Purchase",
+  "restorePurchase": "Restore Purchase",
+  "restorePurchaseDesc": "Restore your previous purchases",
+  "processing": "Processing...",
+  "checkingPurchase": "Checking purchase history...",
+  "purchaseError": "Unable to start purchase",
+  "purchaseRestored": "Purchase restored!",
+  "noPurchaseToRestore": "No purchase to restore",
+
+  "termsOfService": "Terms of Service",
+  "privacyPolicy": "Privacy Policy",
+  "versionInfo": "Version",
+
+  "dateWithWeekday": "{weekday}, {month}/{day}",
+  "@dateWithWeekday": {
+    "placeholders": {
+      "month": {"type": "int"},
+      "day": {"type": "int"},
+      "weekday": {"type": "String"}
+    }
+  },
+
+  "emptyTodoTitle": "No tasks",
+  "emptyTodoSubtitle": "Add a new task to get started"
+}
