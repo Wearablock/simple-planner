@@ -1,0 +1,66 @@
+{
+  "@@locale": "zh_Hant",
+
+  "appTitle": "今日任務",
+
+  "cancel": "取消",
+  "confirm": "確認",
+  "delete": "刪除",
+  "select": "選擇",
+  "settings": "設定",
+
+  "todoInputHint": "輸入任務",
+  "recurring": "重複",
+
+  "selectTime": "選擇時間",
+  "hourFormat": "{hour}:00",
+
+  "dateFormat": "{month}月{day}日",
+
+  "monday": "週一",
+  "tuesday": "週二",
+  "wednesday": "週三",
+  "thursday": "週四",
+  "friday": "週五",
+  "saturday": "週六",
+  "sunday": "週日",
+
+  "everyday": "每天",
+  "weekdays": "平日",
+  "weekend": "週末",
+
+  "deleteConfirmTitle": "確認刪除",
+  "deleteConfirmMessage": "刪除「{title}」？",
+  "deleteAllRecurring": "同時刪除所有未來的重複任務",
+
+  "noTodosForDate": "{month}月{day}日沒有任務",
+
+  "countText": "{count}個",
+
+  "errorAddTodo": "新增任務失敗",
+  "errorDeleteTodo": "刪除任務失敗",
+  "errorToggleTodo": "更新狀態失敗",
+  "errorReorderTodo": "排序失敗",
+  "errorLoadTodos": "載入任務失敗",
+
+  "cannotDeselectLockedDay": "無法取消選取日期的星期",
+
+  "removeAds": "移除廣告",
+  "purchase": "購買",
+  "restorePurchase": "恢復購買",
+  "restorePurchaseDesc": "恢復您之前的購買",
+  "processing": "處理中...",
+  "checkingPurchase": "正在檢查購買紀錄...",
+  "purchaseError": "無法開始購買",
+  "purchaseRestored": "購買已恢復！",
+  "noPurchaseToRestore": "沒有可恢復的購買",
+
+  "termsOfService": "服務條款",
+  "privacyPolicy": "隱私權政策",
+  "versionInfo": "版本",
+
+  "dateWithWeekday": "{month}月{day}日 {weekday}",
+
+  "emptyTodoTitle": "沒有任務",
+  "emptyTodoSubtitle": "新增任務開始吧"
+}

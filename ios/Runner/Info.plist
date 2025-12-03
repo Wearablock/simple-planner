@@ -10,6 +10,7 @@
 			<string>ko</string>
 			<string>ja</string>
 			<string>zh-Hans</string>
+			<string>zh-Hant</string>
 		</array>
 		<key>CFBundleDisplayName</key>
 		<string>Simple Planner</string>

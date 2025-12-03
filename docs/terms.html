@@ -40,6 +40,9 @@
             <button class="lang-option" onclick="switchLang('zh')">
               简体中文
             </button>
+            <button class="lang-option" onclick="switchLang('zh-Hant')">
+              繁體中文
+            </button>
           </div>
         </div>
       </header>
@@ -487,6 +490,110 @@
         </p>
       </main>
 
+      <!-- Traditional Chinese Content -->
+      <main id="content-zh-Hant" class="content-section">
+        <h2>服務條款</h2>
+        <p><strong>生效日期:</strong> 2025年12月3日</p>
+
+        <div class="info-box">
+          <p>
+            使用Simple Planner即表示您同意本服務條款。請仔細閱讀。
+          </p>
+        </div>
+
+        <h3>第1條（服務提供者）</h3>
+        <p>本應用程式由以下公司提供：</p>
+        <ul>
+          <li><strong>公司名稱:</strong> Wearablock Inc.</li>
+          <li>
+            <strong>地址:</strong> 大韓民國 京畿道 金浦市 金浦漢江11路 288-5
+          </li>
+          <li><strong>聯絡方式:</strong> admin@wearablock.com</li>
+        </ul>
+
+        <h3>第2條（服務內容）</h3>
+        <p>
+          Simple Planner是一款任務管理應用程式，允許使用者：
+        </p>
+        <ul>
+          <li>建立和管理日常任務</li>
+          <li>設定重複任務</li>
+          <li>按時間整理任務</li>
+        </ul>
+
+        <h3>第3條（年齡要求）</h3>
+        <p>
+          本服務面向14歲及以上使用者。如果您未滿14歲，必須在使用本應用程式前獲得父母或法定監護人的同意。
+        </p>
+
+        <h3>第4條（使用者責任）</h3>
+        <p>使用者同意：</p>
+        <ul>
+          <li>遵守適用法律使用應用程式</li>
+          <li>不嘗試對應用程式進行逆向工程、修改或散布</li>
+          <li>不將應用程式用於任何非法或未經授權的目的</li>
+        </ul>
+
+        <h3>第5條（廣告）</h3>
+        <p>
+          本應用程式顯示由Google AdMob提供的廣告。使用本應用程式，即表示您確認：
+        </p>
+        <ul>
+          <li>應用程式內可能顯示廣告</li>
+          <li>廣告內容由第三方廣告商提供</li>
+          <li>您可以透過應用程式內購買移除廣告</li>
+        </ul>
+
+        <h3>第6條（應用程式內購買）</h3>
+        <table>
+          <tr>
+            <th>項目</th>
+            <th>價格</th>
+            <th>描述</th>
+          </tr>
+          <tr>
+            <td>移除廣告</td>
+            <td>NT$120</td>
+            <td>永久移除所有廣告</td>
+          </tr>
+        </table>
+        <p>
+          所有購買均透過Apple App Store或Google Play Store處理。退款須遵循各商店的退款政策。
+        </p>
+
+        <h3>第7條（資料儲存）</h3>
+        <p>
+          所有任務資料都儲存在您的裝置本機。我們不會收集、傳輸或將您的任務資料儲存在外部伺服器上。您有責任備份自己的資料。
+        </p>
+
+        <h3>第8條（免責聲明）</h3>
+        <p>
+          應用程式按「原樣」提供，不作任何形式的保證。我們不對以下情況負責：
+        </p>
+        <ul>
+          <li>因裝置故障或應用程式刪除導致的資料遺失</li>
+          <li>因使用應用程式而產生的任何間接或後果性損害</li>
+          <li>服務中斷或錯誤</li>
+        </ul>
+
+        <h3>第9條（條款變更）</h3>
+        <p>
+          我們保留隨時修改這些條款的權利。在變更後繼續使用應用程式即表示接受新條款。
+        </p>
+
+        <h3>第10條（適用法律）</h3>
+        <p>
+          本條款受大韓民國法律管轄。任何爭議應在韓國法院解決。
+        </p>
+
+        <h3>第11條（聯絡方式）</h3>
+        <p>
+          如對本條款有任何疑問，請透過
+          <a href="mailto:admin@wearablock.com">admin@wearablock.com</a>
+          與我們聯繫。
+        </p>
+      </main>
+
       <footer>
         <p>&copy; 2025 Wearablock Inc. All rights reserved.</p>
         <p><a href="privacy.html">Privacy Policy</a></p>
@@ -508,11 +615,13 @@
         // Update button states
         document.querySelectorAll(".lang-option").forEach((option) => {
           option.classList.remove("active");
+          if (option.getAttribute("onclick").includes("'" + lang + "'")) {
+            option.classList.add("active");
+          }
         });
-        event.target.classList.add("active");
 
         // Update current language display
-        const langNames = { en: "English", ko: "한국어", ja: "日本語", zh: "简体中文" };
+        const langNames = { en: "English", ko: "한국어", ja: "日本語", zh: "简体中文", "zh-Hant": "繁體中文" };
         document.getElementById("currentLang").textContent = langNames[lang];
 
         // Update URL hash
@@ -532,7 +641,7 @@
       // Check URL hash on page load
       window.addEventListener("DOMContentLoaded", function () {
         const hash = window.location.hash.slice(1);
-        if (["en", "ko", "ja", "zh"].includes(hash)) {
+        if (["en", "ko", "ja", "zh", "zh-Hant"].includes(hash)) {
           switchLang(hash);
         }
       });

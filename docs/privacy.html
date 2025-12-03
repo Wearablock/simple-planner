@@ -22,6 +22,7 @@
           <button class="lang-option" onclick="switchLang('ko')">한국어</button>
           <button class="lang-option" onclick="switchLang('ja')">日本語</button>
           <button class="lang-option" onclick="switchLang('zh')">简体中文</button>
+          <button class="lang-option" onclick="switchLang('zh-Hant')">繁體中文</button>
         </div>
       </div>
     </header>
@@ -374,6 +375,93 @@
       </ul>
     </main>
 
+    <!-- Traditional Chinese Content -->
+    <main id="content-zh-Hant" class="content-section">
+      <h2>隱私權政策</h2>
+      <p><strong>生效日期:</strong> 2025年12月3日</p>
+
+      <div class="info-box">
+        <p>您的隱私對我們非常重要。本隱私權政策說明Simple Planner如何處理您的資訊。</p>
+      </div>
+
+      <h3>第1條（資訊管理者）</h3>
+      <p>負責管理您資料的主體：</p>
+      <ul>
+        <li><strong>公司名稱:</strong> Wearablock Inc.</li>
+        <li><strong>地址:</strong> 大韓民國 京畿道 金浦市 金浦漢江11路 288-5</li>
+        <li><strong>聯絡方式:</strong> admin@wearablock.com</li>
+      </ul>
+
+      <h3>第2條（我們收集的資訊）</h3>
+      <h4>2.1 我們不收集的資訊</h4>
+      <p>Simple Planner不收集、傳輸或儲存以下資訊：</p>
+      <ul>
+        <li>個人身分資訊</li>
+        <li>您的任務資料或內容</li>
+        <li>位置資料</li>
+        <li>聯絡人資訊</li>
+        <li>裝置識別碼（我們不收集）</li>
+      </ul>
+
+      <h4>2.2 本機資料儲存</h4>
+      <p>您的所有任務資料僅儲存在您的裝置本機。這些資料：</p>
+      <ul>
+        <li>永遠不會離開您的裝置</li>
+        <li>我們無法存取</li>
+        <li>解除安裝應用程式時會被刪除</li>
+      </ul>
+
+      <h3>第3條（第三方服務）</h3>
+      <h4>3.1 Google AdMob</h4>
+      <p>我們使用Google AdMob來展示廣告。AdMob可能收集：</p>
+      <ul>
+        <li>裝置廣告ID</li>
+        <li>IP位址</li>
+        <li>裝置資訊</li>
+        <li>廣告互動資料</li>
+      </ul>
+      <p>更多資訊請參閱<a href="https://policies.google.com/privacy" target="_blank">Google隱私權政策</a>。</p>
+
+      <h4>3.2 App Store / Play Store</h4>
+      <p>當您進行應用程式內購買時，相應的商店（Apple App Store或Google Play Store）會處理交易。我們無法存取您的付款資訊。</p>
+
+      <h3>第4條（兒童隱私）</h3>
+      <p>本應用程式面向14歲及以上使用者。我們不會故意收集14歲以下兒童的個人資訊。如果您認為14歲以下的兒童透過第三方服務提供了個人資訊，請聯繫我們。</p>
+
+      <h3>第5條（資料安全）</h3>
+      <p>由於所有資料都儲存在您的裝置本機：</p>
+      <ul>
+        <li>資料安全取決於您裝置的安全設定</li>
+        <li>我們建議使用裝置密碼/生物辨識保護</li>
+        <li>我們不對因裝置被竊、遺失或損壞而導致的資料遺失負責</li>
+      </ul>
+
+      <h3>第6條（您的權利）</h3>
+      <p>您對資料擁有完全控制權：</p>
+      <ul>
+        <li><strong>存取:</strong> 所有資料都可在應用程式內檢視</li>
+        <li><strong>刪除:</strong> 在應用程式內刪除任務或解除安裝應用程式即可刪除所有資料</li>
+        <li><strong>轉移:</strong> 資料儲存在本機，可透過裝置備份功能進行備份</li>
+      </ul>
+
+      <h3>第7條（退出個人化廣告）</h3>
+      <p>您可以退出個人化廣告：</p>
+      <ul>
+        <li><strong>iOS:</strong> 設定 → 隱私權 → 追蹤</li>
+        <li><strong>Android:</strong> 設定 → Google → 廣告 → 退出廣告個人化</li>
+      </ul>
+      <p>或者，購買「移除廣告」選項以消除所有廣告。</p>
+
+      <h3>第8條（政策變更）</h3>
+      <p>我們可能會不時更新本隱私權政策。如有重大變更，我們將透過應用程式或更新生效日期通知使用者。</p>
+
+      <h3>第9條（聯繫我們）</h3>
+      <p>如果您對本隱私權政策或您的資料有任何疑問，請聯繫我們：</p>
+      <ul>
+        <li><strong>電子郵件:</strong> <a href="mailto:admin@wearablock.com">admin@wearablock.com</a></li>
+      </ul>
+    </main>
+
     <footer>
       <p>&copy; 2025 Wearablock Inc. All rights reserved.</p>
       <p><a href="terms.html">Terms of Service</a></p>
@@ -395,11 +483,13 @@
       // Update button states
       document.querySelectorAll('.lang-option').forEach(option => {
         option.classList.remove('active');
+        if (option.getAttribute('onclick').includes("'" + lang + "'")) {
+          option.classList.add('active');
+        }
       });
-      event.target.classList.add('active');
 
       // Update current language display
-      const langNames = { en: 'English', ko: '한국어', ja: '日本語', zh: '简体中文' };
+      const langNames = { en: 'English', ko: '한국어', ja: '日本語', zh: '简体中文', 'zh-Hant': '繁體中文' };
       document.getElementById('currentLang').textContent = langNames[lang];
 
       // Update URL hash
@@ -419,7 +509,7 @@
     // Check URL hash on page load
     window.addEventListener('DOMContentLoaded', function() {
       const hash = window.location.hash.slice(1);
-      if (['en', 'ko', 'ja', 'zh'].includes(hash)) {
+      if (['en', 'ko', 'ja', 'zh', 'zh-Hant'].includes(hash)) {
         switchLang(hash);
       }
     });

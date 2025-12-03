@@ -34,9 +34,34 @@ class MyApp extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      supportedLocales: const [Locale('en'), Locale('ko'), Locale('ja'), Locale('zh')],
+      supportedLocales: const [
+        Locale('en'),
+        Locale('ko'),
+        Locale('ja'),
+        Locale('zh'), // 简体中文
+        Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant'), // 繁體中文
+      ],
       localeResolutionCallback: (locale, supportedLocales) {
-        // 지원하는 언어인 경우 해당 언어 사용
+        // 정확히 일치하는 locale 찾기 (언어 + scriptCode + 국가 코드)
+        for (var supportedLocale in supportedLocales) {
+          if (supportedLocale.languageCode == locale?.languageCode &&
+              supportedLocale.scriptCode == locale?.scriptCode &&
+              supportedLocale.countryCode == locale?.countryCode) {
+            return supportedLocale;
+          }
+        }
+        // 번체 중국어 처리 (zh-TW, zh-HK 등은 zh_Hant로 매핑)
+        if (locale?.languageCode == 'zh') {
+          final isTraditional = locale?.scriptCode == 'Hant' ||
+              locale?.countryCode == 'TW' ||
+              locale?.countryCode == 'HK' ||
+              locale?.countryCode == 'MO';
+          if (isTraditional) {
+            return const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant');
+          }
+          return const Locale('zh');
+        }
+        // 언어 코드만 일치하는 locale 찾기
         for (var supportedLocale in supportedLocales) {
           if (supportedLocale.languageCode == locale?.languageCode) {
             return supportedLocale;
