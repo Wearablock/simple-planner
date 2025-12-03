@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      supportedLocales: const [Locale('en'), Locale('ko'), Locale('ja')],
+      supportedLocales: const [Locale('en'), Locale('ko'), Locale('ja'), Locale('zh')],
       localeResolutionCallback: (locale, supportedLocales) {
         // 지원하는 언어인 경우 해당 언어 사용
         for (var supportedLocale in supportedLocales) {
