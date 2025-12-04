@@ -1,0 +1,112 @@
+{
+  "@@locale": "id",
+
+  "appTitle": "Tugas Hari Ini",
+  "@appTitle": {
+    "description": "App title"
+  },
+
+  "cancel": "Batal",
+  "confirm": "Konfirmasi",
+  "delete": "Hapus",
+  "select": "Pilih",
+  "settings": "Pengaturan",
+
+  "todoInputHint": "Masukkan tugas",
+  "recurring": "Ulangi",
+
+  "selectTime": "Pilih Waktu",
+  "hourFormat": "{hour}:00",
+  "@hourFormat": {
+    "placeholders": {
+      "hour": {
+        "type": "String"
+      }
+    }
+  },
+
+  "dateFormat": "{day}/{month}",
+  "@dateFormat": {
+    "placeholders": {
+      "month": {"type": "int"},
+      "day": {"type": "int"}
+    }
+  },
+
+  "monday": "Sen",
+  "tuesday": "Sel",
+  "wednesday": "Rab",
+  "thursday": "Kam",
+  "friday": "Jum",
+  "saturday": "Sab",
+  "sunday": "Min",
+
+  "everyday": "Setiap Hari",
+  "weekdays": "Hari Kerja",
+  "weekend": "Akhir Pekan",
+
+  "deleteConfirmTitle": "Konfirmasi Hapus",
+  "deleteConfirmMessage": "Hapus '{title}'?",
+  "@deleteConfirmMessage": {
+    "placeholders": {
+      "title": {"type": "String"}
+    }
+  },
+  "deleteAllRecurring": "Hapus juga semua tugas berulang di masa depan",
+
+  "noTodosForDate": "Tidak ada tugas untuk {day}/{month}",
+  "@noTodosForDate": {
+    "placeholders": {
+      "month": {"type": "int"},
+      "day": {"type": "int"}
+    }
+  },
+
+  "countText": "{count}",
+  "@countText": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+
+  "errorAddTodo": "Gagal menambah tugas",
+  "errorDeleteTodo": "Gagal menghapus tugas",
+  "errorToggleTodo": "Gagal memperbarui status",
+  "errorReorderTodo": "Gagal mengurutkan ulang",
+  "errorLoadTodos": "Gagal memuat tugas",
+
+  "cannotDeselectLockedDay": "Tidak dapat membatalkan pilihan hari dari tanggal yang dipilih",
+
+  "removeAds": "Hapus Iklan",
+  "purchase": "Beli",
+  "restorePurchase": "Pulihkan Pembelian",
+  "restorePurchaseDesc": "Pulihkan pembelian sebelumnya",
+  "processing": "Memproses...",
+  "checkingPurchase": "Memeriksa riwayat pembelian...",
+  "purchaseError": "Tidak dapat memulai pembelian",
+  "purchaseRestored": "Pembelian dipulihkan!",
+  "noPurchaseToRestore": "Tidak ada pembelian untuk dipulihkan",
+  "errorStoreUnavailable": "Tidak dapat terhubung ke toko",
+  "errorLoadProduct": "Tidak dapat memuat informasi produk",
+  "errorProductNotFound": "Produk tidak ditemukan",
+  "errorNoProductInfo": "Tidak ada informasi produk",
+  "errorAlreadyPurchased": "Sudah dibeli",
+  "errorPurchaseFailed": "Terjadi kesalahan saat pembelian",
+  "errorRestoreFailed": "Terjadi kesalahan saat memulihkan pembelian",
+
+  "termsOfService": "Ketentuan Layanan",
+  "privacyPolicy": "Kebijakan Privasi",
+  "versionInfo": "Versi",
+
+  "dateWithWeekday": "{weekday}, {day}/{month}",
+  "@dateWithWeekday": {
+    "placeholders": {
+      "month": {"type": "int"},
+      "day": {"type": "int"},
+      "weekday": {"type": "String"}
+    }
+  },
+
+  "emptyTodoTitle": "Tidak ada tugas",
+  "emptyTodoSubtitle": "Tambahkan tugas baru untuk memulai"
+}

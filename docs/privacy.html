@@ -30,6 +30,7 @@
           <button class="lang-option" onclick="switchLang('it')">Italiano</button>
           <button class="lang-option" onclick="switchLang('ar')">العربية</button>
           <button class="lang-option" onclick="switchLang('th')">ภาษาไทย</button>
+          <button class="lang-option" onclick="switchLang('id')">Bahasa Indonesia</button>
         </div>
       </div>
     </header>
@@ -1078,6 +1079,93 @@
       </ul>
     </main>
 
+    <!-- Indonesian Content -->
+    <main id="content-id" class="content-section">
+      <h2>Kebijakan Privasi</h2>
+      <p><strong>Tanggal Berlaku:</strong> 3 Desember 2025</p>
+
+      <div class="info-box">
+        <p>Privasi Anda penting bagi kami. Kebijakan Privasi ini menjelaskan bagaimana Simple Planner menangani informasi Anda.</p>
+      </div>
+
+      <h3>1. Pengendali Informasi</h3>
+      <p>Entitas yang bertanggung jawab atas data Anda:</p>
+      <ul>
+        <li><strong>Perusahaan:</strong> Wearablock Inc.</li>
+        <li><strong>Alamat:</strong> 288-5, Gimpo Hangang 11-ro, Gimpo-si, Gyeonggi-do, Republik Korea</li>
+        <li><strong>Kontak:</strong> admin@wearablock.com</li>
+      </ul>
+
+      <h3>2. Informasi yang Kami Kumpulkan</h3>
+      <h4>2.1 Informasi yang TIDAK Kami Kumpulkan</h4>
+      <p>Simple Planner TIDAK mengumpulkan, mengirimkan, atau menyimpan:</p>
+      <ul>
+        <li>Informasi identifikasi pribadi</li>
+        <li>Data atau konten tugas Anda</li>
+        <li>Data lokasi</li>
+        <li>Informasi kontak</li>
+        <li>Pengidentifikasi perangkat (oleh kami)</li>
+      </ul>
+
+      <h4>2.2 Penyimpanan Data Lokal</h4>
+      <p>Semua data tugas Anda hanya disimpan secara lokal di perangkat Anda. Data ini:</p>
+      <ul>
+        <li>Tidak pernah meninggalkan perangkat Anda</li>
+        <li>Tidak dapat diakses oleh kami</li>
+        <li>Dihapus saat Anda menghapus aplikasi</li>
+      </ul>
+
+      <h3>3. Layanan Pihak Ketiga</h3>
+      <h4>3.1 Google AdMob</h4>
+      <p>Kami menggunakan Google AdMob untuk menampilkan iklan. AdMob dapat mengumpulkan:</p>
+      <ul>
+        <li>ID iklan perangkat</li>
+        <li>Alamat IP</li>
+        <li>Informasi perangkat</li>
+        <li>Data interaksi iklan</li>
+      </ul>
+      <p>Untuk informasi lebih lanjut, silakan tinjau <a href="https://policies.google.com/privacy" target="_blank">Kebijakan Privasi Google</a>.</p>
+
+      <h4>3.2 App Store / Play Store</h4>
+      <p>Saat Anda melakukan pembelian dalam aplikasi, toko terkait (Apple App Store atau Google Play Store) memproses transaksi. Kami tidak memiliki akses ke informasi pembayaran Anda.</p>
+
+      <h3>4. Privasi Anak</h3>
+      <p>Aplikasi ini ditujukan untuk pengguna berusia 14 tahun ke atas. Kami tidak dengan sengaja mengumpulkan informasi pribadi dari anak di bawah 14 tahun. Jika Anda yakin bahwa anak di bawah 14 tahun telah memberikan informasi pribadi melalui layanan pihak ketiga, silakan hubungi kami.</p>
+
+      <h3>5. Keamanan Data</h3>
+      <p>Karena semua data disimpan secara lokal di perangkat Anda:</p>
+      <ul>
+        <li>Keamanan data bergantung pada pengaturan keamanan perangkat Anda</li>
+        <li>Kami merekomendasikan penggunaan kode sandi/perlindungan biometrik perangkat</li>
+        <li>Kami tidak bertanggung jawab atas kehilangan data karena pencurian, kehilangan, atau kerusakan perangkat</li>
+      </ul>
+
+      <h3>6. Hak Anda</h3>
+      <p>Anda memiliki kendali penuh atas data Anda:</p>
+      <ul>
+        <li><strong>Akses:</strong> Semua data dapat dilihat dalam aplikasi</li>
+        <li><strong>Penghapusan:</strong> Hapus tugas dalam aplikasi atau hapus aplikasi untuk menghapus semua data</li>
+        <li><strong>Portabilitas:</strong> Data disimpan secara lokal dan dapat dicadangkan melalui fitur cadangan perangkat</li>
+      </ul>
+
+      <h3>7. Menyisih dari Iklan yang Dipersonalisasi</h3>
+      <p>Anda dapat menyisih dari iklan yang dipersonalisasi:</p>
+      <ul>
+        <li><strong>iOS:</strong> Pengaturan → Privasi → Pelacakan</li>
+        <li><strong>Android:</strong> Pengaturan → Google → Iklan → Nonaktifkan Personalisasi Iklan</li>
+      </ul>
+      <p>Atau, beli opsi "Hapus Iklan" untuk menghilangkan semua iklan.</p>
+
+      <h3>8. Perubahan Kebijakan Ini</h3>
+      <p>Kami dapat memperbarui Kebijakan Privasi ini dari waktu ke waktu. Kami akan memberi tahu pengguna tentang perubahan signifikan melalui aplikasi atau dengan memperbarui tanggal berlaku.</p>
+
+      <h3>9. Hubungi Kami</h3>
+      <p>Jika Anda memiliki pertanyaan tentang Kebijakan Privasi ini atau data Anda, silakan hubungi kami di:</p>
+      <ul>
+        <li><strong>Email:</strong> <a href="mailto:admin@wearablock.com">admin@wearablock.com</a></li>
+      </ul>
+    </main>
+
     <footer>
       <p>&copy; 2025 Wearablock Inc. All rights reserved.</p>
       <p><a href="terms.html">Terms of Service</a></p>
@@ -1105,7 +1193,7 @@
       });
 
       // Update current language display
-      const langNames = { en: 'English', ko: '한국어', ja: '日本語', zh: '简体中文', 'zh-Hant': '繁體中文', es: 'Español', 'pt-BR': 'Português', de: 'Deutsch', fr: 'Français', it: 'Italiano', ar: 'العربية', th: 'ภาษาไทย' };
+      const langNames = { en: 'English', ko: '한국어', ja: '日本語', zh: '简体中文', 'zh-Hant': '繁體中文', es: 'Español', 'pt-BR': 'Português', de: 'Deutsch', fr: 'Français', it: 'Italiano', ar: 'العربية', th: 'ภาษาไทย', id: 'Bahasa Indonesia' };
       document.getElementById('currentLang').textContent = langNames[lang];
 
       // Update URL hash
@@ -1125,7 +1213,7 @@
     // Check URL hash on page load
     window.addEventListener('DOMContentLoaded', function() {
       const hash = window.location.hash.slice(1);
-      if (['en', 'ko', 'ja', 'zh', 'zh-Hant', 'es', 'pt-BR', 'de', 'fr', 'it', 'ar', 'th'].includes(hash)) {
+      if (['en', 'ko', 'ja', 'zh', 'zh-Hant', 'es', 'pt-BR', 'de', 'fr', 'it', 'ar', 'th', 'id'].includes(hash)) {
         switchLang(hash);
       } else if (hash === 'pt') {
         switchLang('pt-BR');
