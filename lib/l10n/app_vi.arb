@@ -1,0 +1,112 @@
+{
+  "@@locale": "vi",
+
+  "appTitle": "Công việc hôm nay",
+  "@appTitle": {
+    "description": "App title"
+  },
+
+  "cancel": "Hủy",
+  "confirm": "Xác nhận",
+  "delete": "Xóa",
+  "select": "Chọn",
+  "settings": "Cài đặt",
+
+  "todoInputHint": "Nhập công việc",
+  "recurring": "Lặp lại",
+
+  "selectTime": "Chọn thời gian",
+  "hourFormat": "{hour}:00",
+  "@hourFormat": {
+    "placeholders": {
+      "hour": {
+        "type": "String"
+      }
+    }
+  },
+
+  "dateFormat": "{day}/{month}",
+  "@dateFormat": {
+    "placeholders": {
+      "month": {"type": "int"},
+      "day": {"type": "int"}
+    }
+  },
+
+  "monday": "T2",
+  "tuesday": "T3",
+  "wednesday": "T4",
+  "thursday": "T5",
+  "friday": "T6",
+  "saturday": "T7",
+  "sunday": "CN",
+
+  "everyday": "Hàng ngày",
+  "weekdays": "Ngày trong tuần",
+  "weekend": "Cuối tuần",
+
+  "deleteConfirmTitle": "Xác nhận xóa",
+  "deleteConfirmMessage": "Xóa '{title}'?",
+  "@deleteConfirmMessage": {
+    "placeholders": {
+      "title": {"type": "String"}
+    }
+  },
+  "deleteAllRecurring": "Xóa tất cả công việc lặp lại trong tương lai",
+
+  "noTodosForDate": "Không có công việc cho ngày {day}/{month}",
+  "@noTodosForDate": {
+    "placeholders": {
+      "month": {"type": "int"},
+      "day": {"type": "int"}
+    }
+  },
+
+  "countText": "{count}",
+  "@countText": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+
+  "errorAddTodo": "Không thể thêm công việc",
+  "errorDeleteTodo": "Không thể xóa công việc",
+  "errorToggleTodo": "Không thể cập nhật trạng thái",
+  "errorReorderTodo": "Không thể sắp xếp lại",
+  "errorLoadTodos": "Không thể tải công việc",
+
+  "cannotDeselectLockedDay": "Không thể bỏ chọn ngày của ngày đã chọn",
+
+  "removeAds": "Xóa quảng cáo",
+  "purchase": "Mua",
+  "restorePurchase": "Khôi phục mua hàng",
+  "restorePurchaseDesc": "Khôi phục các giao dịch mua trước đó",
+  "processing": "Đang xử lý...",
+  "checkingPurchase": "Đang kiểm tra lịch sử mua hàng...",
+  "purchaseError": "Không thể bắt đầu mua hàng",
+  "purchaseRestored": "Đã khôi phục mua hàng!",
+  "noPurchaseToRestore": "Không có giao dịch mua để khôi phục",
+  "errorStoreUnavailable": "Không thể kết nối với cửa hàng",
+  "errorLoadProduct": "Không thể tải thông tin sản phẩm",
+  "errorProductNotFound": "Không tìm thấy sản phẩm",
+  "errorNoProductInfo": "Không có thông tin sản phẩm",
+  "errorAlreadyPurchased": "Đã mua",
+  "errorPurchaseFailed": "Đã xảy ra lỗi khi mua hàng",
+  "errorRestoreFailed": "Đã xảy ra lỗi khi khôi phục mua hàng",
+
+  "termsOfService": "Điều khoản dịch vụ",
+  "privacyPolicy": "Chính sách bảo mật",
+  "versionInfo": "Phiên bản",
+
+  "dateWithWeekday": "{weekday}, {day}/{month}",
+  "@dateWithWeekday": {
+    "placeholders": {
+      "month": {"type": "int"},
+      "day": {"type": "int"},
+      "weekday": {"type": "String"}
+    }
+  },
+
+  "emptyTodoTitle": "Không có công việc",
+  "emptyTodoSubtitle": "Thêm công việc mới để bắt đầu"
+}

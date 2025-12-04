@@ -56,6 +56,7 @@ class MyApp extends StatelessWidget {
         Locale('ar'), // العربية
         Locale('th'), // ภาษาไทย
         Locale('id'), // Bahasa Indonesia
+        Locale('vi'), // Tiếng Việt
       ],
       localeResolutionCallback: (locale, supportedLocales) {
         // 정확히 일치하는 locale 찾기 (언어 + scriptCode + 국가 코드)
