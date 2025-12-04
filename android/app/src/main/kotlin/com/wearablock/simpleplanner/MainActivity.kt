@@ -1,4 +1,4 @@
-package com.example.simple_planner
+package com.wearablock.simpleplanner
 
 import io.flutter.embedding.android.FlutterActivity
 

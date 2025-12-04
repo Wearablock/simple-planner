@@ -86,6 +86,13 @@
   "purchaseError": "Unable to start purchase",
   "purchaseRestored": "Purchase restored!",
   "noPurchaseToRestore": "No purchase to restore",
+  "errorStoreUnavailable": "Unable to connect to store",
+  "errorLoadProduct": "Unable to load product information",
+  "errorProductNotFound": "Product not found",
+  "errorNoProductInfo": "No product information available",
+  "errorAlreadyPurchased": "Already purchased",
+  "errorPurchaseFailed": "An error occurred during purchase",
+  "errorRestoreFailed": "An error occurred while restoring purchase",
 
   "termsOfService": "Terms of Service",
   "privacyPolicy": "Privacy Policy",

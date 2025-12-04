@@ -144,6 +144,28 @@ class AppLocalizationsPt extends AppLocalizations {
   String get noPurchaseToRestore => 'Nenhuma compra para restaurar';
 
   @override
+  String get errorStoreUnavailable => 'Não foi possível conectar à loja';
+
+  @override
+  String get errorLoadProduct =>
+      'Não foi possível carregar as informações do produto';
+
+  @override
+  String get errorProductNotFound => 'Produto não encontrado';
+
+  @override
+  String get errorNoProductInfo => 'Nenhuma informação de produto disponível';
+
+  @override
+  String get errorAlreadyPurchased => 'Já comprado';
+
+  @override
+  String get errorPurchaseFailed => 'Ocorreu um erro durante a compra';
+
+  @override
+  String get errorRestoreFailed => 'Ocorreu um erro ao restaurar a compra';
+
+  @override
   String get termsOfService => 'Termos de Serviço';
 
   @override

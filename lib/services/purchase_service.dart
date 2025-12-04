@@ -9,6 +9,17 @@ const String kRemoveAdsProductId = 'remove_ads';
 
 enum AdPurchaseState { unknown, available, purchased, pending, error }
 
+enum PurchaseErrorType {
+  none,
+  storeUnavailable,
+  loadProductFailed,
+  productNotFound,
+  noProductInfo,
+  alreadyPurchased,
+  purchaseFailed,
+  restoreFailed,
+}
+
 class PurchaseService extends ChangeNotifier {
   static final PurchaseService _instance = PurchaseService._internal();
   factory PurchaseService() => _instance;
@@ -27,8 +38,8 @@ class PurchaseService extends ChangeNotifier {
   bool _isAdFree = false;
   bool get isAdFree => _isAdFree;
 
-  String? _errorMessage;
-  String? get errorMessage => _errorMessage;
+  PurchaseErrorType _errorType = PurchaseErrorType.none;
+  PurchaseErrorType get errorType => _errorType;
 
   bool _isAvailable = false;
   bool get isAvailable => _isAvailable;
@@ -41,7 +52,7 @@ class PurchaseService extends ChangeNotifier {
     if (!_isAvailable) {
       debugPrint('PurchaseService: 스토어를 사용할 수 없습니다');
       _status = AdPurchaseState.error;
-      _errorMessage = '스토어에 연결할 수 없습니다';
+      _errorType = PurchaseErrorType.storeUnavailable;
       notifyListeners();
       return;
     }
@@ -71,7 +82,7 @@ class PurchaseService extends ChangeNotifier {
       if (response.error != null) {
         debugPrint('상품 로드 에러: ${response.error}');
         _status = AdPurchaseState.error;
-        _errorMessage = '상품 정보를 불러올 수 없습니다';
+        _errorType = PurchaseErrorType.loadProductFailed;
         notifyListeners();
         return;
       }
@@ -79,7 +90,7 @@ class PurchaseService extends ChangeNotifier {
       if (response.productDetails.isEmpty) {
         debugPrint('상품을 찾을 수 없습니다: $kRemoveAdsProductId');
         _status = AdPurchaseState.error;
-        _errorMessage = '상품을 찾을 수 없습니다';
+        _errorType = PurchaseErrorType.productNotFound;
         notifyListeners();
         return;
       }
@@ -96,20 +107,20 @@ class PurchaseService extends ChangeNotifier {
     } catch (e) {
       debugPrint('상품 로드 예외: $e');
       _status = AdPurchaseState.error;
-      _errorMessage = '상품 정보를 불러오는 중 오류가 발생했습니다';
+      _errorType = PurchaseErrorType.loadProductFailed;
       notifyListeners();
     }
   }
 
   Future<bool> purchaseRemoveAds() async {
     if (_removeAdsProduct == null) {
-      _errorMessage = '상품 정보가 없습니다';
+      _errorType = PurchaseErrorType.noProductInfo;
       notifyListeners();
       return false;
     }
 
     if (_isAdFree) {
-      _errorMessage = '이미 구매하셨습니다';
+      _errorType = PurchaseErrorType.alreadyPurchased;
       notifyListeners();
       return false;
     }
@@ -128,7 +139,7 @@ class PurchaseService extends ChangeNotifier {
 
       if (!success) {
         _status = AdPurchaseState.available;
-        _errorMessage = '구매를 시작할 수 없습니다';
+        _errorType = PurchaseErrorType.purchaseFailed;
         notifyListeners();
       }
 
@@ -136,7 +147,7 @@ class PurchaseService extends ChangeNotifier {
     } catch (e) {
       debugPrint('구매 시작 예외: $e');
       _status = AdPurchaseState.available;
-      _errorMessage = '구매 중 오류가 발생했습니다';
+      _errorType = PurchaseErrorType.purchaseFailed;
       notifyListeners();
       return false;
     }
@@ -162,7 +173,7 @@ class PurchaseService extends ChangeNotifier {
       _status = _isAdFree
           ? AdPurchaseState.purchased
           : AdPurchaseState.available;
-      _errorMessage = '구매 복원 중 오류가 발생했습니다';
+      _errorType = PurchaseErrorType.restoreFailed;
       notifyListeners();
     }
   }
@@ -209,7 +220,7 @@ class PurchaseService extends ChangeNotifier {
     await _savePurchaseState();
 
     _status = AdPurchaseState.purchased;
-    _errorMessage = null;
+    _errorType = PurchaseErrorType.none;
     notifyListeners();
 
     debugPrint('구매 완료: 광고 제거됨');
@@ -219,7 +230,7 @@ class PurchaseService extends ChangeNotifier {
     debugPrint('구매 에러: ${purchaseDetails.error?.message}');
 
     _status = AdPurchaseState.error;
-    _errorMessage = purchaseDetails.error?.message ?? '구매 중 오류가 발생했습니다';
+    _errorType = PurchaseErrorType.purchaseFailed;
     notifyListeners();
 
     Future.delayed(const Duration(seconds: 2), () {
@@ -252,7 +263,7 @@ class PurchaseService extends ChangeNotifier {
   }
 
   String get priceString {
-    return _removeAdsProduct?.price ?? '₩4,900';
+    return _removeAdsProduct?.price ?? '';
   }
 
   @override

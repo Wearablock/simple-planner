@@ -143,6 +143,27 @@ class AppLocalizationsAr extends AppLocalizations {
   String get noPurchaseToRestore => 'لا توجد مشتريات للاستعادة';
 
   @override
+  String get errorStoreUnavailable => 'تعذر الاتصال بالمتجر';
+
+  @override
+  String get errorLoadProduct => 'تعذر تحميل معلومات المنتج';
+
+  @override
+  String get errorProductNotFound => 'المنتج غير موجود';
+
+  @override
+  String get errorNoProductInfo => 'لا تتوفر معلومات عن المنتج';
+
+  @override
+  String get errorAlreadyPurchased => 'تم الشراء مسبقاً';
+
+  @override
+  String get errorPurchaseFailed => 'حدث خطأ أثناء عملية الشراء';
+
+  @override
+  String get errorRestoreFailed => 'حدث خطأ أثناء استعادة المشتريات';
+
+  @override
   String get termsOfService => 'شروط الخدمة';
 
   @override

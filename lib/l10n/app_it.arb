@@ -86,6 +86,13 @@
   "purchaseError": "Impossibile avviare l'acquisto",
   "purchaseRestored": "Acquisto ripristinato!",
   "noPurchaseToRestore": "Nessun acquisto da ripristinare",
+  "errorStoreUnavailable": "Impossibile connettersi allo store",
+  "errorLoadProduct": "Impossibile caricare le informazioni del prodotto",
+  "errorProductNotFound": "Prodotto non trovato",
+  "errorNoProductInfo": "Nessuna informazione sul prodotto disponibile",
+  "errorAlreadyPurchased": "Già acquistato",
+  "errorPurchaseFailed": "Si è verificato un errore durante l'acquisto",
+  "errorRestoreFailed": "Si è verificato un errore durante il ripristino dell'acquisto",
 
   "termsOfService": "Termini di servizio",
   "privacyPolicy": "Informativa sulla privacy",

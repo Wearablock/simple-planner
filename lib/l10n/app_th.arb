@@ -1,0 +1,112 @@
+{
+  "@@locale": "th",
+
+  "appTitle": "งานวันนี้",
+  "@appTitle": {
+    "description": "App title"
+  },
+
+  "cancel": "ยกเลิก",
+  "confirm": "ยืนยัน",
+  "delete": "ลบ",
+  "select": "เลือก",
+  "settings": "ตั้งค่า",
+
+  "todoInputHint": "ป้อนงาน",
+  "recurring": "ทำซ้ำ",
+
+  "selectTime": "เลือกเวลา",
+  "hourFormat": "{hour}:00",
+  "@hourFormat": {
+    "placeholders": {
+      "hour": {
+        "type": "String"
+      }
+    }
+  },
+
+  "dateFormat": "{day}/{month}",
+  "@dateFormat": {
+    "placeholders": {
+      "month": {"type": "int"},
+      "day": {"type": "int"}
+    }
+  },
+
+  "monday": "จ.",
+  "tuesday": "อ.",
+  "wednesday": "พ.",
+  "thursday": "พฤ.",
+  "friday": "ศ.",
+  "saturday": "ส.",
+  "sunday": "อา.",
+
+  "everyday": "ทุกวัน",
+  "weekdays": "วันธรรมดา",
+  "weekend": "วันหยุดสุดสัปดาห์",
+
+  "deleteConfirmTitle": "ยืนยันการลบ",
+  "deleteConfirmMessage": "ลบ '{title}' หรือไม่?",
+  "@deleteConfirmMessage": {
+    "placeholders": {
+      "title": {"type": "String"}
+    }
+  },
+  "deleteAllRecurring": "ลบงานที่ทำซ้ำในอนาคตทั้งหมดด้วย",
+
+  "noTodosForDate": "ไม่มีงานสำหรับวันที่ {day}/{month}",
+  "@noTodosForDate": {
+    "placeholders": {
+      "month": {"type": "int"},
+      "day": {"type": "int"}
+    }
+  },
+
+  "countText": "{count}",
+  "@countText": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+
+  "errorAddTodo": "เพิ่มงานไม่สำเร็จ",
+  "errorDeleteTodo": "ลบงานไม่สำเร็จ",
+  "errorToggleTodo": "อัปเดตสถานะไม่สำเร็จ",
+  "errorReorderTodo": "จัดเรียงใหม่ไม่สำเร็จ",
+  "errorLoadTodos": "โหลดงานไม่สำเร็จ",
+
+  "cannotDeselectLockedDay": "ไม่สามารถยกเลิกการเลือกวันของวันที่ที่เลือกได้",
+
+  "removeAds": "ลบโฆษณา",
+  "purchase": "ซื้อ",
+  "restorePurchase": "กู้คืนการซื้อ",
+  "restorePurchaseDesc": "กู้คืนการซื้อก่อนหน้าของคุณ",
+  "processing": "กำลังดำเนินการ...",
+  "checkingPurchase": "กำลังตรวจสอบประวัติการซื้อ...",
+  "purchaseError": "ไม่สามารถเริ่มการซื้อได้",
+  "purchaseRestored": "กู้คืนการซื้อสำเร็จ!",
+  "noPurchaseToRestore": "ไม่มีการซื้อที่จะกู้คืน",
+  "errorStoreUnavailable": "ไม่สามารถเชื่อมต่อกับร้านค้าได้",
+  "errorLoadProduct": "ไม่สามารถโหลดข้อมูลสินค้าได้",
+  "errorProductNotFound": "ไม่พบสินค้า",
+  "errorNoProductInfo": "ไม่มีข้อมูลสินค้า",
+  "errorAlreadyPurchased": "ซื้อแล้ว",
+  "errorPurchaseFailed": "เกิดข้อผิดพลาดระหว่างการซื้อ",
+  "errorRestoreFailed": "เกิดข้อผิดพลาดขณะกู้คืนการซื้อ",
+
+  "termsOfService": "ข้อกำหนดการใช้งาน",
+  "privacyPolicy": "นโยบายความเป็นส่วนตัว",
+  "versionInfo": "เวอร์ชัน",
+
+  "dateWithWeekday": "{weekday} {day}/{month}",
+  "@dateWithWeekday": {
+    "placeholders": {
+      "month": {"type": "int"},
+      "day": {"type": "int"},
+      "weekday": {"type": "String"}
+    }
+  },
+
+  "emptyTodoTitle": "ไม่มีงาน",
+  "emptyTodoSubtitle": "เพิ่มงานใหม่เพื่อเริ่มต้น"
+}

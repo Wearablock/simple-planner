@@ -142,6 +142,27 @@ class AppLocalizationsKo extends AppLocalizations {
   String get noPurchaseToRestore => '복원할 구매 내역이 없습니다';
 
   @override
+  String get errorStoreUnavailable => '스토어에 연결할 수 없습니다';
+
+  @override
+  String get errorLoadProduct => '상품 정보를 불러올 수 없습니다';
+
+  @override
+  String get errorProductNotFound => '상품을 찾을 수 없습니다';
+
+  @override
+  String get errorNoProductInfo => '상품 정보가 없습니다';
+
+  @override
+  String get errorAlreadyPurchased => '이미 구매하셨습니다';
+
+  @override
+  String get errorPurchaseFailed => '구매 중 오류가 발생했습니다';
+
+  @override
+  String get errorRestoreFailed => '구매 복원 중 오류가 발생했습니다';
+
+  @override
   String get termsOfService => '이용약관 및 정책';
 
   @override

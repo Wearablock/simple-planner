@@ -86,6 +86,13 @@
   "purchaseError": "تعذر بدء عملية الشراء",
   "purchaseRestored": "تم استعادة المشتريات!",
   "noPurchaseToRestore": "لا توجد مشتريات للاستعادة",
+  "errorStoreUnavailable": "تعذر الاتصال بالمتجر",
+  "errorLoadProduct": "تعذر تحميل معلومات المنتج",
+  "errorProductNotFound": "المنتج غير موجود",
+  "errorNoProductInfo": "لا تتوفر معلومات عن المنتج",
+  "errorAlreadyPurchased": "تم الشراء مسبقاً",
+  "errorPurchaseFailed": "حدث خطأ أثناء عملية الشراء",
+  "errorRestoreFailed": "حدث خطأ أثناء استعادة المشتريات",
 
   "termsOfService": "شروط الخدمة",
   "privacyPolicy": "سياسة الخصوصية",

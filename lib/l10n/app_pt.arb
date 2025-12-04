@@ -86,6 +86,13 @@
   "purchaseError": "Não foi possível iniciar a compra",
   "purchaseRestored": "Compra restaurada!",
   "noPurchaseToRestore": "Nenhuma compra para restaurar",
+  "errorStoreUnavailable": "Não foi possível conectar à loja",
+  "errorLoadProduct": "Não foi possível carregar as informações do produto",
+  "errorProductNotFound": "Produto não encontrado",
+  "errorNoProductInfo": "Nenhuma informação de produto disponível",
+  "errorAlreadyPurchased": "Já comprado",
+  "errorPurchaseFailed": "Ocorreu um erro durante a compra",
+  "errorRestoreFailed": "Ocorreu um erro ao restaurar a compra",
 
   "termsOfService": "Termos de Serviço",
   "privacyPolicy": "Política de Privacidade",

@@ -4,6 +4,27 @@ import 'package:simple_planner/constants/app_constants.dart';
 import 'package:simple_planner/l10n/app_localizations.dart';
 import 'package:simple_planner/services/purchase_service.dart';
 
+String _getErrorMessage(AppLocalizations l10n, PurchaseErrorType errorType) {
+  switch (errorType) {
+    case PurchaseErrorType.none:
+      return '';
+    case PurchaseErrorType.storeUnavailable:
+      return l10n.errorStoreUnavailable;
+    case PurchaseErrorType.loadProductFailed:
+      return l10n.errorLoadProduct;
+    case PurchaseErrorType.productNotFound:
+      return l10n.errorProductNotFound;
+    case PurchaseErrorType.noProductInfo:
+      return l10n.errorNoProductInfo;
+    case PurchaseErrorType.alreadyPurchased:
+      return l10n.errorAlreadyPurchased;
+    case PurchaseErrorType.purchaseFailed:
+      return l10n.errorPurchaseFailed;
+    case PurchaseErrorType.restoreFailed:
+      return l10n.errorRestoreFailed;
+  }
+}
+
 class RemoveAdsButton extends StatelessWidget {
   const RemoveAdsButton({super.key});
 
@@ -40,12 +61,13 @@ class RemoveAdsButton extends StatelessWidget {
         }
 
         // 광고 제거 안됨 → 광고 제거 버튼 표시
+        final priceString = purchaseService.priceString;
         return ListTile(
           leading: PhosphorIcon(
             PhosphorIcons.prohibit(PhosphorIconsStyle.light),
           ),
           title: Text(l10n.removeAds),
-          subtitle: Text(purchaseService.priceString),
+          subtitle: priceString.isNotEmpty ? Text(priceString) : null,
           trailing: FilledButton(
             onPressed: () => _handlePurchase(context),
             style: FilledButton.styleFrom(
@@ -64,9 +86,10 @@ class RemoveAdsButton extends StatelessWidget {
     final success = await purchaseService.purchaseRemoveAds();
 
     if (!success && context.mounted) {
+      final errorMessage = _getErrorMessage(l10n, purchaseService.errorType);
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text(purchaseService.errorMessage ?? l10n.purchaseError),
+          content: Text(errorMessage.isNotEmpty ? errorMessage : l10n.purchaseError),
           backgroundColor: AppColors.error,
         ),
       );

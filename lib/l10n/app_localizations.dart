@@ -14,6 +14,7 @@ import 'app_localizations_it.dart';
 import 'app_localizations_ja.dart';
 import 'app_localizations_ko.dart';
 import 'app_localizations_pt.dart';
+import 'app_localizations_th.dart';
 import 'app_localizations_zh.dart';
 
 // ignore_for_file: type=lint
@@ -111,6 +112,7 @@ abstract class AppLocalizations {
     Locale('ja'),
     Locale('ko'),
     Locale('pt'),
+    Locale('th'),
     Locale('zh'),
     Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant'),
   ];
@@ -361,6 +363,48 @@ abstract class AppLocalizations {
   /// **'No purchase to restore'**
   String get noPurchaseToRestore;
 
+  /// No description provided for @errorStoreUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Unable to connect to store'**
+  String get errorStoreUnavailable;
+
+  /// No description provided for @errorLoadProduct.
+  ///
+  /// In en, this message translates to:
+  /// **'Unable to load product information'**
+  String get errorLoadProduct;
+
+  /// No description provided for @errorProductNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'Product not found'**
+  String get errorProductNotFound;
+
+  /// No description provided for @errorNoProductInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'No product information available'**
+  String get errorNoProductInfo;
+
+  /// No description provided for @errorAlreadyPurchased.
+  ///
+  /// In en, this message translates to:
+  /// **'Already purchased'**
+  String get errorAlreadyPurchased;
+
+  /// No description provided for @errorPurchaseFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'An error occurred during purchase'**
+  String get errorPurchaseFailed;
+
+  /// No description provided for @errorRestoreFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'An error occurred while restoring purchase'**
+  String get errorRestoreFailed;
+
   /// No description provided for @termsOfService.
   ///
   /// In en, this message translates to:
@@ -418,6 +462,7 @@ class _AppLocalizationsDelegate
     'ja',
     'ko',
     'pt',
+    'th',
     'zh',
   ].contains(locale.languageCode);
 
@@ -458,6 +503,8 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
       return AppLocalizationsKo();
     case 'pt':
       return AppLocalizationsPt();
+    case 'th':
+      return AppLocalizationsTh();
     case 'zh':
       return AppLocalizationsZh();
   }

@@ -10,18 +10,12 @@ class AdService extends ChangeNotifier {
   factory AdService() => _instance;
   AdService._internal();
 
+  // TODO: 프로덕션 출시 전 실제 AdMob 광고 단위 ID로 교체 필요
+  // 현재는 테스트 ID 사용 중
   String get bannerAdUnitId {
-    if (kDebugMode) {
-      return Platform.isAndroid
-          ? 'ca-app-pub-3940256099942544/6300978111'
-          : 'ca-app-pub-3940256099942544/2934735716';
-    } else {
-      // 릴리즈 모드: 실제 광고 ID 사용
-      // ⚠️ 출시 전 실제 ID로 교체하세요!
-      return Platform.isAndroid
-          ? 'ca-app-pub-XXXXXXXXXXXXXXXX/ZZZZZZZZZZ' // Android 실제
-          : 'ca-app-pub-XXXXXXXXXXXXXXXX/BBBBBBBBBB'; // iOS 실제
-    }
+    return Platform.isAndroid
+        ? 'ca-app-pub-3940256099942544/6300978111' // 테스트 ID
+        : 'ca-app-pub-3940256099942544/2934735716'; // 테스트 ID
   }
 
   BannerAd? _bannerAd;

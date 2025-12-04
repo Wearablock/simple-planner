@@ -143,6 +143,27 @@ class AppLocalizationsEn extends AppLocalizations {
   String get noPurchaseToRestore => 'No purchase to restore';
 
   @override
+  String get errorStoreUnavailable => 'Unable to connect to store';
+
+  @override
+  String get errorLoadProduct => 'Unable to load product information';
+
+  @override
+  String get errorProductNotFound => 'Product not found';
+
+  @override
+  String get errorNoProductInfo => 'No product information available';
+
+  @override
+  String get errorAlreadyPurchased => 'Already purchased';
+
+  @override
+  String get errorPurchaseFailed => 'An error occurred during purchase';
+
+  @override
+  String get errorRestoreFailed => 'An error occurred while restoring purchase';
+
+  @override
   String get termsOfService => 'Terms of Service';
 
   @override

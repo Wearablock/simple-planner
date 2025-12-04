@@ -142,6 +142,27 @@ class AppLocalizationsZh extends AppLocalizations {
   String get noPurchaseToRestore => '没有可恢复的购买';
 
   @override
+  String get errorStoreUnavailable => '无法连接到商店';
+
+  @override
+  String get errorLoadProduct => '无法加载商品信息';
+
+  @override
+  String get errorProductNotFound => '未找到商品';
+
+  @override
+  String get errorNoProductInfo => '没有商品信息';
+
+  @override
+  String get errorAlreadyPurchased => '已购买';
+
+  @override
+  String get errorPurchaseFailed => '购买时发生错误';
+
+  @override
+  String get errorRestoreFailed => '恢复购买时发生错误';
+
+  @override
   String get termsOfService => '服务条款';
 
   @override
@@ -298,6 +319,27 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get noPurchaseToRestore => '沒有可恢復的購買';
+
+  @override
+  String get errorStoreUnavailable => '無法連接到商店';
+
+  @override
+  String get errorLoadProduct => '無法載入商品資訊';
+
+  @override
+  String get errorProductNotFound => '找不到商品';
+
+  @override
+  String get errorNoProductInfo => '沒有商品資訊';
+
+  @override
+  String get errorAlreadyPurchased => '已購買';
+
+  @override
+  String get errorPurchaseFailed => '購買時發生錯誤';
+
+  @override
+  String get errorRestoreFailed => '恢復購買時發生錯誤';
 
   @override
   String get termsOfService => '服務條款';

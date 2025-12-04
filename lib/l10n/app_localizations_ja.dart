@@ -142,6 +142,27 @@ class AppLocalizationsJa extends AppLocalizations {
   String get noPurchaseToRestore => '復元する購入がありません';
 
   @override
+  String get errorStoreUnavailable => 'ストアに接続できません';
+
+  @override
+  String get errorLoadProduct => '商品情報を読み込めません';
+
+  @override
+  String get errorProductNotFound => '商品が見つかりません';
+
+  @override
+  String get errorNoProductInfo => '商品情報がありません';
+
+  @override
+  String get errorAlreadyPurchased => 'すでに購入済みです';
+
+  @override
+  String get errorPurchaseFailed => '購入中にエラーが発生しました';
+
+  @override
+  String get errorRestoreFailed => '購入の復元中にエラーが発生しました';
+
+  @override
   String get termsOfService => '利用規約';
 
   @override

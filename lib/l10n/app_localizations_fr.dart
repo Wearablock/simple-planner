@@ -144,6 +144,30 @@ class AppLocalizationsFr extends AppLocalizations {
   String get noPurchaseToRestore => 'Aucun achat à restaurer';
 
   @override
+  String get errorStoreUnavailable => 'Impossible de se connecter au magasin';
+
+  @override
+  String get errorLoadProduct =>
+      'Impossible de charger les informations du produit';
+
+  @override
+  String get errorProductNotFound => 'Produit non trouvé';
+
+  @override
+  String get errorNoProductInfo => 'Aucune information produit disponible';
+
+  @override
+  String get errorAlreadyPurchased => 'Déjà acheté';
+
+  @override
+  String get errorPurchaseFailed =>
+      'Une erreur s\'est produite lors de l\'achat';
+
+  @override
+  String get errorRestoreFailed =>
+      'Une erreur s\'est produite lors de la restauration de l\'achat';
+
+  @override
   String get termsOfService => 'Conditions d\'utilisation';
 
   @override

@@ -54,6 +54,13 @@
   "purchaseError": "无法开始购买",
   "purchaseRestored": "购买已恢复！",
   "noPurchaseToRestore": "没有可恢复的购买",
+  "errorStoreUnavailable": "无法连接到商店",
+  "errorLoadProduct": "无法加载商品信息",
+  "errorProductNotFound": "未找到商品",
+  "errorNoProductInfo": "没有商品信息",
+  "errorAlreadyPurchased": "已购买",
+  "errorPurchaseFailed": "购买时发生错误",
+  "errorRestoreFailed": "恢复购买时发生错误",
 
   "termsOfService": "服务条款",
   "privacyPolicy": "隐私政策",
