@@ -1,0 +1,112 @@
+{
+  "@@locale": "ru",
+
+  "appTitle": "Задачи на сегодня",
+  "@appTitle": {
+    "description": "App title"
+  },
+
+  "cancel": "Отмена",
+  "confirm": "Подтвердить",
+  "delete": "Удалить",
+  "select": "Выбрать",
+  "settings": "Настройки",
+
+  "todoInputHint": "Введите задачу",
+  "recurring": "Повторять",
+
+  "selectTime": "Выбрать время",
+  "hourFormat": "{hour}:00",
+  "@hourFormat": {
+    "placeholders": {
+      "hour": {
+        "type": "String"
+      }
+    }
+  },
+
+  "dateFormat": "{day}.{month}",
+  "@dateFormat": {
+    "placeholders": {
+      "month": {"type": "int"},
+      "day": {"type": "int"}
+    }
+  },
+
+  "monday": "Пн",
+  "tuesday": "Вт",
+  "wednesday": "Ср",
+  "thursday": "Чт",
+  "friday": "Пт",
+  "saturday": "Сб",
+  "sunday": "Вс",
+
+  "everyday": "Каждый день",
+  "weekdays": "Будние дни",
+  "weekend": "Выходные",
+
+  "deleteConfirmTitle": "Подтвердите удаление",
+  "deleteConfirmMessage": "Удалить '{title}'?",
+  "@deleteConfirmMessage": {
+    "placeholders": {
+      "title": {"type": "String"}
+    }
+  },
+  "deleteAllRecurring": "Удалить также все будущие повторяющиеся задачи",
+
+  "noTodosForDate": "Нет задач на {day}.{month}",
+  "@noTodosForDate": {
+    "placeholders": {
+      "month": {"type": "int"},
+      "day": {"type": "int"}
+    }
+  },
+
+  "countText": "{count}",
+  "@countText": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+
+  "errorAddTodo": "Не удалось добавить задачу",
+  "errorDeleteTodo": "Не удалось удалить задачу",
+  "errorToggleTodo": "Не удалось обновить статус",
+  "errorReorderTodo": "Не удалось изменить порядок",
+  "errorLoadTodos": "Не удалось загрузить задачи",
+
+  "cannotDeselectLockedDay": "Невозможно отменить выбор дня для выбранной даты",
+
+  "removeAds": "Убрать рекламу",
+  "purchase": "Купить",
+  "restorePurchase": "Восстановить покупку",
+  "restorePurchaseDesc": "Восстановить предыдущие покупки",
+  "processing": "Обработка...",
+  "checkingPurchase": "Проверка истории покупок...",
+  "purchaseError": "Не удалось начать покупку",
+  "purchaseRestored": "Покупка восстановлена!",
+  "noPurchaseToRestore": "Нет покупок для восстановления",
+  "errorStoreUnavailable": "Не удалось подключиться к магазину",
+  "errorLoadProduct": "Не удалось загрузить информацию о продукте",
+  "errorProductNotFound": "Продукт не найден",
+  "errorNoProductInfo": "Нет информации о продукте",
+  "errorAlreadyPurchased": "Уже куплено",
+  "errorPurchaseFailed": "Произошла ошибка при покупке",
+  "errorRestoreFailed": "Произошла ошибка при восстановлении покупки",
+
+  "termsOfService": "Условия использования",
+  "privacyPolicy": "Политика конфиденциальности",
+  "versionInfo": "Версия",
+
+  "dateWithWeekday": "{weekday}, {day}.{month}",
+  "@dateWithWeekday": {
+    "placeholders": {
+      "month": {"type": "int"},
+      "day": {"type": "int"},
+      "weekday": {"type": "String"}
+    }
+  },
+
+  "emptyTodoTitle": "Нет задач",
+  "emptyTodoSubtitle": "Добавьте новую задачу, чтобы начать"
+}

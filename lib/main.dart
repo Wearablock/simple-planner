@@ -53,6 +53,7 @@ class MyApp extends StatelessWidget {
         Locale('de'), // Deutsch
         Locale('fr'), // Français
         Locale('it'), // Italiano
+        Locale('ru'), // Русский
         Locale('ar'), // العربية
         Locale('th'), // ภาษาไทย
         Locale('id'), // Bahasa Indonesia
