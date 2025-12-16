@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Support - Simple Planner</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Simple Planner</h1>
+        <div class="lang-selector">
+          <button class="lang-btn" onclick="toggleDropdown()">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+              />
+            </svg>
+            <span id="currentLang">English</span>
+          </button>
+          <div class="lang-dropdown" id="langDropdown">
+            <button class="lang-option active" onclick="switchLang('en')">
+              English
+            </button>
+            <button class="lang-option" onclick="switchLang('ko')">
+              한국어
+            </button>
+            <button class="lang-option" onclick="switchLang('ja')">
+              日本語
+            </button>
+            <button class="lang-option" onclick="switchLang('zh')">
+              简体中文
+            </button>
+            <button class="lang-option" onclick="switchLang('zh-Hant')">
+              繁體中文
+            </button>
+            <button class="lang-option" onclick="switchLang('es')">
+              Español
+            </button>
+            <button class="lang-option" onclick="switchLang('pt-BR')">
+              Português
+            </button>
+            <button class="lang-option" onclick="switchLang('de')">
+              Deutsch
+            </button>
+            <button class="lang-option" onclick="switchLang('fr')">
+              Français
+            </button>
+            <button class="lang-option" onclick="switchLang('it')">
+              Italiano
+            </button>
+            <button class="lang-option" onclick="switchLang('ru')">
+              Русский
+            </button>
+            <button class="lang-option" onclick="switchLang('ar')">
+              العربية
+            </button>
+            <button class="lang-option" onclick="switchLang('th')">
+              ภาษาไทย
+            </button>
+            <button class="lang-option" onclick="switchLang('id')">
+              Bahasa Indonesia
+            </button>
+            <button class="lang-option" onclick="switchLang('vi')">
+              Tiếng Việt
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- English Content -->
+      <main id="content-en" class="content-section active">
+        <h2>Support</h2>
+
+        <div class="info-box">
+          <p>
+            Need help? We're here to assist you with any questions or issues.
+          </p>
+        </div>
+
+        <h3>Contact Us</h3>
+        <p>For questions, feedback, or support requests, please email us:</p>
+        <p><a href="mailto:admin@wearablock.com">admin@wearablock.com</a></p>
+
+        <h3>Frequently Asked Questions</h3>
+
+        <h3>How do I add a new task?</h3>
+        <p>Tap the + button at the bottom of the screen to add a new task. You can set a title, time, and repeat options.</p>
+
+        <h3>How do I set up recurring tasks?</h3>
+        <p>When creating or editing a task, tap the repeat option to set daily, weekly, or custom repeat schedules.</p>
+
+        <h3>How do I restore my purchase?</h3>
+        <p>Go to Settings and tap "Remove Ads". If you've already purchased, tap "Restore Purchase" to restore your ad-free status.</p>
+
+        <h3>Is my data backed up?</h3>
+        <p>Currently, data is stored locally on your device. We recommend regularly backing up your device to prevent data loss.</p>
+
+        <h3>How do I delete a task?</h3>
+        <p>Swipe left on a task to reveal the delete option, or tap on the task to edit and then delete it.</p>
+      </main>
+
+      <!-- Korean Content -->
+      <main id="content-ko" class="content-section">
+        <h2>고객 지원</h2>
+
+        <div class="info-box">
+          <p>
+            도움이 필요하신가요? 질문이나 문제가 있으시면 도와드리겠습니다.
+          </p>
+        </div>
+
+        <h3>문의하기</h3>
+        <p>질문, 피드백 또는 지원 요청은 이메일로 보내주세요:</p>
+        <p><a href="mailto:admin@wearablock.com">admin@wearablock.com</a></p>
+
+        <h3>자주 묻는 질문</h3>
+
+        <h3>새 할 일을 어떻게 추가하나요?</h3>
+        <p>화면 하단의 + 버튼을 탭하여 새 할 일을 추가하세요. 제목, 시간, 반복 옵션을 설정할 수 있습니다.</p>
+
+        <h3>반복 할 일은 어떻게 설정하나요?</h3>
+        <p>할 일을 만들거나 수정할 때 반복 옵션을 탭하여 매일, 매주 또는 사용자 지정 반복 일정을 설정하세요.</p>
+
+        <h3>구매를 복원하려면 어떻게 하나요?</h3>
+        <p>설정으로 이동하여 "광고 제거"를 탭하세요. 이미 구매하셨다면 "구매 복원"을 탭하여 광고 없는 상태를 복원하세요.</p>
+
+        <h3>데이터가 백업되나요?</h3>
+        <p>현재 데이터는 기기에 로컬로 저장됩니다. 데이터 손실을 방지하려면 정기적으로 기기를 백업하시기 바랍니다.</p>
+
+        <h3>할 일을 어떻게 삭제하나요?</h3>
+        <p>할 일을 왼쪽으로 스와이프하면 삭제 옵션이 나타나거나, 할 일을 탭하여 편집 후 삭제할 수 있습니다.</p>
+      </main>
+
+      <!-- Japanese Content -->
+      <main id="content-ja" class="content-section">
+        <h2>サポート</h2>
+
+        <div class="info-box">
+          <p>
+            お困りですか？ご質問や問題がございましたら、お手伝いいたします。
+          </p>
+        </div>
+
+        <h3>お問い合わせ</h3>
+        <p>ご質問、フィードバック、サポートリクエストは、メールでお問い合わせください：</p>
+        <p><a href="mailto:admin@wearablock.com">admin@wearablock.com</a></p>
+
+        <h3>よくある質問</h3>
+
+        <h3>新しいタスクを追加するには？</h3>
+        <p>画面下部の+ボタンをタップして新しいタスクを追加します。タイトル、時間、繰り返しオプションを設定できます。</p>
+
+        <h3>繰り返しタスクを設定するには？</h3>
+        <p>タスクを作成または編集する際、繰り返しオプションをタップして毎日、毎週、またはカスタム繰り返しスケジュールを設定します。</p>
+
+        <h3>購入を復元するには？</h3>
+        <p>設定に移動し、「広告を削除」をタップします。すでに購入済みの場合は、「購入を復元」をタップして広告なしの状態を復元します。</p>
+
+        <h3>データはバックアップされますか？</h3>
+        <p>現在、データはデバイスにローカル保存されています。データの損失を防ぐため、定期的にデバイスをバックアップすることをお勧めします。</p>
+
+        <h3>タスクを削除するには？</h3>
+        <p>タスクを左にスワイプすると削除オプションが表示されます。または、タスクをタップして編集画面から削除できます。</p>
+      </main>
+
+      <!-- Simplified Chinese Content -->
+      <main id="content-zh" class="content-section">
+        <h2>支持</h2>
+
+        <div class="info-box">
+          <p>
+            需要帮助吗？如有任何问题，我们随时为您提供帮助。
+          </p>
+        </div>
+
+        <h3>联系我们</h3>
+        <p>如有问题、反馈或支持请求，请发送电子邮件：</p>
+        <p><a href="mailto:admin@wearablock.com">admin@wearablock.com</a></p>
+
+        <h3>常见问题</h3>
+
+        <h3>如何添加新任务？</h3>
+        <p>点击屏幕底部的+按钮添加新任务。您可以设置标题、时间和重复选项。</p>
+
+        <h3>如何设置重复任务？</h3>
+        <p>创建或编辑任务时，点击重复选项以设置每日、每周或自定义重复计划。</p>
+
+        <h3>如何恢复购买？</h3>
+        <p>前往设置并点击"移除广告"。如果您已购买，点击"恢复购买"以恢复无广告状态。</p>
+
+        <h3>我的数据会备份吗？</h3>
+        <p>目前，数据存储在您的设备本地。建议定期备份设备以防止数据丢失。</p>
+
+        <h3>如何删除任务？</h3>
+        <p>向左滑动任务可显示删除选项，或点击任务进入编辑界面后删除。</p>
+      </main>
+
+      <!-- Traditional Chinese Content -->
+      <main id="content-zh-Hant" class="content-section">
+        <h2>支援</h2>
+
+        <div class="info-box">
+          <p>
+            需要幫助嗎？如有任何問題，我們隨時為您提供協助。
+          </p>
+        </div>
+
+        <h3>聯絡我們</h3>
+        <p>如有問題、反饋或支援請求，請發送電子郵件：</p>
+        <p><a href="mailto:admin@wearablock.com">admin@wearablock.com</a></p>
+
+        <h3>常見問題</h3>
+
+        <h3>如何新增任務？</h3>
+        <p>點擊螢幕底部的+按鈕新增任務。您可以設定標題、時間和重複選項。</p>
+
+        <h3>如何設定重複任務？</h3>
+        <p>建立或編輯任務時，點擊重複選項以設定每日、每週或自訂重複排程。</p>
+
+        <h3>如何恢復購買？</h3>
+        <p>前往設定並點擊「移除廣告」。如果您已購買，點擊「恢復購買」以恢復無廣告狀態。</p>
+
+        <h3>我的資料會備份嗎？</h3>
+        <p>目前，資料儲存在您的裝置本機。建議定期備份裝置以防止資料遺失。</p>
+
+        <h3>如何刪除任務？</h3>
+        <p>向左滑動任務可顯示刪除選項，或點擊任務進入編輯介面後刪除。</p>
+      </main>
+
+      <!-- Spanish Content -->
+      <main id="content-es" class="content-section">
+        <h2>Soporte</h2>
+
+        <div class="info-box">
+          <p>
+            ¿Necesita ayuda? Estamos aquí para asistirle con cualquier pregunta o problema.
+          </p>
+        </div>
+
+        <h3>Contáctenos</h3>
+        <p>Para preguntas, comentarios o solicitudes de soporte, envíenos un correo electrónico:</p>
+        <p><a href="mailto:admin@wearablock.com">admin@wearablock.com</a></p>
+
+        <h3>Preguntas Frecuentes</h3>
+
+        <h3>¿Cómo agrego una nueva tarea?</h3>
+        <p>Toque el botón + en la parte inferior de la pantalla para agregar una nueva tarea. Puede establecer un título, hora y opciones de repetición.</p>
+
+        <h3>¿Cómo configuro tareas recurrentes?</h3>
+        <p>Al crear o editar una tarea, toque la opción de repetición para establecer programas diarios, semanales o personalizados.</p>
+
+        <h3>¿Cómo restauro mi compra?</h3>
+        <p>Vaya a Configuración y toque "Eliminar anuncios". Si ya ha comprado, toque "Restaurar compra" para restaurar su estado sin anuncios.</p>
+
+        <h3>¿Se respaldan mis datos?</h3>
+        <p>Actualmente, los datos se almacenan localmente en su dispositivo. Recomendamos hacer copias de seguridad regulares de su dispositivo para prevenir la pérdida de datos.</p>
+
+        <h3>¿Cómo elimino una tarea?</h3>
+        <p>Deslice hacia la izquierda en una tarea para revelar la opción de eliminar, o toque la tarea para editar y luego eliminarla.</p>
+      </main>
+
+      <!-- Portuguese (Brazil) Content -->
+      <main id="content-pt-BR" class="content-section">
+        <h2>Suporte</h2>
+
+        <div class="info-box">
+          <p>
+            Precisa de ajuda? Estamos aqui para ajudá-lo com qualquer dúvida ou problema.
+          </p>
+        </div>
+
+        <h3>Entre em Contato</h3>
+        <p>Para perguntas, feedback ou solicitações de suporte, envie-nos um e-mail:</p>
+        <p><a href="mailto:admin@wearablock.com">admin@wearablock.com</a></p>
+
+        <h3>Perguntas Frequentes</h3>
+
+        <h3>Como adiciono uma nova tarefa?</h3>
+        <p>Toque no botão + na parte inferior da tela para adicionar uma nova tarefa. Você pode definir um título, horário e opções de repetição.</p>
+
+        <h3>Como configuro tarefas recorrentes?</h3>
+        <p>Ao criar ou editar uma tarefa, toque na opção de repetição para definir agendamentos diários, semanais ou personalizados.</p>
+
+        <h3>Como restauro minha compra?</h3>
+        <p>Vá para Configurações e toque em "Remover anúncios". Se você já comprou, toque em "Restaurar compra" para restaurar seu status sem anúncios.</p>
+
+        <h3>Meus dados são salvos em backup?</h3>
+        <p>Atualmente, os dados são armazenados localmente no seu dispositivo. Recomendamos fazer backup regular do seu dispositivo para evitar perda de dados.</p>
+
+        <h3>Como excluo uma tarefa?</h3>
+        <p>Deslize para a esquerda em uma tarefa para revelar a opção de excluir, ou toque na tarefa para editar e depois excluí-la.</p>
+      </main>
+
+      <!-- German Content -->
+      <main id="content-de" class="content-section">
+        <h2>Support</h2>
+
+        <div class="info-box">
+          <p>
+            Brauchen Sie Hilfe? Wir sind hier, um Ihnen bei Fragen oder Problemen zu helfen.
+          </p>
+        </div>
+
+        <h3>Kontakt</h3>
+        <p>Für Fragen, Feedback oder Supportanfragen senden Sie uns eine E-Mail:</p>
+        <p><a href="mailto:admin@wearablock.com">admin@wearablock.com</a></p>
+
+        <h3>Häufig gestellte Fragen</h3>
+
+        <h3>Wie füge ich eine neue Aufgabe hinzu?</h3>
+        <p>Tippen Sie auf die + Schaltfläche am unteren Bildschirmrand, um eine neue Aufgabe hinzuzufügen. Sie können einen Titel, eine Uhrzeit und Wiederholungsoptionen festlegen.</p>
+
+        <h3>Wie richte ich wiederkehrende Aufgaben ein?</h3>
+        <p>Beim Erstellen oder Bearbeiten einer Aufgabe tippen Sie auf die Wiederholungsoption, um tägliche, wöchentliche oder benutzerdefinierte Wiederholungspläne festzulegen.</p>
+
+        <h3>Wie stelle ich meinen Kauf wieder her?</h3>
+        <p>Gehen Sie zu Einstellungen und tippen Sie auf "Werbung entfernen". Wenn Sie bereits gekauft haben, tippen Sie auf "Kauf wiederherstellen", um Ihren werbefreien Status wiederherzustellen.</p>
+
+        <h3>Werden meine Daten gesichert?</h3>
+        <p>Derzeit werden die Daten lokal auf Ihrem Gerät gespeichert. Wir empfehlen, Ihr Gerät regelmäßig zu sichern, um Datenverlust zu vermeiden.</p>
+
+        <h3>Wie lösche ich eine Aufgabe?</h3>
+        <p>Wischen Sie bei einer Aufgabe nach links, um die Löschoption anzuzeigen, oder tippen Sie auf die Aufgabe zum Bearbeiten und dann Löschen.</p>
+      </main>
+
+      <!-- French Content -->
+      <main id="content-fr" class="content-section">
+        <h2>Assistance</h2>
+
+        <div class="info-box">
+          <p>
+            Besoin d'aide ? Nous sommes là pour vous aider avec toutes vos questions ou problèmes.
+          </p>
+        </div>
+
+        <h3>Nous Contacter</h3>
+        <p>Pour les questions, commentaires ou demandes d'assistance, envoyez-nous un e-mail :</p>
+        <p><a href="mailto:admin@wearablock.com">admin@wearablock.com</a></p>
+
+        <h3>Questions Fréquentes</h3>
+
+        <h3>Comment ajouter une nouvelle tâche ?</h3>
+        <p>Appuyez sur le bouton + en bas de l'écran pour ajouter une nouvelle tâche. Vous pouvez définir un titre, une heure et des options de répétition.</p>
+
+        <h3>Comment configurer des tâches récurrentes ?</h3>
+        <p>Lors de la création ou de la modification d'une tâche, appuyez sur l'option de répétition pour définir des plannings quotidiens, hebdomadaires ou personnalisés.</p>
+
+        <h3>Comment restaurer mon achat ?</h3>
+        <p>Allez dans Paramètres et appuyez sur "Supprimer les publicités". Si vous avez déjà acheté, appuyez sur "Restaurer l'achat" pour restaurer votre statut sans publicité.</p>
+
+        <h3>Mes données sont-elles sauvegardées ?</h3>
+        <p>Actuellement, les données sont stockées localement sur votre appareil. Nous recommandons de sauvegarder régulièrement votre appareil pour éviter la perte de données.</p>
+
+        <h3>Comment supprimer une tâche ?</h3>
+        <p>Faites glisser une tâche vers la gauche pour révéler l'option de suppression, ou appuyez sur la tâche pour la modifier puis la supprimer.</p>
+      </main>
+
+      <!-- Italian Content -->
+      <main id="content-it" class="content-section">
+        <h2>Supporto</h2>
+
+        <div class="info-box">
+          <p>
+            Hai bisogno di aiuto? Siamo qui per assisterti con qualsiasi domanda o problema.
+          </p>
+        </div>
+
+        <h3>Contattaci</h3>
+        <p>Per domande, feedback o richieste di supporto, inviaci un'email:</p>
+        <p><a href="mailto:admin@wearablock.com">admin@wearablock.com</a></p>
+
+        <h3>Domande Frequenti</h3>
+
+        <h3>Come aggiungo una nuova attività?</h3>
+        <p>Tocca il pulsante + nella parte inferiore dello schermo per aggiungere una nuova attività. Puoi impostare un titolo, un orario e opzioni di ripetizione.</p>
+
+        <h3>Come imposto attività ricorrenti?</h3>
+        <p>Durante la creazione o la modifica di un'attività, tocca l'opzione di ripetizione per impostare pianificazioni giornaliere, settimanali o personalizzate.</p>
+
+        <h3>Come ripristino il mio acquisto?</h3>
+        <p>Vai su Impostazioni e tocca "Rimuovi annunci". Se hai già acquistato, tocca "Ripristina acquisto" per ripristinare il tuo stato senza pubblicità.</p>
+
+        <h3>I miei dati vengono salvati?</h3>
+        <p>Attualmente, i dati sono memorizzati localmente sul tuo dispositivo. Ti consigliamo di eseguire regolarmente il backup del dispositivo per prevenire la perdita di dati.</p>
+
+        <h3>Come elimino un'attività?</h3>
+        <p>Scorri verso sinistra su un'attività per rivelare l'opzione di eliminazione, oppure tocca l'attività per modificarla e poi eliminarla.</p>
+      </main>
+
+      <!-- Russian Content -->
+      <main id="content-ru" class="content-section">
+        <h2>Поддержка</h2>
+
+        <div class="info-box">
+          <p>
+            Нужна помощь? Мы готовы помочь вам с любыми вопросами или проблемами.
+          </p>
+        </div>
+
+        <h3>Связаться с нами</h3>
+        <p>По вопросам, отзывам или запросам поддержки отправьте нам письмо:</p>
+        <p><a href="mailto:admin@wearablock.com">admin@wearablock.com</a></p>
+
+        <h3>Часто задаваемые вопросы</h3>
+
+        <h3>Как добавить новую задачу?</h3>
+        <p>Нажмите кнопку + внизу экрана, чтобы добавить новую задачу. Вы можете установить название, время и параметры повторения.</p>
+
+        <h3>Как настроить повторяющиеся задачи?</h3>
+        <p>При создании или редактировании задачи нажмите на опцию повторения, чтобы установить ежедневное, еженедельное или пользовательское расписание.</p>
+
+        <h3>Как восстановить покупку?</h3>
+        <p>Перейдите в Настройки и нажмите "Удалить рекламу". Если вы уже приобрели, нажмите "Восстановить покупку", чтобы восстановить статус без рекламы.</p>
+
+        <h3>Мои данные резервируются?</h3>
+        <p>В настоящее время данные хранятся локально на вашем устройстве. Рекомендуем регулярно создавать резервные копии устройства для предотвращения потери данных.</p>
+
+        <h3>Как удалить задачу?</h3>
+        <p>Проведите по задаче влево, чтобы появилась опция удаления, или нажмите на задачу для редактирования и последующего удаления.</p>
+      </main>
+
+      <!-- Arabic Content -->
+      <main id="content-ar" class="content-section" dir="rtl" lang="ar">
+        <h2>الدعم</h2>
+
+        <div class="info-box">
+          <p>
+            هل تحتاج إلى مساعدة؟ نحن هنا لمساعدتك في أي أسئلة أو مشاكل.
+          </p>
+        </div>
+
+        <h3>اتصل بنا</h3>
+        <p>للأسئلة أو الملاحظات أو طلبات الدعم، أرسل لنا بريدًا إلكترونيًا:</p>
+        <p><a href="mailto:admin@wearablock.com">admin@wearablock.com</a></p>
+
+        <h3>الأسئلة الشائعة</h3>
+
+        <h3>كيف أضيف مهمة جديدة؟</h3>
+        <p>اضغط على زر + في أسفل الشاشة لإضافة مهمة جديدة. يمكنك تعيين عنوان ووقت وخيارات التكرار.</p>
+
+        <h3>كيف أقوم بإعداد المهام المتكررة؟</h3>
+        <p>عند إنشاء أو تعديل مهمة، اضغط على خيار التكرار لتعيين جداول يومية أو أسبوعية أو مخصصة.</p>
+
+        <h3>كيف أستعيد عملية الشراء؟</h3>
+        <p>انتقل إلى الإعدادات واضغط على "إزالة الإعلانات". إذا كنت قد اشتريت بالفعل، اضغط على "استعادة الشراء" لاستعادة حالة بدون إعلانات.</p>
+
+        <h3>هل يتم نسخ بياناتي احتياطياً؟</h3>
+        <p>حالياً، يتم تخزين البيانات محلياً على جهازك. نوصي بعمل نسخ احتياطية منتظمة لجهازك لمنع فقدان البيانات.</p>
+
+        <h3>كيف أحذف مهمة؟</h3>
+        <p>اسحب لليسار على مهمة لإظهار خيار الحذف، أو اضغط على المهمة للتعديل ثم الحذف.</p>
+      </main>
+
+      <!-- Thai Content -->
+      <main id="content-th" class="content-section">
+        <h2>ฝ่ายสนับสนุน</h2>
+
+        <div class="info-box">
+          <p>
+            ต้องการความช่วยเหลือหรือไม่? เราพร้อมช่วยเหลือคุณในทุกคำถามหรือปัญหา
+          </p>
+        </div>
+
+        <h3>ติดต่อเรา</h3>
+        <p>สำหรับคำถาม ข้อเสนอแนะ หรือคำขอความช่วยเหลือ กรุณาส่งอีเมลมาที่:</p>
+        <p><a href="mailto:admin@wearablock.com">admin@wearablock.com</a></p>
+
+        <h3>คำถามที่พบบ่อย</h3>
+
+        <h3>ฉันจะเพิ่มงานใหม่ได้อย่างไร?</h3>
+        <p>แตะปุ่ม + ที่ด้านล่างของหน้าจอเพื่อเพิ่มงานใหม่ คุณสามารถตั้งชื่อ เวลา และตัวเลือกการทำซ้ำ</p>
+
+        <h3>ฉันจะตั้งค่างานที่เกิดซ้ำได้อย่างไร?</h3>
+        <p>เมื่อสร้างหรือแก้ไขงาน แตะตัวเลือกการทำซ้ำเพื่อตั้งกำหนดการรายวัน รายสัปดาห์ หรือกำหนดเอง</p>
+
+        <h3>ฉันจะกู้คืนการซื้อได้อย่างไร?</h3>
+        <p>ไปที่การตั้งค่าและแตะ "ลบโฆษณา" หากคุณซื้อแล้ว แตะ "กู้คืนการซื้อ" เพื่อกู้คืนสถานะปลอดโฆษณา</p>
+
+        <h3>ข้อมูลของฉันถูกสำรองหรือไม่?</h3>
+        <p>ปัจจุบันข้อมูลถูกจัดเก็บในเครื่องของคุณ เราแนะนำให้สำรองข้อมูลอุปกรณ์เป็นประจำเพื่อป้องกันการสูญหายของข้อมูล</p>
+
+        <h3>ฉันจะลบงานได้อย่างไร?</h3>
+        <p>ปัดไปทางซ้ายบนงานเพื่อแสดงตัวเลือกลบ หรือแตะที่งานเพื่อแก้ไขแล้วลบ</p>
+      </main>
+
+      <!-- Indonesian Content -->
+      <main id="content-id" class="content-section">
+        <h2>Dukungan</h2>
+
+        <div class="info-box">
+          <p>
+            Butuh bantuan? Kami siap membantu Anda dengan pertanyaan atau masalah apa pun.
+          </p>
+        </div>
+
+        <h3>Hubungi Kami</h3>
+        <p>Untuk pertanyaan, masukan, atau permintaan dukungan, silakan email kami:</p>
+        <p><a href="mailto:admin@wearablock.com">admin@wearablock.com</a></p>
+
+        <h3>Pertanyaan yang Sering Diajukan</h3>
+
+        <h3>Bagaimana cara menambahkan tugas baru?</h3>
+        <p>Ketuk tombol + di bagian bawah layar untuk menambahkan tugas baru. Anda dapat mengatur judul, waktu, dan opsi pengulangan.</p>
+
+        <h3>Bagaimana cara mengatur tugas berulang?</h3>
+        <p>Saat membuat atau mengedit tugas, ketuk opsi pengulangan untuk mengatur jadwal harian, mingguan, atau kustom.</p>
+
+        <h3>Bagaimana cara memulihkan pembelian saya?</h3>
+        <p>Buka Pengaturan dan ketuk "Hapus Iklan". Jika Anda sudah membeli, ketuk "Pulihkan Pembelian" untuk memulihkan status bebas iklan.</p>
+
+        <h3>Apakah data saya dicadangkan?</h3>
+        <p>Saat ini, data disimpan secara lokal di perangkat Anda. Kami menyarankan untuk mencadangkan perangkat secara teratur untuk mencegah kehilangan data.</p>
+
+        <h3>Bagaimana cara menghapus tugas?</h3>
+        <p>Geser ke kiri pada tugas untuk menampilkan opsi hapus, atau ketuk tugas untuk mengedit lalu menghapusnya.</p>
+      </main>
+
+      <!-- Vietnamese Content -->
+      <main id="content-vi" class="content-section">
+        <h2>Hỗ trợ</h2>
+
+        <div class="info-box">
+          <p>
+            Cần trợ giúp? Chúng tôi sẵn sàng hỗ trợ bạn với mọi câu hỏi hoặc vấn đề.
+          </p>
+        </div>
+
+        <h3>Liên hệ</h3>
+        <p>Đối với câu hỏi, phản hồi hoặc yêu cầu hỗ trợ, vui lòng gửi email cho chúng tôi:</p>
+        <p><a href="mailto:admin@wearablock.com">admin@wearablock.com</a></p>
+
+        <h3>Câu hỏi thường gặp</h3>
+
+        <h3>Làm cách nào để thêm công việc mới?</h3>
+        <p>Nhấn nút + ở cuối màn hình để thêm công việc mới. Bạn có thể đặt tiêu đề, thời gian và tùy chọn lặp lại.</p>
+
+        <h3>Làm cách nào để thiết lập công việc lặp lại?</h3>
+        <p>Khi tạo hoặc chỉnh sửa công việc, nhấn vào tùy chọn lặp lại để đặt lịch hàng ngày, hàng tuần hoặc tùy chỉnh.</p>
+
+        <h3>Làm cách nào để khôi phục giao dịch mua?</h3>
+        <p>Đi đến Cài đặt và nhấn "Xóa quảng cáo". Nếu bạn đã mua, nhấn "Khôi phục giao dịch mua" để khôi phục trạng thái không quảng cáo.</p>
+
+        <h3>Dữ liệu của tôi có được sao lưu không?</h3>
+        <p>Hiện tại, dữ liệu được lưu trữ cục bộ trên thiết bị của bạn. Chúng tôi khuyên bạn nên sao lưu thiết bị thường xuyên để tránh mất dữ liệu.</p>
+
+        <h3>Làm cách nào để xóa công việc?</h3>
+        <p>Vuốt sang trái trên công việc để hiển thị tùy chọn xóa, hoặc nhấn vào công việc để chỉnh sửa rồi xóa.</p>
+      </main>
+
+      <footer>
+        <p>&copy; 2025 Wearablock Inc. All rights reserved.</p>
+        <p>
+          <a href="terms.html">Terms of Service</a> |
+          <a href="privacy.html">Privacy Policy</a>
+        </p>
+      </footer>
+    </div>
+
+    <script>
+      function toggleDropdown() {
+        document.getElementById("langDropdown").classList.toggle("show");
+      }
+
+      function switchLang(lang) {
+        // Update content visibility
+        document.querySelectorAll(".content-section").forEach((section) => {
+          section.classList.remove("active");
+        });
+        document.getElementById("content-" + lang).classList.add("active");
+
+        // Update button states
+        document.querySelectorAll(".lang-option").forEach((option) => {
+          option.classList.remove("active");
+          if (option.getAttribute("onclick").includes("'" + lang + "'")) {
+            option.classList.add("active");
+          }
+        });
+
+        // Update current language display
+        const langNames = { en: "English", ko: "한국어", ja: "日本語", zh: "简体中文", "zh-Hant": "繁體中文", es: "Español", "pt-BR": "Português", de: "Deutsch", fr: "Français", it: "Italiano", ru: "Русский", ar: "العربية", th: "ภาษาไทย", id: "Bahasa Indonesia", vi: "Tiếng Việt" };
+        document.getElementById("currentLang").textContent = langNames[lang];
+
+        // Update URL hash
+        window.location.hash = lang;
+
+        // Close dropdown
+        document.getElementById("langDropdown").classList.remove("show");
+      }
+
+      // Close dropdown when clicking outside
+      document.addEventListener("click", function (event) {
+        if (!event.target.closest(".lang-selector")) {
+          document.getElementById("langDropdown").classList.remove("show");
+        }
+      });
+
+      // Check URL hash on page load
+      window.addEventListener("DOMContentLoaded", function () {
+        const hash = window.location.hash.slice(1);
+        if (["en", "ko", "ja", "zh", "zh-Hant", "es", "pt-BR", "de", "fr", "it", "ru", "ar", "th", "id", "vi"].includes(hash)) {
+          switchLang(hash);
+        } else if (hash === "pt") {
+          switchLang("pt-BR");
+        }
+      });
+    </script>
+  </body>
+</html>
