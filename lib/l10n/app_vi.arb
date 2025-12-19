@@ -108,5 +108,8 @@
   },
 
   "emptyTodoTitle": "Không có công việc",
-  "emptyTodoSubtitle": "Thêm công việc mới để bắt đầu"
+  "emptyTodoSubtitle": "Thêm công việc mới để bắt đầu",
+
+  "alreadyPurchasedQuestion": "Đã mua rồi?",
+  "adsRemoved": "Đã xóa quảng cáo"
 }

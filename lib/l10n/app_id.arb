@@ -108,5 +108,8 @@
   },
 
   "emptyTodoTitle": "Tidak ada tugas",
-  "emptyTodoSubtitle": "Tambahkan tugas baru untuk memulai"
+  "emptyTodoSubtitle": "Tambahkan tugas baru untuk memulai",
+
+  "alreadyPurchasedQuestion": "Sudah membeli?",
+  "adsRemoved": "Iklan dihapus"
 }

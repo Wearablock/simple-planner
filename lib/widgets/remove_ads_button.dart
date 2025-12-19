@@ -37,18 +37,7 @@ class RemoveAdsButton extends StatelessWidget {
       builder: (context, _) {
         final purchaseService = PurchaseService();
 
-        // 광고 제거됨 → 구매 복원 표시
-        if (purchaseService.isAdFree) {
-          return ListTile(
-            leading: PhosphorIcon(
-              PhosphorIcons.arrowCounterClockwise(PhosphorIconsStyle.light),
-            ),
-            title: Text(l10n.restorePurchase),
-            subtitle: Text(l10n.restorePurchaseDesc),
-            onTap: () => _handleRestore(context),
-          );
-        }
-
+        // 처리 중
         if (purchaseService.status == AdPurchaseState.pending) {
           return ListTile(
             leading: const SizedBox(
@@ -60,21 +49,47 @@ class RemoveAdsButton extends StatelessWidget {
           );
         }
 
-        // 광고 제거 안됨 → 광고 제거 버튼 표시
-        final priceString = purchaseService.priceString;
-        return ListTile(
-          leading: PhosphorIcon(
-            PhosphorIcons.prohibit(PhosphorIconsStyle.light),
-          ),
-          title: Text(l10n.removeAds),
-          subtitle: priceString.isNotEmpty ? Text(priceString) : null,
-          trailing: FilledButton(
-            onPressed: () => _handlePurchase(context),
-            style: FilledButton.styleFrom(
-              backgroundColor: AppColors.warning,
+        // 광고 제거됨 → 완료 상태 표시
+        if (purchaseService.isAdFree) {
+          return ListTile(
+            leading: PhosphorIcon(
+              PhosphorIcons.checkCircle(PhosphorIconsStyle.fill),
+              color: AppColors.success,
             ),
-            child: Text(l10n.purchase),
-          ),
+            title: Text(l10n.removeAds),
+            subtitle: Text(l10n.adsRemoved),
+          );
+        }
+
+        // 광고 제거 안됨 → 구매 버튼 + 복원 링크 표시
+        final priceString = purchaseService.priceString;
+        return Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            ListTile(
+              leading: PhosphorIcon(
+                PhosphorIcons.prohibit(PhosphorIconsStyle.light),
+              ),
+              title: Text(l10n.removeAds),
+              subtitle: priceString.isNotEmpty ? Text(priceString) : null,
+              trailing: FilledButton(
+                onPressed: () => _handlePurchase(context),
+                style: FilledButton.styleFrom(
+                  backgroundColor: AppColors.warning,
+                ),
+                child: Text(l10n.purchase),
+              ),
+            ),
+            // 구매 복원 버튼 (Apple 심사 요구사항 - 명확하게 표시)
+            ListTile(
+              leading: PhosphorIcon(
+                PhosphorIcons.arrowCounterClockwise(PhosphorIconsStyle.light),
+              ),
+              title: Text(l10n.restorePurchase),
+              subtitle: Text(l10n.alreadyPurchasedQuestion),
+              onTap: () => _handleRestore(context),
+            ),
+          ],
         );
       },
     );

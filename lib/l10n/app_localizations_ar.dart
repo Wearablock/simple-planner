@@ -182,4 +182,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get emptyTodoSubtitle => 'أضف مهمة جديدة للبدء';
+
+  @override
+  String get alreadyPurchasedQuestion => 'هل اشتريت من قبل؟';
+
+  @override
+  String get adsRemoved => 'تمت إزالة الإعلانات';
 }

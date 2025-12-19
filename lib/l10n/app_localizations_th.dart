@@ -182,4 +182,10 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get emptyTodoSubtitle => 'เพิ่มงานใหม่เพื่อเริ่มต้น';
+
+  @override
+  String get alreadyPurchasedQuestion => 'ซื้อแล้วหรือยัง?';
+
+  @override
+  String get adsRemoved => 'ลบโฆษณาแล้ว';
 }

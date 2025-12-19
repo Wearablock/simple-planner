@@ -184,4 +184,10 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get emptyTodoSubtitle => 'Adicione uma nova tarefa para começar';
+
+  @override
+  String get alreadyPurchasedQuestion => 'Já comprou?';
+
+  @override
+  String get adsRemoved => 'Anúncios removidos';
 }

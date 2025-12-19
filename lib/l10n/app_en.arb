@@ -108,5 +108,8 @@
   },
 
   "emptyTodoTitle": "No tasks",
-  "emptyTodoSubtitle": "Add a new task to get started"
+  "emptyTodoSubtitle": "Add a new task to get started",
+
+  "alreadyPurchasedQuestion": "Already purchased?",
+  "adsRemoved": "Ads removed"
 }

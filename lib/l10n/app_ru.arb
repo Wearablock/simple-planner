@@ -108,5 +108,8 @@
   },
 
   "emptyTodoTitle": "Нет задач",
-  "emptyTodoSubtitle": "Добавьте новую задачу, чтобы начать"
+  "emptyTodoSubtitle": "Добавьте новую задачу, чтобы начать",
+
+  "alreadyPurchasedQuestion": "Уже купили?",
+  "adsRemoved": "Реклама удалена"
 }

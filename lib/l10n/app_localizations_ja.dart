@@ -181,4 +181,10 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get emptyTodoSubtitle => '新しいタスクを追加してみましょう';
+
+  @override
+  String get alreadyPurchasedQuestion => 'すでに購入済みですか？';
+
+  @override
+  String get adsRemoved => '広告が削除されました';
 }

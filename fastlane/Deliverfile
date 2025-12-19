@@ -1,0 +1,8 @@
+# ==============================================
+# Deliverfile - App Store Connect Settings
+# ==============================================
+
+force true
+submit_for_review false
+automatic_release false
+precheck_include_in_app_purchases false

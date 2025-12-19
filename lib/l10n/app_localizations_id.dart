@@ -184,4 +184,10 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get emptyTodoSubtitle => 'Tambahkan tugas baru untuk memulai';
+
+  @override
+  String get alreadyPurchasedQuestion => 'Sudah membeli?';
+
+  @override
+  String get adsRemoved => 'Iklan dihapus';
 }

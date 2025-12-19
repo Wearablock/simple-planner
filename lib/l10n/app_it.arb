@@ -108,5 +108,8 @@
   },
 
   "emptyTodoTitle": "Nessuna attività",
-  "emptyTodoSubtitle": "Aggiungi una nuova attività per iniziare"
+  "emptyTodoSubtitle": "Aggiungi una nuova attività per iniziare",
+
+  "alreadyPurchasedQuestion": "Già acquistato?",
+  "adsRemoved": "Pubblicità rimosse"
 }

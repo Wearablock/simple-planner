@@ -182,4 +182,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get emptyTodoSubtitle => 'Add a new task to get started';
+
+  @override
+  String get alreadyPurchasedQuestion => 'Already purchased?';
+
+  @override
+  String get adsRemoved => 'Ads removed';
 }

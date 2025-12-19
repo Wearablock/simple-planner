@@ -183,4 +183,10 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get emptyTodoSubtitle => 'Thêm công việc mới để bắt đầu';
+
+  @override
+  String get alreadyPurchasedQuestion => 'Đã mua rồi?';
+
+  @override
+  String get adsRemoved => 'Đã xóa quảng cáo';
 }

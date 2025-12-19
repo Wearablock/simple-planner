@@ -468,6 +468,70 @@ class AppDatabase extends _$AppDatabase {
       recurringId: Value(template.id),
     );
   }
+
+  // ============================================================
+  // Demo Data (스크린샷용 - 출시 후 삭제)
+  // ============================================================
+
+  /// 스크린샷용 더미 데이터를 생성합니다.
+  /// 출시 후 이 메서드와 호출 코드를 삭제하세요.
+  Future<void> seedDemoData() async {
+    // 이미 데이터가 있으면 스킵
+    final existingTodos = await select(todos).get();
+    if (existingTodos.isNotEmpty) return;
+
+    final today = DateTime.now();
+    final tomorrow = today.add(const Duration(days: 1));
+
+    // 오늘의 할 일들
+    final todayTasks = [
+      ('Morning workout', 6, true),
+      ('Check emails', 8, true),
+      ('Team standup meeting', 9, true),
+      ('Review project proposal', 10, false),
+      ('Lunch break', 12, false),
+      ('Client presentation', 14, false),
+      ('Code review', 15, false),
+      ('Plan tomorrow', 18, false),
+      ('Read a book', 21, false),
+    ];
+
+    // 내일의 할 일들
+    final tomorrowTasks = [
+      ('Gym session', 7, false),
+      ('Weekly planning', 9, false),
+      ('Doctor appointment', 11, false),
+      ('Grocery shopping', 17, false),
+    ];
+
+    // 오늘 할 일 삽입
+    for (var i = 0; i < todayTasks.length; i++) {
+      final (title, hour, isDone) = todayTasks[i];
+      await into(todos).insert(
+        TodosCompanion.insert(
+          title: title,
+          scheduledAt: today.dateOnly.add(Duration(hours: hour)),
+          priority: Value(i),
+          isDone: Value(isDone),
+        ),
+      );
+    }
+
+    // 내일 할 일 삽입
+    for (var i = 0; i < tomorrowTasks.length; i++) {
+      final (title, hour, isDone) = tomorrowTasks[i];
+      await into(todos).insert(
+        TodosCompanion.insert(
+          title: title,
+          scheduledAt: tomorrow.dateOnly.add(Duration(hours: hour)),
+          priority: Value(i),
+          isDone: Value(isDone),
+        ),
+      );
+    }
+
+    debugPrint('✅ Demo data seeded successfully!');
+  }
 }
 
 LazyDatabase _openConnection() {

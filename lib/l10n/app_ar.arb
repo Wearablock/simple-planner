@@ -108,5 +108,8 @@
   },
 
   "emptyTodoTitle": "لا توجد مهام",
-  "emptyTodoSubtitle": "أضف مهمة جديدة للبدء"
+  "emptyTodoSubtitle": "أضف مهمة جديدة للبدء",
+
+  "alreadyPurchasedQuestion": "هل اشتريت من قبل؟",
+  "adsRemoved": "تمت إزالة الإعلانات"
 }

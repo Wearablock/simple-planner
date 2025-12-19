@@ -108,5 +108,8 @@
   },
 
   "emptyTodoTitle": "ไม่มีงาน",
-  "emptyTodoSubtitle": "เพิ่มงานใหม่เพื่อเริ่มต้น"
+  "emptyTodoSubtitle": "เพิ่มงานใหม่เพื่อเริ่มต้น",
+
+  "alreadyPurchasedQuestion": "ซื้อแล้วหรือยัง?",
+  "adsRemoved": "ลบโฆษณาแล้ว"
 }

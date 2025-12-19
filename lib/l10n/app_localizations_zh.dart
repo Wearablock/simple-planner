@@ -181,6 +181,12 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get emptyTodoSubtitle => '添加新任务开始吧';
+
+  @override
+  String get alreadyPurchasedQuestion => '已经购买过了？';
+
+  @override
+  String get adsRemoved => '广告已移除';
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hant`).
@@ -360,4 +366,10 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get emptyTodoSubtitle => '新增任務開始吧';
+
+  @override
+  String get alreadyPurchasedQuestion => '已經購買過了？';
+
+  @override
+  String get adsRemoved => '廣告已移除';
 }

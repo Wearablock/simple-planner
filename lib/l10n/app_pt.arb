@@ -108,5 +108,8 @@
   },
 
   "emptyTodoTitle": "Nenhuma tarefa",
-  "emptyTodoSubtitle": "Adicione uma nova tarefa para começar"
+  "emptyTodoSubtitle": "Adicione uma nova tarefa para começar",
+
+  "alreadyPurchasedQuestion": "Já comprou?",
+  "adsRemoved": "Anúncios removidos"
 }

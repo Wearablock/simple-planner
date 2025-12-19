@@ -1,0 +1,128 @@
+# ==============================================
+# Fastfile - Store Upload Automation
+# ==============================================
+#
+# Usage:
+#   fastlane ios upload_screenshots
+#   fastlane ios upload_appstore
+#   fastlane ios upload_testflight
+#   fastlane android upload_screenshots
+#   fastlane android upload_production
+#
+# ==============================================
+
+# ============================================
+# iOS Platform
+# ============================================
+platform :ios do
+
+  desc "Upload screenshots to App Store Connect"
+  lane :upload_screenshots do
+    deliver(
+      skip_binary_upload: true,
+      skip_metadata: true,
+      skip_screenshots: false,
+      overwrite_screenshots: true,
+      screenshots_path: "store-automation/output/appstore",
+      precheck_include_in_app_purchases: false
+    )
+  end
+
+  desc "Upload metadata to App Store Connect"
+  lane :upload_metadata do
+    deliver(
+      skip_binary_upload: true,
+      skip_metadata: false,
+      skip_screenshots: true,
+      precheck_include_in_app_purchases: false
+    )
+  end
+
+  desc "Upload IPA to TestFlight"
+  lane :upload_testflight do
+    upload_to_testflight(
+      ipa: "build/ios/ipa/*.ipa",
+      skip_waiting_for_build_processing: true
+    )
+  end
+
+  desc "Upload IPA to App Store for Review"
+  lane :upload_appstore do
+    deliver(
+      ipa: "build/ios/ipa/*.ipa",
+      skip_metadata: true,
+      skip_screenshots: true,
+      submit_for_review: false,
+      precheck_include_in_app_purchases: false
+    )
+  end
+
+  desc "Full iOS deployment (IPA + Screenshots)"
+  lane :deploy do
+    upload_appstore
+    upload_screenshots
+  end
+
+end
+
+# ============================================
+# Android Platform
+# ============================================
+platform :android do
+
+  desc "Upload screenshots to Play Store"
+  lane :upload_screenshots do
+    upload_to_play_store(
+      skip_upload_apk: true,
+      skip_upload_aab: true,
+      skip_upload_metadata: true,
+      skip_upload_changelogs: true,
+      skip_upload_images: false,
+      skip_upload_screenshots: false,
+      metadata_path: "store-automation/output/playstore"
+    )
+  end
+
+  desc "Upload metadata to Play Store"
+  lane :upload_metadata do
+    upload_to_play_store(
+      skip_upload_apk: true,
+      skip_upload_aab: true,
+      skip_upload_metadata: false,
+      skip_upload_changelogs: false,
+      skip_upload_images: true,
+      skip_upload_screenshots: true
+    )
+  end
+
+  desc "Upload AAB to Internal Testing"
+  lane :upload_internal do
+    upload_to_play_store(
+      track: "internal",
+      aab: "build/app/outputs/bundle/release/app-release.aab",
+      skip_upload_metadata: true,
+      skip_upload_changelogs: true,
+      skip_upload_images: true,
+      skip_upload_screenshots: true
+    )
+  end
+
+  desc "Upload AAB to Production"
+  lane :upload_production do
+    upload_to_play_store(
+      track: "production",
+      aab: "build/app/outputs/bundle/release/app-release.aab",
+      skip_upload_metadata: true,
+      skip_upload_changelogs: true,
+      skip_upload_images: true,
+      skip_upload_screenshots: true
+    )
+  end
+
+  desc "Full Android deployment (AAB + Screenshots)"
+  lane :deploy do
+    upload_production
+    upload_screenshots
+  end
+
+end

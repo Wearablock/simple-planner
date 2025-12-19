@@ -14,8 +14,8 @@ class AdService extends ChangeNotifier {
   // 현재는 테스트 ID 사용 중
   String get bannerAdUnitId {
     return Platform.isAndroid
-        ? 'ca-app-pub-3940256099942544/6300978111' // 테스트 ID
-        : 'ca-app-pub-3940256099942544/2934735716'; // 테스트 ID
+        ? 'ca-app-pub-8841058711613546/4088024019' // Android 프로덕션 ID
+        : 'ca-app-pub-8841058711613546/6967448154'; // iOS 프로덕션 ID
   }
 
   BannerAd? _bannerAd;
@@ -36,10 +36,14 @@ class AdService extends ChangeNotifier {
   Future<void> initialize() async {
     if (_isInitialized) return;
 
-    await MobileAds.instance.initialize();
-
-    _isInitialized = true;
-    debugPrint('AdService 초기화 완료');
+    try {
+      await MobileAds.instance.initialize();
+      _isInitialized = true;
+      debugPrint('AdService 초기화 완료');
+    } catch (e) {
+      debugPrint('AdService 초기화 실패: $e');
+      _isInitialized = false;
+    }
   }
 
   Future<void> loadBannerAd(double screenWidth) async {

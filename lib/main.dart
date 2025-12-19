@@ -23,6 +23,9 @@ void main() async {
 
   database = AppDatabase();
 
+  // 스크린샷용 더미 데이터 (프로덕션에서는 비활성화)
+  // await database.seedDemoData();
+
   await PurchaseService().initialize();
 
   await AdService().initialize();
@@ -36,6 +39,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       localizationsDelegates: const [
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
@@ -70,12 +74,16 @@ class MyApp extends StatelessWidget {
         }
         // 번체 중국어 처리 (zh-TW, zh-HK 등은 zh_Hant로 매핑)
         if (locale?.languageCode == 'zh') {
-          final isTraditional = locale?.scriptCode == 'Hant' ||
+          final isTraditional =
+              locale?.scriptCode == 'Hant' ||
               locale?.countryCode == 'TW' ||
               locale?.countryCode == 'HK' ||
               locale?.countryCode == 'MO';
           if (isTraditional) {
-            return const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant');
+            return const Locale.fromSubtags(
+              languageCode: 'zh',
+              scriptCode: 'Hant',
+            );
           }
           return const Locale('zh');
         }

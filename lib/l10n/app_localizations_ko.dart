@@ -181,4 +181,10 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get emptyTodoSubtitle => '새로운 할 일을 추가해보세요';
+
+  @override
+  String get alreadyPurchasedQuestion => '이미 구매하셨나요?';
+
+  @override
+  String get adsRemoved => '광고가 제거되었습니다';
 }

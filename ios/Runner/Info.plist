@@ -62,7 +62,7 @@
 		<!-- ========== 👇 여기부터 새로 추가 ========== -->
 		<!-- 1️⃣ AdMob 앱 ID (필수) -->
 		<key>GADApplicationIdentifier</key>
-		<string>ca-app-pub-3940256099942544~1458002511</string>
+		<string>ca-app-pub-8841058711613546~3578867483</string>
 		<!-- 2️⃣ 광고 네트워크 허용 목록 (필수) -->
 		<key>SKAdNetworkItems</key>
 		<array>

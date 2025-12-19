@@ -69,5 +69,8 @@
   "dateWithWeekday": "{month}月{day}日 {weekday}",
 
   "emptyTodoTitle": "没有任务",
-  "emptyTodoSubtitle": "添加新任务开始吧"
+  "emptyTodoSubtitle": "添加新任务开始吧",
+
+  "alreadyPurchasedQuestion": "已经购买过了？",
+  "adsRemoved": "广告已移除"
 }

@@ -184,4 +184,10 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get emptyTodoSubtitle => 'Добавьте новую задачу, чтобы начать';
+
+  @override
+  String get alreadyPurchasedQuestion => 'Уже купили?';
+
+  @override
+  String get adsRemoved => 'Реклама удалена';
 }

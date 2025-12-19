@@ -1,4 +1,8 @@
-guides
+# Documentation/Guides (local only)
+guides/
+
+# Claude Code
+.claude/
 
 # Miscellaneous
 *.class
@@ -39,9 +43,7 @@ GoogleService-Info.plist
 .env
 .env.*
 
-# The .vscode folder contains launch configuration and tasks you configure in
-# VS Code which you may wish to be included in version control, so this line
-# is commented out by default.
+# VS Code
 #.vscode/
 
 # Flutter/Dart/Pub related
@@ -60,7 +62,41 @@ app.*.symbols
 # Obfuscation related
 app.*.map.json
 
-# Android Studio will place build artifacts here
+# Android Studio build artifacts
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# ==============================================
+# Fastlane
+# ==============================================
+# Sensitive files (NEVER commit)
+**/fastlane/play-store-key.json
+**/fastlane/report.xml
+**/fastlane/Preview.html
+**/fastlane/screenshots/
+**/fastlane/test_output/
+**/fastlane/README.md
+*.cer
+*.mobileprovision
+*.p12
+AuthKey_*.p8
+
+# Old fastlane folders (now using root fastlane/)
+ios/fastlane/
+android/fastlane/
+
+# ==============================================
+# Store Automation (separate git repo)
+# ==============================================
+store-automation/
+
+# ==============================================
+# Screenshots (old folder, replaced by store-automation)
+# ==============================================
+screenshots/
+
+# ==============================================
+# Store Listing assets
+# ==============================================
+store_listing/

@@ -108,5 +108,8 @@
   },
 
   "emptyTodoTitle": "Aucune tâche",
-  "emptyTodoSubtitle": "Ajoutez une nouvelle tâche pour commencer"
+  "emptyTodoSubtitle": "Ajoutez une nouvelle tâche pour commencer",
+
+  "alreadyPurchasedQuestion": "Déjà acheté ?",
+  "adsRemoved": "Publicités supprimées"
 }

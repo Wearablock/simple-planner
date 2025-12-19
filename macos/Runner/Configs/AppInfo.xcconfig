@@ -8,7 +8,7 @@
 PRODUCT_NAME = simple_planner
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.example.simplePlanner
+PRODUCT_BUNDLE_IDENTIFIER = com.wearablock.simpleplanner
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2025 com.example. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2025 wearablock. All rights reserved.

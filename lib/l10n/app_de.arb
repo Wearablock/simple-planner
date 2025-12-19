@@ -108,5 +108,8 @@
   },
 
   "emptyTodoTitle": "Keine Aufgaben",
-  "emptyTodoSubtitle": "Fügen Sie eine neue Aufgabe hinzu, um zu beginnen"
+  "emptyTodoSubtitle": "Fügen Sie eine neue Aufgabe hinzu, um zu beginnen",
+
+  "alreadyPurchasedQuestion": "Bereits gekauft?",
+  "adsRemoved": "Werbung entfernt"
 }

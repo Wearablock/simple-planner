@@ -446,6 +446,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Add a new task to get started'**
   String get emptyTodoSubtitle;
+
+  /// No description provided for @alreadyPurchasedQuestion.
+  ///
+  /// In en, this message translates to:
+  /// **'Already purchased?'**
+  String get alreadyPurchasedQuestion;
+
+  /// No description provided for @adsRemoved.
+  ///
+  /// In en, this message translates to:
+  /// **'Ads removed'**
+  String get adsRemoved;
 }
 
 class _AppLocalizationsDelegate
