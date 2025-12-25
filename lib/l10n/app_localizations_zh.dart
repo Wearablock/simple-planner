@@ -87,6 +87,20 @@ class AppLocalizationsZh extends AppLocalizations {
   String get deleteAllRecurring => '同时删除所有未来的重复任务';
 
   @override
+  String get timeChangeTitle => '更改时间';
+
+  @override
+  String timeChangeMessage(String title, String newHour) {
+    return '将「$title」更改为$newHour:00';
+  }
+
+  @override
+  String get changeAllRecurring => '同时更改所有未来的重复任务';
+
+  @override
+  String get change => '更改';
+
+  @override
   String noTodosForDate(int month, int day) {
     return '$month月$day日没有任务';
   }
@@ -270,6 +284,20 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get deleteAllRecurring => '同時刪除所有未來的重複任務';
+
+  @override
+  String get timeChangeTitle => '更改時間';
+
+  @override
+  String timeChangeMessage(String title, String newHour) {
+    return '將「$title」更改為$newHour:00';
+  }
+
+  @override
+  String get changeAllRecurring => '同時更改所有未來的重複任務';
+
+  @override
+  String get change => '更改';
 
   @override
   String noTodosForDate(int month, int day) {

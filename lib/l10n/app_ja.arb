@@ -33,6 +33,11 @@
   "deleteConfirmMessage": "「{title}」を削除しますか？",
   "deleteAllRecurring": "今後の繰り返しタスクもすべて削除",
 
+  "timeChangeTitle": "時間の変更",
+  "timeChangeMessage": "「{title}」を{newHour}:00に変更します",
+  "changeAllRecurring": "今後の繰り返しタスクもすべて変更",
+  "change": "変更",
+
   "noTodosForDate": "{month}月{day}日のタスクはありません",
 
   "countText": "{count}件",

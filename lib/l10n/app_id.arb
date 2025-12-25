@@ -54,6 +54,11 @@
   },
   "deleteAllRecurring": "Hapus juga semua tugas berulang di masa depan",
 
+  "timeChangeTitle": "Ubah Waktu",
+  "timeChangeMessage": "Ubah '{title}' ke {newHour}:00",
+  "changeAllRecurring": "Ubah juga semua tugas berulang di masa depan",
+  "change": "Ubah",
+
   "noTodosForDate": "Tidak ada tugas untuk {day}/{month}",
   "@noTodosForDate": {
     "placeholders": {

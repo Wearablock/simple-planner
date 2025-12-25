@@ -88,6 +88,21 @@ class AppLocalizationsDe extends AppLocalizations {
       'Auch alle zukünftigen wiederkehrenden Aufgaben löschen';
 
   @override
+  String get timeChangeTitle => 'Zeit ändern';
+
+  @override
+  String timeChangeMessage(String title, String newHour) {
+    return '\'$title\' auf $newHour:00 ändern';
+  }
+
+  @override
+  String get changeAllRecurring =>
+      'Auch alle zukünftigen wiederkehrenden Aufgaben ändern';
+
+  @override
+  String get change => 'Ändern';
+
+  @override
   String noTodosForDate(int month, int day) {
     return 'Keine Aufgaben für $day.$month.';
   }

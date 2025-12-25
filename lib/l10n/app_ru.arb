@@ -54,6 +54,11 @@
   },
   "deleteAllRecurring": "Удалить также все будущие повторяющиеся задачи",
 
+  "timeChangeTitle": "Изменить время",
+  "timeChangeMessage": "Изменить '{title}' на {newHour}:00",
+  "changeAllRecurring": "Изменить также все будущие повторяющиеся задачи",
+  "change": "Изменить",
+
   "noTodosForDate": "Нет задач на {day}.{month}",
   "@noTodosForDate": {
     "placeholders": {

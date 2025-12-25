@@ -88,6 +88,21 @@ class AppLocalizationsEs extends AppLocalizations {
       'Eliminar también todas las tareas recurrentes futuras';
 
   @override
+  String get timeChangeTitle => 'Cambiar hora';
+
+  @override
+  String timeChangeMessage(String title, String newHour) {
+    return 'Cambiar \'$title\' a $newHour:00';
+  }
+
+  @override
+  String get changeAllRecurring =>
+      'Cambiar también todas las tareas recurrentes futuras';
+
+  @override
+  String get change => 'Cambiar';
+
+  @override
   String noTodosForDate(int month, int day) {
     return 'No hay tareas para $day/$month';
   }

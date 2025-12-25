@@ -54,6 +54,11 @@
   },
   "deleteAllRecurring": "Xóa tất cả công việc lặp lại trong tương lai",
 
+  "timeChangeTitle": "Thay đổi thời gian",
+  "timeChangeMessage": "Thay đổi '{title}' thành {newHour}:00",
+  "changeAllRecurring": "Thay đổi tất cả công việc lặp lại trong tương lai",
+  "change": "Thay đổi",
+
   "noTodosForDate": "Không có công việc cho ngày {day}/{month}",
   "@noTodosForDate": {
     "placeholders": {

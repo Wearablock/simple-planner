@@ -51,6 +51,7 @@ dependencies:
   google_fonts: ^6.3.3
   phosphor_flutter: ^2.1.0
   upgrader: ^12.3.0
+  drag_and_drop_lists: ^0.4.2
 
 dev_dependencies:
   flutter_test:

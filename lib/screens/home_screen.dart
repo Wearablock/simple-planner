@@ -11,6 +11,7 @@ import 'package:simple_planner/widgets/calendar_dialog.dart';
 import 'package:simple_planner/widgets/date_app_bar.dart';
 import 'package:simple_planner/widgets/delete_dialog.dart';
 import 'package:simple_planner/widgets/hour_picker_dialog.dart';
+import 'package:simple_planner/widgets/time_change_dialog.dart';
 import 'package:simple_planner/widgets/todo_input_section.dart';
 import 'package:simple_planner/widgets/todo_stream_view.dart';
 
@@ -30,8 +31,8 @@ class _HomeScreenState extends State<HomeScreen> {
   // 입력 관련 상태 (그룹화)
   TodoInputState _inputState = TodoInputState.initial();
 
-  // 재정렬 관련 상태 (그룹화)
-  ReorderState _reorderState = ReorderState.initial;
+  // 현재 투두 목록 (재정렬 시 사용)
+  List<Todo> _currentTodos = [];
 
   @override
   void initState() {
@@ -56,7 +57,9 @@ class _HomeScreenState extends State<HomeScreen> {
     }
 
     if (result.isFailure) {
-      _showErrorSnackBar(AppLocalizations.of(context).errorAddTodo);
+      if (mounted) {
+        _showErrorSnackBar(AppLocalizations.of(context).errorAddTodo);
+      }
       return;
     }
 
@@ -147,7 +150,6 @@ class _HomeScreenState extends State<HomeScreen> {
       setState(() {
         _selectedDate = selectedDate;
         _inputState = _inputState.resetForDateChange();
-        _reorderState = _reorderState.reset();
       });
       await database.ensureRecurringTodosExist(selectedDate, selectedDate);
     }
@@ -175,7 +177,7 @@ class _HomeScreenState extends State<HomeScreen> {
         result = await database.deleteTodo(todo.id);
       }
 
-      if (result.isFailure) {
+      if (result.isFailure && mounted) {
         _showErrorSnackBar(AppLocalizations.of(context).errorDeleteTodo);
       }
     }
@@ -183,44 +185,129 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Future<void> _onTodoToggleComplete(Todo todo) async {
     final result = await database.toggleTodoCompletion(todo);
-    if (result.isFailure) {
+    if (result.isFailure && mounted) {
       _showErrorSnackBar(AppLocalizations.of(context).errorToggleTodo);
     }
   }
 
-  Future<void> _onTodoReorder(
-    int hour,
-    List<Todo> todosInHour,
-    int oldIndex,
-    int newIndex,
+  /// 시간대별로 투두를 그룹화
+  Map<int, List<Todo>> _groupTodosByHour(List<Todo> todos) {
+    final grouped = <int, List<Todo>>{};
+    for (final todo in todos) {
+      final hour = todo.scheduledAt.hour;
+      grouped.putIfAbsent(hour, () => []).add(todo);
+    }
+    return grouped;
+  }
+
+  /// 드래그 앤 드롭으로 아이템 재정렬/이동
+  Future<void> _onItemReorder(
+    int oldItemIndex,
+    int oldListIndex,
+    int newItemIndex,
+    int newListIndex,
   ) async {
-    if (oldIndex == newIndex) return;
+    final todosByHour = _groupTodosByHour(_currentTodos);
+    final oldHour = oldListIndex;
+    final newHour = newListIndex;
 
-    final reorderedTodos = ReorderHelper.reorderInHour(
-      hour: hour,
-      hourTodos: todosInHour,
-      oldIndex: oldIndex,
-      newIndex: newIndex,
-      currentOptimisticTodos: _reorderState.optimisticTodos,
-    );
+    final todosInOldHour = todosByHour[oldHour] ?? [];
+    if (oldItemIndex >= todosInOldHour.length) return;
 
-    setState(() => _reorderState = _reorderState.startReorder(reorderedTodos));
+    final movedTodo = todosInOldHour[oldItemIndex];
 
-    final reorderedIds = todosInHour.toList()
-      ..removeAt(oldIndex)
-      ..insert(newIndex, todosInHour[oldIndex]);
+    Result<void> result;
 
-    final result = await database.reorderTodosInHour(
-      reorderedIds.map((todo) => todo.id).toList(),
-    );
+    if (oldHour == newHour) {
+      // 같은 시간대 내 순서 변경
+      if (oldItemIndex == newItemIndex) return;
 
-    if (mounted) {
-      setState(() => _reorderState = _reorderState.finishReorder());
+      final reorderedTodos = List<Todo>.from(todosInOldHour);
+      reorderedTodos.removeAt(oldItemIndex);
+      reorderedTodos.insert(newItemIndex, movedTodo);
 
-      if (result.isFailure) {
-        _showErrorSnackBar(AppLocalizations.of(context).errorReorderTodo);
+      result = await database.reorderTodosInHour(
+        reorderedTodos.map((t) => t.id).toList(),
+      );
+    } else {
+      // 다른 시간대로 이동
+      final isRecurring = movedTodo.recurringId != null;
+
+      // 반복 할일인 경우 다이얼로그 표시
+      if (isRecurring) {
+        final dialogResult = await TimeChangeDialog.show(
+          context: context,
+          title: movedTodo.title,
+          newHour: newHour,
+          isRecurring: true,
+        );
+
+        if (!dialogResult.confirmed) return;
+
+        if (dialogResult.changeAllRecurring) {
+          // 이후 반복 일정 전체 시간 변경
+          result = await database.updateRecurringTodoHour(
+            movedTodo.recurringId!,
+            newHour,
+            movedTodo.scheduledAt,
+          );
+        } else {
+          // 현재 투두만 시간 변경
+          result = await _moveSingleTodoToHour(
+            movedTodo,
+            newHour,
+            newItemIndex,
+            todosByHour[newHour] ?? [],
+          );
+        }
+      } else {
+        // 일반 할일은 바로 이동
+        result = await _moveSingleTodoToHour(
+          movedTodo,
+          newHour,
+          newItemIndex,
+          todosByHour[newHour] ?? [],
+        );
       }
     }
+
+    if (result.isFailure && mounted) {
+      _showErrorSnackBar(AppLocalizations.of(context).errorReorderTodo);
+    }
+  }
+
+  /// 단일 투두를 새 시간대로 이동
+  Future<Result<void>> _moveSingleTodoToHour(
+    Todo movedTodo,
+    int newHour,
+    int newItemIndex,
+    List<Todo> todosInNewHour,
+  ) async {
+    final newPriority = newItemIndex;
+
+    // 투두를 새 시간대로 이동
+    var result = await database.moveTodoToHour(
+      movedTodo.id,
+      newHour,
+      newPriority,
+    );
+
+    // 새 시간대의 기존 투두들 우선순위 재조정
+    if (result.isSuccess && todosInNewHour.isNotEmpty) {
+      final updatedNewHourTodos = <int>[];
+      for (int i = 0; i < todosInNewHour.length; i++) {
+        if (i == newItemIndex) {
+          updatedNewHourTodos.add(movedTodo.id);
+        }
+        updatedNewHourTodos.add(todosInNewHour[i].id);
+      }
+      if (newItemIndex >= todosInNewHour.length) {
+        updatedNewHourTodos.add(movedTodo.id);
+      }
+      await database.reorderTodosInHour(updatedNewHourTodos);
+    }
+
+    return result;
   }
 
   void _onRecurringToggle() {
@@ -233,6 +320,7 @@ class _HomeScreenState extends State<HomeScreen> {
       stream: database.streamTodosByDate(_selectedDate),
       builder: (context, snapshot) {
         final todos = snapshot.data ?? [];
+        _currentTodos = todos;
         final totalCount = todos.length;
         final completedCount = todos.where((t) => t.isDone).length;
 
@@ -262,13 +350,9 @@ class _HomeScreenState extends State<HomeScreen> {
               Expanded(
                 child: TodoStreamView(
                   selectedDate: _selectedDate,
-                  reorderState: _reorderState,
-                  onReorderStateChanged: (state) {
-                    if (mounted) setState(() => _reorderState = state);
-                  },
                   onTodoDelete: _onTodoDelete,
                   onTodoToggle: _onTodoToggleComplete,
-                  onTodoReorder: _onTodoReorder,
+                  onItemReorder: _onItemReorder,
                 ),
               ),
             ],

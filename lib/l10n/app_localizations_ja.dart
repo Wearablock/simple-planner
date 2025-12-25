@@ -87,6 +87,20 @@ class AppLocalizationsJa extends AppLocalizations {
   String get deleteAllRecurring => '今後の繰り返しタスクもすべて削除';
 
   @override
+  String get timeChangeTitle => '時間の変更';
+
+  @override
+  String timeChangeMessage(String title, String newHour) {
+    return '「$title」を$newHour:00に変更します';
+  }
+
+  @override
+  String get changeAllRecurring => '今後の繰り返しタスクもすべて変更';
+
+  @override
+  String get change => '変更';
+
+  @override
   String noTodosForDate(int month, int day) {
     return '$month月$day日のタスクはありません';
   }

@@ -87,6 +87,20 @@ class AppLocalizationsKo extends AppLocalizations {
   String get deleteAllRecurring => '이후 반복 일정도 모두 삭제';
 
   @override
+  String get timeChangeTitle => '시간 변경';
+
+  @override
+  String timeChangeMessage(String title, String newHour) {
+    return '\'$title\'의 시간을 $newHour:00으로 변경합니다';
+  }
+
+  @override
+  String get changeAllRecurring => '이후 반복 일정도 모두 변경';
+
+  @override
+  String get change => '변경';
+
+  @override
   String noTodosForDate(int month, int day) {
     return '$month월 $day일에 할 일이 없습니다';
   }

@@ -33,6 +33,11 @@
   "deleteConfirmMessage": "'{title}'을(를) 삭제하시겠습니까?",
   "deleteAllRecurring": "이후 반복 일정도 모두 삭제",
 
+  "timeChangeTitle": "시간 변경",
+  "timeChangeMessage": "'{title}'의 시간을 {newHour}:00으로 변경합니다",
+  "changeAllRecurring": "이후 반복 일정도 모두 변경",
+  "change": "변경",
+
   "noTodosForDate": "{month}월 {day}일에 할 일이 없습니다",
 
   "countText": "{count}개",

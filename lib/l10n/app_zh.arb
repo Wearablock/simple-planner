@@ -33,6 +33,11 @@
   "deleteConfirmMessage": "删除「{title}」？",
   "deleteAllRecurring": "同时删除所有未来的重复任务",
 
+  "timeChangeTitle": "更改时间",
+  "timeChangeMessage": "将「{title}」更改为{newHour}:00",
+  "changeAllRecurring": "同时更改所有未来的重复任务",
+  "change": "更改",
+
   "noTodosForDate": "{month}月{day}日没有任务",
 
   "countText": "{count}个",

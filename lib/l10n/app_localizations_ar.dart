@@ -87,6 +87,21 @@ class AppLocalizationsAr extends AppLocalizations {
   String get deleteAllRecurring => 'حذف جميع المهام المتكررة المستقبلية أيضاً';
 
   @override
+  String get timeChangeTitle => 'تغيير الوقت';
+
+  @override
+  String timeChangeMessage(String title, String newHour) {
+    return 'تغيير \'$title\' إلى $newHour:00';
+  }
+
+  @override
+  String get changeAllRecurring =>
+      'تغيير جميع المهام المتكررة المستقبلية أيضاً';
+
+  @override
+  String get change => 'تغيير';
+
+  @override
   String noTodosForDate(int month, int day) {
     return 'لا توجد مهام ليوم $day/$month';
   }

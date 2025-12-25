@@ -54,6 +54,11 @@
   },
   "deleteAllRecurring": "حذف جميع المهام المتكررة المستقبلية أيضاً",
 
+  "timeChangeTitle": "تغيير الوقت",
+  "timeChangeMessage": "تغيير '{title}' إلى {newHour}:00",
+  "changeAllRecurring": "تغيير جميع المهام المتكررة المستقبلية أيضاً",
+  "change": "تغيير",
+
   "noTodosForDate": "لا توجد مهام ليوم {day}/{month}",
   "@noTodosForDate": {
     "placeholders": {

@@ -54,6 +54,11 @@
   },
   "deleteAllRecurring": "Supprimer également toutes les tâches récurrentes futures",
 
+  "timeChangeTitle": "Modifier l'heure",
+  "timeChangeMessage": "Modifier '{title}' à {newHour}:00",
+  "changeAllRecurring": "Modifier également toutes les tâches récurrentes futures",
+  "change": "Modifier",
+
   "noTodosForDate": "Aucune tâche pour le {day}/{month}",
   "@noTodosForDate": {
     "placeholders": {

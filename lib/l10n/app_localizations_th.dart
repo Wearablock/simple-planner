@@ -87,6 +87,20 @@ class AppLocalizationsTh extends AppLocalizations {
   String get deleteAllRecurring => 'ลบงานที่ทำซ้ำในอนาคตทั้งหมดด้วย';
 
   @override
+  String get timeChangeTitle => 'เปลี่ยนเวลา';
+
+  @override
+  String timeChangeMessage(String title, String newHour) {
+    return 'เปลี่ยน \'$title\' เป็น $newHour:00';
+  }
+
+  @override
+  String get changeAllRecurring => 'เปลี่ยนงานที่ทำซ้ำในอนาคตทั้งหมดด้วย';
+
+  @override
+  String get change => 'เปลี่ยน';
+
+  @override
   String noTodosForDate(int month, int day) {
     return 'ไม่มีงานสำหรับวันที่ $day/$month';
   }

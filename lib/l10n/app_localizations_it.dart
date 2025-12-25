@@ -88,6 +88,21 @@ class AppLocalizationsIt extends AppLocalizations {
       'Elimina anche tutte le attività ricorrenti future';
 
   @override
+  String get timeChangeTitle => 'Cambia orario';
+
+  @override
+  String timeChangeMessage(String title, String newHour) {
+    return 'Cambiare \'$title\' a $newHour:00';
+  }
+
+  @override
+  String get changeAllRecurring =>
+      'Cambia anche tutte le attività ricorrenti future';
+
+  @override
+  String get change => 'Cambia';
+
+  @override
   String noTodosForDate(int month, int day) {
     return 'Nessuna attività per il $day/$month';
   }

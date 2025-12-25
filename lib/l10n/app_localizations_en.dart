@@ -87,6 +87,20 @@ class AppLocalizationsEn extends AppLocalizations {
   String get deleteAllRecurring => 'Also delete all future recurring tasks';
 
   @override
+  String get timeChangeTitle => 'Change Time';
+
+  @override
+  String timeChangeMessage(String title, String newHour) {
+    return 'Change \'$title\' to $newHour:00';
+  }
+
+  @override
+  String get changeAllRecurring => 'Also change all future recurring tasks';
+
+  @override
+  String get change => 'Change';
+
+  @override
   String noTodosForDate(int month, int day) {
     return 'No tasks for $month/$day';
   }

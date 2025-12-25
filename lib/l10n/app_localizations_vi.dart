@@ -88,6 +88,21 @@ class AppLocalizationsVi extends AppLocalizations {
       'Xóa tất cả công việc lặp lại trong tương lai';
 
   @override
+  String get timeChangeTitle => 'Thay đổi thời gian';
+
+  @override
+  String timeChangeMessage(String title, String newHour) {
+    return 'Thay đổi \'$title\' thành $newHour:00';
+  }
+
+  @override
+  String get changeAllRecurring =>
+      'Thay đổi tất cả công việc lặp lại trong tương lai';
+
+  @override
+  String get change => 'Thay đổi';
+
+  @override
   String noTodosForDate(int month, int day) {
     return 'Không có công việc cho ngày $day/$month';
   }

@@ -88,6 +88,21 @@ class AppLocalizationsId extends AppLocalizations {
       'Hapus juga semua tugas berulang di masa depan';
 
   @override
+  String get timeChangeTitle => 'Ubah Waktu';
+
+  @override
+  String timeChangeMessage(String title, String newHour) {
+    return 'Ubah \'$title\' ke $newHour:00';
+  }
+
+  @override
+  String get changeAllRecurring =>
+      'Ubah juga semua tugas berulang di masa depan';
+
+  @override
+  String get change => 'Ubah';
+
+  @override
   String noTodosForDate(int month, int day) {
     return 'Tidak ada tugas untuk $day/$month';
   }

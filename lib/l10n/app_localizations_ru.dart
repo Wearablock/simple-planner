@@ -88,6 +88,21 @@ class AppLocalizationsRu extends AppLocalizations {
       'Удалить также все будущие повторяющиеся задачи';
 
   @override
+  String get timeChangeTitle => 'Изменить время';
+
+  @override
+  String timeChangeMessage(String title, String newHour) {
+    return 'Изменить \'$title\' на $newHour:00';
+  }
+
+  @override
+  String get changeAllRecurring =>
+      'Изменить также все будущие повторяющиеся задачи';
+
+  @override
+  String get change => 'Изменить';
+
+  @override
   String noTodosForDate(int month, int day) {
     return 'Нет задач на $day.$month';
   }

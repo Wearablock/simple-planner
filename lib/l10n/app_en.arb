@@ -54,6 +54,17 @@
   },
   "deleteAllRecurring": "Also delete all future recurring tasks",
 
+  "timeChangeTitle": "Change Time",
+  "timeChangeMessage": "Change '{title}' to {newHour}:00",
+  "@timeChangeMessage": {
+    "placeholders": {
+      "title": {"type": "String"},
+      "newHour": {"type": "String"}
+    }
+  },
+  "changeAllRecurring": "Also change all future recurring tasks",
+  "change": "Change",
+
   "noTodosForDate": "No tasks for {month}/{day}",
   "@noTodosForDate": {
     "placeholders": {

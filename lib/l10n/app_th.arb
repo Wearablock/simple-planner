@@ -54,6 +54,11 @@
   },
   "deleteAllRecurring": "ลบงานที่ทำซ้ำในอนาคตทั้งหมดด้วย",
 
+  "timeChangeTitle": "เปลี่ยนเวลา",
+  "timeChangeMessage": "เปลี่ยน '{title}' เป็น {newHour}:00",
+  "changeAllRecurring": "เปลี่ยนงานที่ทำซ้ำในอนาคตทั้งหมดด้วย",
+  "change": "เปลี่ยน",
+
   "noTodosForDate": "ไม่มีงานสำหรับวันที่ {day}/{month}",
   "@noTodosForDate": {
     "placeholders": {

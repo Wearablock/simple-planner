@@ -12,20 +12,19 @@ part 'database.g.dart';
 
 /// Todo 중복 체크를 위한 키 클래스
 ///
-/// 문자열 연결 대신 해시 기반 비교를 사용하여 성능 향상
+/// 날짜 단위로 중복 체크 (시간 제외)
+/// 시간을 포함하면 사용자가 시간을 변경한 후 중복 생성 문제가 발생
 class TodoKey {
   final int recurringId;
   final int year;
   final int month;
   final int day;
-  final int hour;
 
   const TodoKey({
     required this.recurringId,
     required this.year,
     required this.month,
     required this.day,
-    required this.hour,
   });
 
   factory TodoKey.fromTodo(Todo todo) {
@@ -35,7 +34,6 @@ class TodoKey {
       year: date.year,
       month: date.month,
       day: date.day,
-      hour: date.hour,
     );
   }
 
@@ -45,7 +43,6 @@ class TodoKey {
       year: date.year,
       month: date.month,
       day: date.day,
-      hour: template.hour,
     );
   }
 
@@ -56,11 +53,10 @@ class TodoKey {
           recurringId == other.recurringId &&
           year == other.year &&
           month == other.month &&
-          day == other.day &&
-          hour == other.hour;
+          day == other.day;
 
   @override
-  int get hashCode => Object.hash(recurringId, year, month, day, hour);
+  int get hashCode => Object.hash(recurringId, year, month, day);
 }
 
 class RecurringTodos extends Table {
@@ -287,6 +283,43 @@ class AppDatabase extends _$AppDatabase {
     }
   }
 
+  /// 할 일을 다른 시간대로 이동합니다.
+  ///
+  /// [todoId] 이동할 할 일 ID
+  /// [newHour] 새 시간대 (0-23)
+  /// [newPriority] 새 시간대에서의 우선순위
+  Future<Result<void>> moveTodoToHour(
+    int todoId,
+    int newHour,
+    int newPriority,
+  ) async {
+    try {
+      final todo = await (select(todos)..where((row) => row.id.equals(todoId)))
+          .getSingleOrNull();
+
+      if (todo == null) return successVoid;
+
+      final newScheduledAt = DateTime(
+        todo.scheduledAt.year,
+        todo.scheduledAt.month,
+        todo.scheduledAt.day,
+        newHour,
+      );
+
+      await (update(todos)..where((row) => row.id.equals(todoId))).write(
+        TodosCompanion(
+          scheduledAt: Value(newScheduledAt),
+          priority: Value(newPriority),
+        ),
+      );
+
+      return successVoid;
+    } catch (e, s) {
+      debugPrint('moveTodoToHour 실패: $e');
+      return Failure(e, s);
+    }
+  }
+
   // ============================================================
   // 반복 Todo 관리
   // ============================================================
@@ -317,6 +350,51 @@ class AppDatabase extends _$AppDatabase {
       return Success(id);
     } catch (e, s) {
       debugPrint('createRecurringTodo 실패: $e');
+      return Failure(e, s);
+    }
+  }
+
+  /// 반복 할 일의 시간을 변경합니다.
+  ///
+  /// [recurringId] 반복 할 일 ID
+  /// [newHour] 새 시간 (0-23)
+  /// [fromDate] 이 날짜 이후의 할 일에 적용
+  Future<Result<void>> updateRecurringTodoHour(
+    int recurringId,
+    int newHour,
+    DateTime fromDate,
+  ) async {
+    try {
+      // 반복 템플릿의 시간 업데이트
+      await (update(recurringTodos)..where((row) => row.id.equals(recurringId)))
+          .write(RecurringTodosCompanion(hour: Value(newHour)));
+
+      // 이 날짜 이후의 기존 투두들의 시간 업데이트
+      final existingTodos = await (select(todos)
+            ..where((row) => row.recurringId.equals(recurringId))
+            ..where((row) =>
+                row.scheduledAt.isBiggerOrEqualValue(fromDate.startOfDay)))
+          .get();
+
+      await batch((b) {
+        for (final todo in existingTodos) {
+          final newScheduledAt = DateTime(
+            todo.scheduledAt.year,
+            todo.scheduledAt.month,
+            todo.scheduledAt.day,
+            newHour,
+          );
+          b.update(
+            todos,
+            TodosCompanion(scheduledAt: Value(newScheduledAt)),
+            where: (row) => row.id.equals(todo.id),
+          );
+        }
+      });
+
+      return successVoid;
+    } catch (e, s) {
+      debugPrint('updateRecurringTodoHour 실패: $e');
       return Failure(e, s);
     }
   }

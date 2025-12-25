@@ -267,6 +267,30 @@ abstract class AppLocalizations {
   /// **'Also delete all future recurring tasks'**
   String get deleteAllRecurring;
 
+  /// No description provided for @timeChangeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Change Time'**
+  String get timeChangeTitle;
+
+  /// No description provided for @timeChangeMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Change \'{title}\' to {newHour}:00'**
+  String timeChangeMessage(String title, String newHour);
+
+  /// No description provided for @changeAllRecurring.
+  ///
+  /// In en, this message translates to:
+  /// **'Also change all future recurring tasks'**
+  String get changeAllRecurring;
+
+  /// No description provided for @change.
+  ///
+  /// In en, this message translates to:
+  /// **'Change'**
+  String get change;
+
   /// No description provided for @noTodosForDate.
   ///
   /// In en, this message translates to:

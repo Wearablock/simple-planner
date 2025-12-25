@@ -54,6 +54,11 @@
   },
   "deleteAllRecurring": "Elimina anche tutte le attività ricorrenti future",
 
+  "timeChangeTitle": "Cambia orario",
+  "timeChangeMessage": "Cambiare '{title}' a {newHour}:00",
+  "changeAllRecurring": "Cambia anche tutte le attività ricorrenti future",
+  "change": "Cambia",
+
   "noTodosForDate": "Nessuna attività per il {day}/{month}",
   "@noTodosForDate": {
     "placeholders": {
