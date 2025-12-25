@@ -1,0 +1,6 @@
+Có gì mới trong phiên bản 1.0.2
+
+- Thêm tùy chọn thay đổi thời gian cho công việc lặp lại: Chọn thay đổi chỉ công việc hiện tại hoặc tất cả các công việc trong tương lai
+- Sửa lỗi tạo bản sao khi di chuyển công việc lặp lại
+- Cải thiện giao diện với khoảng cách giữa các khung giờ nhỏ gọn hơn
+- Cải thiện độ ổn định chung

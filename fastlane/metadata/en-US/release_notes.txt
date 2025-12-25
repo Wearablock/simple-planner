@@ -1,0 +1,6 @@
+What's New in v1.0.2
+
+- Added time change option for recurring todos: Choose to change only the current todo or all future occurrences
+- Fixed a bug where moving recurring todos created duplicates
+- Improved UI with more compact hour slot spacing
+- General stability improvements

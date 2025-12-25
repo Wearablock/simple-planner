@@ -77,6 +77,23 @@ platform :ios do
     upload_screenshots
   end
 
+  desc "Build and release to App Store with metadata"
+  lane :release do
+    # Flutter 빌드
+    sh("cd .. && flutter build ipa --release")
+
+    # App Store에 IPA + 메타데이터(릴리스 노트) 업로드
+    deliver(
+      api_key: api_key,
+      ipa: "build/ios/ipa/simple_planner.ipa",
+      skip_metadata: false,
+      skip_screenshots: true,
+      submit_for_review: false,
+      force: true,
+      precheck_include_in_app_purchases: false
+    )
+  end
+
 end
 
 # ============================================
@@ -137,6 +154,22 @@ platform :android do
   lane :deploy do
     upload_production
     upload_screenshots
+  end
+
+  desc "Build and release to Play Store"
+  lane :release do
+    # Flutter 빌드
+    sh("cd .. && flutter build appbundle --release")
+
+    # Play Store에 AAB 업로드
+    upload_to_play_store(
+      track: "production",
+      aab: "build/app/outputs/bundle/release/app-release.aab",
+      skip_upload_metadata: true,
+      skip_upload_changelogs: true,
+      skip_upload_images: true,
+      skip_upload_screenshots: true
+    )
   end
 
 end

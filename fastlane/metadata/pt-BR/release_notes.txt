@@ -1,0 +1,6 @@
+Novidades na versão 1.0.2
+
+- Adicionada opção de alteração de horário para tarefas recorrentes: escolha alterar apenas a tarefa atual ou todas as futuras
+- Corrigido um bug que criava duplicatas ao mover tarefas recorrentes
+- Interface aprimorada com espaçamento mais compacto entre os horários
+- Melhorias gerais de estabilidade

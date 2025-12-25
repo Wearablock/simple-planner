@@ -1,0 +1,6 @@
+Novità nella versione 1.0.2
+
+- Aggiunta opzione di modifica orario per attività ricorrenti: scegli se modificare solo l'attività corrente o tutte quelle future
+- Corretto un bug che creava duplicati durante lo spostamento di attività ricorrenti
+- Interfaccia migliorata con spaziatura più compatta tra le fasce orarie
+- Miglioramenti generali della stabilità
