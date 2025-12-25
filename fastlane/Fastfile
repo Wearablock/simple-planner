@@ -16,9 +16,20 @@
 # ============================================
 platform :ios do
 
+  # App Store Connect API Key 설정
+  def api_key
+    app_store_connect_api_key(
+      key_id: "H9Z8PM46JZ",
+      issuer_id: "61771d9b-ea3e-409d-9d3b-c4ee05e77ae8",
+      key_filepath: "fastlane/AuthKey_H9Z8PM46JZ.p8",
+      in_house: false
+    )
+  end
+
   desc "Upload screenshots to App Store Connect"
   lane :upload_screenshots do
     deliver(
+      api_key: api_key,
       skip_binary_upload: true,
       skip_metadata: true,
       skip_screenshots: false,
@@ -31,6 +42,7 @@ platform :ios do
   desc "Upload metadata to App Store Connect"
   lane :upload_metadata do
     deliver(
+      api_key: api_key,
       skip_binary_upload: true,
       skip_metadata: false,
       skip_screenshots: true,
@@ -41,7 +53,8 @@ platform :ios do
   desc "Upload IPA to TestFlight"
   lane :upload_testflight do
     upload_to_testflight(
-      ipa: "build/ios/ipa/*.ipa",
+      api_key: api_key,
+      ipa: "build/ios/ipa/simple_planner.ipa",
       skip_waiting_for_build_processing: true
     )
   end
@@ -49,7 +62,8 @@ platform :ios do
   desc "Upload IPA to App Store for Review"
   lane :upload_appstore do
     deliver(
-      ipa: "build/ios/ipa/*.ipa",
+      api_key: api_key,
+      ipa: "build/ios/ipa/simple_planner.ipa",
       skip_metadata: true,
       skip_screenshots: true,
       submit_for_review: false,

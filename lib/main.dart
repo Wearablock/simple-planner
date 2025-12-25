@@ -8,6 +8,7 @@ import 'package:simple_planner/database/database.dart';
 import 'package:simple_planner/screens/home_screen.dart';
 import 'package:simple_planner/services/ad_service.dart';
 import 'package:simple_planner/services/purchase_service.dart';
+import 'package:upgrader/upgrader.dart';
 
 late AppDatabase database;
 
@@ -125,7 +126,10 @@ class MyApp extends StatelessWidget {
           labelSmall: GoogleFonts.poppins(fontWeight: FontWeight.w300),
         ),
       ),
-      home: const HomeScreen(),
+      home: UpgradeAlert(
+        dialogStyle: UpgradeDialogStyle.material,
+        child: const HomeScreen(),
+      ),
     );
   }
 }

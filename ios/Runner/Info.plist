@@ -263,10 +263,6 @@
 				<string>3qcr597p9d.skadnetwork</string>
 			</dict>
 		</array>
-		<!-- 3️⃣ 추적 동의 팝업 문구 (필수) -->
-		<key>NSUserTrackingUsageDescription</key>
-		<string>맞춤형 광고를 제공하기 위해 사용됩니다. 추적을 허용하지 않아도 앱을 사용할 수 있습니다.</string>
-		<!-- ========== 👆 여기까지 새로 추가 ========== -->
 		<key>UIStatusBarHidden</key>
 		<false/>
 	</dict>

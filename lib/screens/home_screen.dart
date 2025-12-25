@@ -73,6 +73,7 @@ class _HomeScreenState extends State<HomeScreen> {
       _controller.text,
       _inputState.selectedHour,
       weekdaysWithCurrentDay.value,
+      _selectedDate,
     );
 
     if (createResult.isFailure) {

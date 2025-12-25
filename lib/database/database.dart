@@ -69,6 +69,7 @@ class RecurringTodos extends Table {
   IntColumn get hour => integer()();
   IntColumn get weekdays => integer().withDefault(const Constant(127))();
   BoolColumn get isActive => boolean().withDefault(const Constant(true))();
+  DateTimeColumn get startDate => dateTime()();
   DateTimeColumn get createdAt => dateTime().withDefault(currentDateAndTime)();
 }
 
@@ -93,7 +94,7 @@ class AppDatabase extends _$AppDatabase {
   AppDatabase() : super(_openConnection());
 
   @override
-  int get schemaVersion => 4;
+  int get schemaVersion => 5;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
@@ -117,6 +118,16 @@ class AppDatabase extends _$AppDatabase {
       if (from < 4) {
         await m.database.customStatement(
           'ALTER TABLE todos ADD COLUMN is_deleted INTEGER NOT NULL DEFAULT 0',
+        );
+      }
+
+      if (from < 5) {
+        // 기존 반복 투두는 createdAt을 startDate로 사용
+        await m.database.customStatement(
+          'ALTER TABLE recurring_todos ADD COLUMN start_date INTEGER NOT NULL DEFAULT 0',
+        );
+        await m.database.customStatement(
+          'UPDATE recurring_todos SET start_date = created_at',
         );
       }
     },
@@ -285,12 +296,14 @@ class AppDatabase extends _$AppDatabase {
   /// [title] 할 일 제목
   /// [hour] 매일 실행할 시간 (0-23)
   /// [weekdays] 반복할 요일 비트마스크
+  /// [startDate] 반복 시작 날짜
   ///
   /// 성공 시 생성된 RecurringTodo의 ID를 반환합니다.
   Future<Result<int>> createRecurringTodo(
     String title,
     int hour,
     int weekdays,
+    DateTime startDate,
   ) async {
     try {
       final id = await into(recurringTodos).insert(
@@ -298,6 +311,7 @@ class AppDatabase extends _$AppDatabase {
           title: title,
           hour: hour,
           weekdays: Value(weekdays),
+          startDate: startDate.dateOnly,
         ),
       );
       return Success(id);
@@ -457,6 +471,8 @@ class AppDatabase extends _$AppDatabase {
   }
 
   bool _isTemplateActiveOnDate(RecurringTodo template, DateTime date) {
+    // startDate 이전 날짜는 생성하지 않음
+    if (date.isBefore(template.startDate)) return false;
     return Weekdays.fromValue(template.weekdays).containsDate(date);
   }
 

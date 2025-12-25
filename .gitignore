@@ -72,6 +72,7 @@ app.*.map.json
 # ==============================================
 # Sensitive files (NEVER commit)
 **/fastlane/play-store-key.json
+**/fastlane/api_key.json
 **/fastlane/report.xml
 **/fastlane/Preview.html
 **/fastlane/screenshots/
