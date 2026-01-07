@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:app_tracking_transparency/app_tracking_transparency.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:simple_planner/services/purchase_service.dart';
@@ -36,6 +37,16 @@ class AdService extends ChangeNotifier {
     if (_isInitialized) return;
 
     try {
+      // iOS 14.5+ ATT 권한 요청
+      if (Platform.isIOS) {
+        final status = await AppTrackingTransparency.trackingAuthorizationStatus;
+        if (status == TrackingStatus.notDetermined) {
+          // 앱 시작 직후 다이얼로그가 표시되지 않을 수 있으므로 약간의 지연 추가
+          await Future.delayed(const Duration(milliseconds: 500));
+          await AppTrackingTransparency.requestTrackingAuthorization();
+        }
+      }
+
       await MobileAds.instance.initialize();
       _isInitialized = true;
       debugPrint('AdService 초기화 완료');

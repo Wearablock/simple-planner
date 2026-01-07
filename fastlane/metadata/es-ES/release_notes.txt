@@ -1,6 +1,4 @@
-Novedades en v1.0.2
+Novedades en v1.0.3
 
-- Opción de cambio de hora para tareas recurrentes: Elige cambiar solo la tarea actual o todas las futuras
-- Corregido un error que creaba duplicados al mover tareas recurrentes
-- Interfaz mejorada con espaciado más compacto entre franjas horarias
+- Compatibilidad con App Tracking Transparency para anuncios personalizados
 - Mejoras generales de estabilidad

@@ -1,6 +1,4 @@
-Neu in Version 1.0.2
+Neu in v1.0.3
 
-- Zeitänderungsoption für wiederkehrende Aufgaben hinzugefügt: Wählen Sie, ob nur die aktuelle oder alle zukünftigen Aufgaben geändert werden sollen
-- Fehler behoben, bei dem das Verschieben wiederkehrender Aufgaben Duplikate erzeugte
-- Verbesserte Benutzeroberfläche mit kompakteren Zeitfenster-Abständen
+- App Tracking Transparency Unterstützung für personalisierte Werbung hinzugefügt
 - Allgemeine Stabilitätsverbesserungen

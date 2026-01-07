@@ -1,6 +1,4 @@
-Yang Baru di v1.0.2
+Yang Baru di v1.0.3
 
-- Menambahkan opsi perubahan waktu untuk tugas berulang: Pilih untuk mengubah tugas saat ini saja atau semua tugas mendatang
-- Memperbaiki bug yang menyebabkan duplikasi saat memindahkan tugas berulang
-- UI yang ditingkatkan dengan jarak slot waktu yang lebih kompak
-- Peningkatan stabilitas umum
+- Menambahkan dukungan App Tracking Transparency untuk iklan yang dipersonalisasi
+- Peningkatan stabilitas secara umum

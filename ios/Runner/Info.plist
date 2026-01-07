@@ -63,6 +63,9 @@
 		<!-- 1️⃣ AdMob 앱 ID (필수) -->
 		<key>GADApplicationIdentifier</key>
 		<string>ca-app-pub-8841058711613546~3578867483</string>
+		<!-- 2️⃣ App Tracking Transparency 설명 (iOS 14.5+ 필수) -->
+		<key>NSUserTrackingUsageDescription</key>
+		<string>This identifier will be used to deliver personalized ads to you.</string>
 		<!-- 2️⃣ 광고 네트워크 허용 목록 (필수) -->
 		<key>SKAdNetworkItems</key>
 		<array>

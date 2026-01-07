@@ -1,6 +1,4 @@
-Nouveautés de la version 1.0.2
+Nouveautés de la v1.0.3
 
-- Option de changement d'heure pour les tâches récurrentes : choisissez de modifier uniquement la tâche actuelle ou toutes les tâches futures
-- Correction d'un bug qui créait des doublons lors du déplacement des tâches récurrentes
-- Interface améliorée avec un espacement plus compact entre les créneaux horaires
+- Ajout de la prise en charge d'App Tracking Transparency pour les publicités personnalisées
 - Améliorations générales de la stabilité
